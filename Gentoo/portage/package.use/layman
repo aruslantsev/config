@@ -1,0 +1,2 @@
+app-portage/layman git mercurial cvs subversion
+dev-vcs/subversion perl -dso

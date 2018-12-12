@@ -1,0 +1,9 @@
+app-arch/p7zip rar
+dev-python/numpy lapack
+dev-python/pandas -X
+kde-apps/ark lzma zip
+kde-apps/gwenview kipi
+kde-plasma/plasma-nm modemmanager
+sys-apps/man-pages -l10n_ru
+sys-apps/smartmontools -daemon
+x11-drivers/xf86-video-intel dri3 uxa

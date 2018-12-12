@@ -1,0 +1,4 @@
+dev-libs/xmlsec nss
+media-libs/harfbuzz icu
+app-office/libreoffice -bluetooth -branding -dbus vlc
+net-nds/openldap -berkdb
