@@ -1,0 +1,4 @@
+media-video/vlc -dvbpsi -encode -gcrypt cdda -cddb dvd vaapi vorbis dbus ogg
+sys-libs/zlib minizip
+media-video/ffmpeg ssse3 vaapi vdpau
+virtual/ffmpeg vaapi
