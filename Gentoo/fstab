@@ -22,11 +22,12 @@
 #       documentation for details on setting a label. To obtain the UUID, use
 #       the blkid(8) command.
 
-# <fs>						<mountpoint>	<type>	<opts>							<dump/pass>
-UUID=84381ade-db79-4294-b6f2-461e1e917328	/			ext4	discard,barrier=0,relatime,commit=600,errors=remount-ro	0 1
-UUID=C333-F992					/boot/efi		vfat	umask=0077						0 2
-UUID=d03d15f5-d913-4b70-a982-8c5c3fa9b80d	/home			ext4	defaults,discard,barrier=0,relatime			0 2
-UUID=0bca82e8-9fc6-40ce-a4b5-09b10a59665c	none			swap	sw							0 0
-none						/var/cache/edb/dep	tmpfs	defaults						0 0
-none						/var/tmp/		tmpfs	defaults						0 0
-none						/tmp/			tmpfs	defaults						0 0
+# <fs>						<mountpoint>		<type>	<opts>					<dump/pass>
+#										# I use fstrim instead of discard
+UUID=84381ade-db79-4294-b6f2-461e1e917328	/			ext4	defaults,barrier=0,errors=remount-ro	0 1
+UUID=D177-1A2A					/boot/efi		vfat	umask=0077				0 2
+UUID=d03d15f5-d913-4b70-a982-8c5c3fa9b80d	/home			ext4	defaults,barrier=0			0 2
+UUID=0bca82e8-9fc6-40ce-a4b5-09b10a59665c	none			swap	defaults				0 0
+none						/var/cache/edb/dep	tmpfs	defaults				0 0
+none						/var/tmp/		tmpfs	defaults				0 0
+none						/tmp/			tmpfs	defaults				0 0

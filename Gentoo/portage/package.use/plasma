@@ -4,6 +4,6 @@ media-video/vlc vorbis ogg
 sys-libs/zlib minizip
 x11-libs/libxcb xkb
 dev-qt/qtgui egl
-# sys-auth/consolekit policykit
 dev-lang/python sqlite
 dev-qt/qtcore icu
+kde-apps/kio-extras mtp

@@ -1,2 +1,8 @@
 media-libs/vigra openexr
 dev-libs/boost python
+
+dev-qt/qtwebengine widgets
+dev-qt/qtwebchannel qml
+dev-libs/libxml2 icu
+media-libs/libvpx svc
+

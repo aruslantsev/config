@@ -1,6 +1,7 @@
 app-arch/p7zip rar
 dev-python/numpy lapack
 dev-python/pandas -X
+dev-python/nltk numpy
 kde-apps/ark lzma zip
 kde-apps/gwenview kipi
 kde-plasma/plasma-nm modemmanager
