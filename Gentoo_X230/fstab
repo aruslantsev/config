@@ -1,0 +1,34 @@
+# /etc/fstab: static file system information.
+#
+# noatime turns off atimes for increased performance (atimes normally aren't 
+# needed); notail increases performance of ReiserFS (at the expense of storage 
+# efficiency).  It's safe to drop the noatime options if you want and to 
+# switch between notail / tail freely.
+#
+# The root filesystem should have a pass number of either 0 or 1.
+# All other filesystems should have a pass number of 0 or greater than 1.
+#
+# See the manpage fstab(5) for more information.
+#
+
+# NOTE: If your BOOT partition is ReiserFS, add the notail option to opts.
+#
+# NOTE: Even though we list ext4 as the type here, it will work with ext2/ext3
+#       filesystems.  This just tells the kernel to use the ext4 driver.
+#
+# NOTE: You can use full paths to devices like /dev/sda3, but it is often
+#       more reliable to use filesystem labels or UUIDs. See your filesystem
+#       documentation for details on setting a label. To obtain the UUID, use
+#       the blkid(8) command.
+
+# <fs>                                          <mountpoint>            <type>  <opts>                                          <dump/pass>
+#                                                                               # I use fstrim instead of discard
+UUID=5a1f1c3c-7c35-4749-99f7-8a6fe112bba8	/			ext4	defaults,noatime,barrier=0,errors=remount-ro		0 1
+UUID=DC18-715D					/boot/efi               vfat	umask=0077,noatime					0 2
+UUID=47bc28c1-cbff-4941-8c22-1ae58e1a651b	none                    swap	defaults,discard					0 0
+UUID=d03d15f5-d913-4b70-a982-8c5c3fa9b80d       /home                   ext4	defaults,noatime,barrier=0				0 2
+none						/var/cache/edb/dep      tmpfs	defaults						0 0
+none						/var/tmp/               tmpfs	defaults						0 0
+none						/var/log/               tmpfs	defaults						0 0
+none						/tmp/                   tmpfs	defaults						0 0
+

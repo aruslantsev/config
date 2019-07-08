@@ -1,0 +1,4 @@
+app-office/libreoffice -bluetooth -dbus -mariadb
+dev-libs/xmlsec nss
+media-libs/harfbuzz icu
+

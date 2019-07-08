@@ -1,0 +1,3 @@
+sys-apps/man-pages -l10n_ru
+sys-apps/smartmontools -daemon
+dev-libs/glib -dbus # needs dconf

@@ -1,0 +1,11 @@
+dev-libs/libpcre2 pcre16
+app-text/xmlto text
+x11-libs/libxcb xkb
+dev-qt/qtgui egl
+dev-qt/qtcore icu
+media-video/vlc vorbis ogg
+sys-libs/zlib minizip
+app-text/poppler qt5 # kfind
+
+kde-plasma/plasma-meta -desktop-portal networkmanager
+kde-plasma/plasma-nm openconnect
