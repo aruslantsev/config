@@ -1,4 +1,0 @@
-if [ "$METHOD" = "suspend" ]; then
-METHOD=suspend_hybrid
-fi
-PM_HIBERNATE_DELAY=900

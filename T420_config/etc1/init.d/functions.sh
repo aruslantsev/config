@@ -1,1 +1,0 @@
-/lib64/rc/sh/functions.sh

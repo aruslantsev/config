@@ -1,2 +1,0 @@
-event=button/sleep
-action=/etc/acpi/actions/hibernate_ram.sh

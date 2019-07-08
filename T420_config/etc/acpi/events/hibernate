@@ -1,2 +1,0 @@
-event=button/suspend
-action=/etc/acpi/actions/hibernate.sh

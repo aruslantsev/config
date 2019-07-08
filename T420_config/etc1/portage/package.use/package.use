@@ -1,8 +1,0 @@
-app-admin/sudo -sendmail
-app-laptop/tp_smapi hdaps
-app-misc/mc -slang
-app-office/libreoffice -bluetooth -gtk -gtk3 -kde
-sys-apps/man-pages -linguas_ru -l10n_ru
-sys-apps/smartmontools minimal
-sys-fs/lvm2 -thin
-x11-wm/fluxbox -imlib

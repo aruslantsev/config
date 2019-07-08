@@ -1,4 +1,0 @@
-app-text/poppler cairo
-media-libs/libmng -lcms
-media-gfx/gimp -lcms
-media-libs/libmypaint gegl

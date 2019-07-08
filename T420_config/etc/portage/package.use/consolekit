@@ -1,5 +1,0 @@
-net-misc/networkmanager consolekit
-sys-auth/pambase consolekit
-sys-auth/consolekit policykit
-x11-misc/sddm consolekit
-
