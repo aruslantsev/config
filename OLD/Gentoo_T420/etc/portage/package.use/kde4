@@ -1,0 +1,14 @@
+app-text/poppler qt4
+# move kde-base/kactivities kde-frameworks/kactivities
+kde-frameworks/kactivities minimal
+kde-apps/kde4-l10n minimal
+# move kde-base/baloo kde-frameworks/baloo
+kde-frameworks/baloo minimal
+=kde-apps/kdesu-4* -handbook
+=dev-libs/libdbusmenu-qt-0* qt4
+# move app-office/akonadi-server kde-apps/akonadi
+=kde-apps/akonadi-1* qt4
+=media-libs/phonon-4* qt4
+=kde-apps/kdesu-15* -handbook
+sys-auth/polkit-qt qt4
+media-gfx/exiv2 xmp

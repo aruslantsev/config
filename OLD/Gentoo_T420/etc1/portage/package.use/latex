@@ -1,0 +1,5 @@
+dev-qt/qtwebkit printsupport
+media-libs/harfbuzz icu
+app-text/texlive extra xetex -X
+app-text/texlive-core xetex
+

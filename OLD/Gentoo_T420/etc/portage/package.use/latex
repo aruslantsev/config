@@ -1,0 +1,3 @@
+dev-qt/qtwebkit printsupport
+app-text/texlive extra xetex -X
+app-text/texlive-core xetex

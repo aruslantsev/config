@@ -1,0 +1,2 @@
+event=video/switchmode
+action=/etc/acpi/actions/screen_off.sh

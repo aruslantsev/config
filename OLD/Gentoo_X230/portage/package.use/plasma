@@ -1,0 +1,9 @@
+dev-libs/libpcre2 pcre16
+app-text/xmlto text
+media-video/vlc vorbis ogg
+sys-libs/zlib minizip
+x11-libs/libxcb xkb
+dev-qt/qtgui egl
+dev-lang/python sqlite
+dev-qt/qtcore icu
+kde-apps/kio-extras mtp

@@ -1,0 +1,84 @@
+# 
+# WARNING: No attempt is made to preserve this file upon upgrades.
+#          The file format may also change between hibernate script versions.
+#          It is recommended that you enter any modules you wish to unload
+#          into hibernate.conf.
+# 
+# The syntax of each line in this file is "module name [...]" where [...] is
+# a sequence of minimum/maximum kernel version pairs that the module is
+# incompatible with. For example:
+#     usb-ehci 2.4.0 2.4.25 2.6.0 2.6.2
+# (would indicate that usb-ehci was incompatible in 2.4 until 2.4.25, and in
+# 2.6 until 2.6.2 - example only!)
+#
+# A module without any versions is always considered unsuspendable.
+#
+# If a line is prefixed with an '@' sign, then the versions are interpreted
+# as the module version (as reported by modinfo) instead of the kernel version.
+# Unversioned modules (modules with no version: line shown in modinfo) are
+# always unloaded if listed, regardless of the version range.
+#
+# This format has some limitations - it does not take into account
+# TuxOnIce versions (which may include driver updates).
+#
+
+acx100
+acx_pci
+hsfmodem
+prism54
+
+bcm4400		2.6.0	2.6.99
+emu10k1		2.4.0	2.4.99	2.6.0	2.6.99
+forcedeth	2.4.0	2.4.99	2.6.0	2.6.99
+@ipw2100	0.0	1.0.2
+@ipw2200	0.0	0.20
+natsemi		2.6.0	2.6.99
+psmouse		2.6.0	2.6.19
+rt2400		2.4.0	2.4.99	2.6.0	2.6.99
+ehci_hcd	2.6.0	2.6.14
+ohci_hcd	2.6.0	2.6.14
+uhci_hcd	2.6.0	2.6.14
+ehci-hcd	2.4.0	2.4.99
+usb-ohci	2.4.0	2.4.99
+usb-uhci	2.4.0	2.4.99
+snd_ens1370	2.6.0	2.6.99
+snd_ens1371	2.6.0	2.6.99
+snd_maestro3	2.6.0	2.6.99
+@snd_bt_sco	0.0	1.18
+en1370		2.6.0	2.6.99
+en1371		2.6.0	2.6.99
+via_agp		2.6.0	2.6.8
+via_rhine	2.6.0	2.6.99
+i8042		2.6.10	2.6.99
+intel_mch_agp	2.6.0	2.6.99
+rt2500		2.6.0	2.6.14
+
+button		2.6.9	2.6.22
+speedstep_smi	2.6.12	2.6.99
+
+@ndiswrapper    0.10    0.11
+
+nvidia		0.0	2.6.25
+
+# #383169
+ath_pci
+
+# #427252
+ipw3945
+
+# suggested by Jan Ondrej.
+iwl3945		2.6.0	2.6.27
+mac80211	2.6.0	2.6.27
+sky2
+
+#uvcvideo has a bug which I'm working to find at the moment
+#It will sometimes cause an oops at atomic copy time.
+uvcvideo
+
+# Suggested by Miklos Aubert 5/2/2009 AEST - TuxOnIce users.
+snd_ice1712
+
+# Suggested by Vladimir Skuratovich - TuxOnIce users, 26/3/2009 AEST.
+firewire-core
+firewire-sbp2
+firewire-ohci

@@ -1,0 +1,26 @@
+# move app-cdr/k3b kde-apps/k3b
+kde-apps/k3b encode
+app-i18n/enca -recode
+app-laptop/tp_smapi hdaps
+app-office/libreoffice -bluetooth -gtk -gtk3 kde
+app-portage/layman git bazaar cvs mercurial subversion
+media-sound/shntool flac
+media-video/mplayer -xscreensaver -dvd -dvdnav -libass -mp3 vdpau
+net-wireless/wpa_supplicant ap dbus p2p wps
+sys-apps/man-pages -linguas_ru -l10n_ru
+sys-apps/smartmontools minimal
+sys-fs/lvm2 -lvm1 -thin
+sys-fs/udisks -gptfdisk
+
+
+# required by virtual/ffmpeg-9-r2::gentoo[-libav]
+# required by kde-apps/kdenlive-16.12.3::gentoo
+# required by kdenlive (argument)
+>=media-video/ffmpeg-3.2.4 sdl
+# required by kde-apps/kdenlive-16.12.3::gentoo
+# required by kdenlive (argument)
+>=virtual/ffmpeg-9-r2 sdl
+# required by kde-apps/kdenlive-16.12.3::gentoo
+# required by kdenlive (argument)
+>=media-libs/mlt-6.4.1-r1 kdenlive melt xml sdl
+

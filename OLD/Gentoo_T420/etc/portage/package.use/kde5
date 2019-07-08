@@ -1,0 +1,4 @@
+kde-apps/kopete oscar
+kde-frameworks/knotifications dbus
+kde-plasma/plasma-workspace dbus
+kde-plasma/plasma-desktop legacy-systray qt4

@@ -1,0 +1,2 @@
+dpkg -l linux-* | awk '/^ii/{ print $2 }' | grep -e [0-9] | grep -v 64
+
