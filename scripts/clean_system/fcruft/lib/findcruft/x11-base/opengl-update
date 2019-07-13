@@ -1,0 +1,10 @@
+echo /etc/env.d/09opengl
+echo /usr/X11R6/include/GL/gl.h
+echo /usr/X11R6/include/GL/glx.h
+echo /usr/X11R6/include/GL/glxtokens.h
+echo /usr/X11R6/lib/libGL.so.1
+echo /usr/X11R6/lib/libMesaGL.so
+echo /usr/X11R6/lib/modules/extensions/libglx.a
+echo /usr/lib/libGL.la
+echo /usr/lib/libGL.so
+echo /usr/lib/libGL.so.1

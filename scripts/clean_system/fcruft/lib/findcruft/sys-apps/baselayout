@@ -1,0 +1,9 @@
+[[ -r /usr/share/baselayout/mkdirs.sh ]] \
+&& sed 's/^.*  can.t create \(.*\)"$/\1/;t;d' /usr/share/baselayout/mkdirs.sh
+cruftdir /etc/runlevels
+echo /usr/doc
+echo /usr/include/GL
+echo /usr/info
+echo /usr/man
+echo /usr/share/man/.keep.gz
+echo /var/log/dmesg

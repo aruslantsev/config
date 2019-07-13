@@ -1,0 +1,2 @@
+echo /sbin/pidof
+echo /usr/bin/pidof

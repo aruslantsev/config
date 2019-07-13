@@ -1,0 +1,2 @@
+echo /var/run/pam_mount
+cruftfile "/var/run/pam_mount/.*"

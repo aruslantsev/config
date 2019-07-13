@@ -1,0 +1,1 @@
+echo /etc/sgml/sgml-docbook-${SLOT}.cat

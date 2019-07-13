@@ -1,0 +1,8 @@
+echo /var/cache/man/whatis
+for manx in /usr/share/man/man*; do
+	x=${manx#/usr/share/man/man}
+	for manp in $manx/*; do
+		p=${manp#$manx/}
+		echo "/var/cache/man/cat$x/${p%.gz}.bz2"
+	done
+done

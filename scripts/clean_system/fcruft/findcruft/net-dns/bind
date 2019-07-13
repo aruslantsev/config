@@ -1,0 +1,7 @@
+echo /etc/bind/rndc.key
+cruftfile "/etc/bind/pri/.*"
+cruftfile "/etc/bind/sec/.*"
+cruftfile "/var/bind/pri/.*"
+cruftfile "/var/bind/sec/.*"
+echo /var/run/named
+echo /var/run/named/named.pid

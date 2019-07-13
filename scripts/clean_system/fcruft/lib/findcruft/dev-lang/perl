@@ -1,0 +1,2 @@
+echo /usr/lib/libperl.so
+cruftdir $(perl -e 'use Config; print $Config{installsitearch};')

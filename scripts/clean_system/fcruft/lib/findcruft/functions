@@ -1,0 +1,40 @@
+# functions (borrowed from ecatmur's "cruft"):
+NS_PLUGINS_DIR="$(sed 's/^PLUGINS_DIR="\(.*\)"$/\1/;t;d' $PORTDIR/eclass/nsplugins.eclass)"
+function nsplugin() {
+        for MYFILE in "${@}"; do
+                echo "/usr/lib/${NS_PLUGINS_DIR}/${MYFILE}"
+        done
+}
+function fontdir() {
+        for MYDIR in "${@}"; do
+                if [[ "$MYDIR" == /* ]]
+		then
+			echo ${MYDIR}/encodings.dir
+                        echo ${MYDIR}/fonts.cache-1
+			echo ${MYDIR}/fonts.dir
+			echo ${MYDIR}/fonts.list
+			echo ${MYDIR}/fonts.scale
+                elif [[ "${MYDIR}" ]]
+		then
+                        fontdir /usr/share/fonts/${MYDIR}
+                        fontdir ${MYDIR%/*}
+                else
+                        fontdir /usr/share/fonts
+                fi
+        done
+}
+function xpiapp() {
+	path="$1"
+	shift
+	[[ "$#" -gt 0 ]] && for x in "$*"; do xpiapp "$x"; done
+	[[ "$path" != /* ]] && path="/usr/lib/${path}"
+	[[ "$path" == */ ]] && path="${path%/}"
+	echo ${path}/chrome/chrome.rdf
+	cruftdir ${path}/chrome/overlayinfo
+	echo ${path}/components/compreg.dat
+	echo ${path}/components/xpti.dat
+	echo ${path}/components.ini
+	cruftdir ${path}/extensions
+	echo ${path}/install.log
+	cruftdir ${path}/searchplugins
+}

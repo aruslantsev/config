@@ -1,0 +1,3 @@
+echo /etc/blkid.tab
+echo /etc/blkid.tab.old
+cruftdir /lib/udev-state

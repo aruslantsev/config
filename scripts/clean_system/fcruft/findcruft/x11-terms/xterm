@@ -1,0 +1,8 @@
+echo /usr/share/terminfo/x/xterm-65
+echo /usr/share/terminfo/x/xterm-boldso
+echo /usr/share/terminfo/x/xterm-ic
+echo /usr/share/terminfo/x/xterm-mono
+echo /usr/share/terminfo/x/xterm-nrc
+echo /usr/share/terminfo/x/xterm+pcfkeys
+echo /usr/share/terminfo/x/xterm-rep
+echo /usr/share/terminfo/x/xterm-xmc

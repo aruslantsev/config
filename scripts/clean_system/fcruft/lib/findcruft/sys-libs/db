@@ -1,0 +1,9 @@
+echo /usr/include/db.h
+echo /usr/include/db_185.h
+echo /usr/lib/libdb.so
+[[ "$SLOT" == "1" ]] && echo /usr/lib/libdb-1.so
+echo /usr/lib/libdb_cxx.so
+echo /usr/lib/libdb_java.a
+echo /usr/lib/libdb_java.so
+echo /usr/lib/libdb_tcl.a
+echo /usr/lib/libdb_tcl.so

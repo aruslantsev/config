@@ -1,0 +1,6 @@
+for game in $(cat /var/db/pkg/gnome-extra/gnome-games-*/CONTENTS \
+	| grep '^obj /usr/bin/' \
+	| sed "s:\(^obj \)/usr/bin/\(.*\)\( .*\)\{2\}$:\2:"); do
+	cruftfile "/var/lib/games/${game}\..*\.scores"
+	cruftfile "/var/lib/games/${game}.scores"
+done

@@ -1,0 +1,9 @@
+echo /var/lib/nfs/etab
+echo /var/lib/nfs/rmtab
+echo /var/lib/nfs/sm
+echo /var/lib/nfs/sm/.keep
+echo /var/lib/nfs/sm.bak
+echo /var/lib/nfs/sm.bak/.keep
+echo /var/lib/nfs/state
+echo /var/lib/nfs/v4root
+echo /var/lib/nfs/xtab

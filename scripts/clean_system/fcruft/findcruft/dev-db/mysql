@@ -1,0 +1,13 @@
+#
+# mysql stores it's pid & sock in this dir
+# only remove it when mysql is not running
+#
+# by soulwarrior, see http://forums.gentoo.org/viewtopic-p-1825645.html#1825645
+#
+if [ -n "`/usr/bin/pidof mysqld`" ]
+then
+    echo /var/run/mysqld/mysqld.pid;
+    echo /var/run/mysqld/mysqld.sock;
+fi
+# don't remove it's log files
+cruftdir /var/lib/mysql

@@ -1,0 +1,15 @@
+# cups-pdf stores the pdf's by default in this directory
+# remove directories from non-existant users
+#
+# by soulwarrior, see http://forums.gentoo.org/viewtopic-p-1825645.html#1825645
+#
+echo /var/spool/cups-pdf
+echo /var/spool/cups-pdf/SPOOL
+for x in /var/spool/cups-pdf/*
+do
+    name=`basename $x`
+    if [ `grep "^$name:" /etc/passwd` ]
+    then
+        echo $x
+    fi
+done

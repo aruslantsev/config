@@ -1,0 +1,10 @@
+# /usr/man and /usr/doc symlinks pointing to the appropriate
+# subdirs of /usr/share (some ebuilds use the wrong ones):
+echo /usr/man /usr/share/man
+echo /usr/doc /usr/share/doc
+# /usr/include/GL points to /usr/X11R6/include/GL, but some
+# ebuild install into the former:
+echo /usr/include/GL /usr/X11R6/include/GL
+# /usr/lib/terminfo points to /usr/share/terminfo, but
+# x11-terms/xterm installs into the former
+echo /usr/lib/terminfo /usr/share/terminfo

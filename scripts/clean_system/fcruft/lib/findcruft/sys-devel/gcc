@@ -1,0 +1,13 @@
+echo /etc/env.d/05gcc
+echo /etc/env.d/gcc/config
+# TODO: evaluate why these are there:
+echo /usr/bin/g++32
+echo /usr/bin/g77
+echo /usr/bin/gcc32
+echo /usr/bin/${CHOST}-g++32
+echo /usr/bin/${CHOST}-g77
+echo /usr/bin/${CHOST}-gcc32
+VER_MAJOR=$(echo ${VERSION} | cut -d. -f1)
+VER_MINOR=$(echo ${VERSION} | cut -d. -f2)
+echo /usr/share/gcc-data/${CHOST}/${VER_MAJOR}.${VER_MINOR}/info/dir
+echo /usr/share/gcc-data/${CHOST}/${VER_MAJOR}.${VER_MINOR}/info/dir.old

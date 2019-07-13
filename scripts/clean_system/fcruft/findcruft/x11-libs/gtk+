@@ -1,0 +1,4 @@
+echo /etc/X11/gtk
+cruftfile "/etc/X11/gtk/gtkrc\..*"
+echo /etc/gtk-2.0/gdk-pixbuf.loaders
+echo /etc/gtk-2.0/gtk.immodules

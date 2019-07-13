@@ -1,0 +1,15 @@
+[[ -r /etc/dispatch-conf.conf ]] && cruftdir $(sed 's/[[:space:]]*archive-dir=\("\?\)\(.*\)\1$/\2/;t;d' /etc/dispatch-conf.conf)
+echo /etc/portage
+echo /etc/portage/package.keywords
+echo /etc/portage/package.mask
+echo /etc/portage/package.unmask
+echo /etc/portage/package.use
+echo /etc/portage/profile
+echo /etc/portage/profile/packages
+echo /etc/portage/sets
+echo /etc/portage/sets/world
+echo /usr/lib/portage/bin/pmake
+echo /var/lib/portage
+echo /var/lib/portage/config
+echo /var/lib/portage/world
+echo /var/log/emerge.log

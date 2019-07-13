@@ -1,0 +1,4 @@
+cat /etc/syslog-ng/syslog-ng.conf \
+| grep '^[[:space:]]*file' \
+| sed 's/^.*file("\([^"]\+\)");.*/\1/'
+echo /var/run/syslog-ng.pid

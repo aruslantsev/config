@@ -1,0 +1,3 @@
+echo /initrd
+echo /etc/splash/default
+cruftdir /lib/splash/cache

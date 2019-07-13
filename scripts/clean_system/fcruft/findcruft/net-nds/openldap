@@ -1,0 +1,1 @@
+echo /etc/openldap/ssl/ldap.pem

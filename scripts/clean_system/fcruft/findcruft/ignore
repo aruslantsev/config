@@ -1,0 +1,32 @@
+# Not managed "by default":
+echo /boot
+echo /dev
+echo /home
+echo /media
+echo /mnt
+echo /lost+found
+echo /proc
+echo /root
+echo /srv
+echo /sys
+echo /tmp
+echo /usr/local
+echo /var/tmp
+
+# Portage stuff (partly too large to be ignored
+# in package rules):
+echo /timestamp.chk
+echo ${PORTDIR%/}
+echo ${DISTDIR%/}
+echo ${PKGDIR%/}
+echo ${PORT_LOGDIR%/}
+for overlay in ${PORTDIR_OVERLAY}; do
+	echo ${overlay%/}
+done
+echo ${PORTAGE_TMPDIR%/}/portage
+echo ${PORTAGE_TMPDIR%/}/portage-pkg
+echo ${PORTAGE_TMPDIR%/}/sync
+echo ${PORTAGE_TMPDIR%/}/timestamp.chk
+echo ${CCACHE_DIR%/}
+echo /var/cache/edb
+echo /var/db/pkg

@@ -1,0 +1,8 @@
+# /usr/man and /usr/doc symlinks pointing to the appropriate
+# subdirs of /usr/share (some ebuilds use the wrong ones):
+echo /usr/man /usr/share/man
+echo /usr/doc /usr/share/doc
+
+# /usr/lib/terminfo points to /usr/share/terminfo, but
+# x11-terms/xterm installs into the former
+echo /usr/lib/terminfo /usr/share/terminfo

@@ -1,0 +1,4 @@
+VER_MAJOR=$(echo ${VERSION} | cut -d. -f1)
+VER_MINOR=$(echo ${VERSION} | cut -d. -f2)
+echo /usr/share/gcc-data/${CHOST}/${VER_MAJOR}.${VER_MINOR}/info/dir
+echo /usr/share/gcc-data/${CHOST}/${VER_MAJOR}.${VER_MINOR}/info/dir.old

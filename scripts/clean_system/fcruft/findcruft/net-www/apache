@@ -1,0 +1,14 @@
+echo /var/run/cgisock
+cruftdir /var/www/localhost/htdocs
+#
+# pid of apache2
+# only to be removed, when apache2 is not running
+#
+# by soulwarrior, see http://forums.gentoo.org/viewtopic-p-1825645.html#1825645
+#
+if [ -n "`/usr/bin/pidof apache2`" ]
+then
+    echo /var/run/apache2.pid;
+fi
+# don't remove it's log files
+cruftdir /var/log/apache2

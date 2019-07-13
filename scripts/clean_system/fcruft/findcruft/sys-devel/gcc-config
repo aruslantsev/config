@@ -1,0 +1,17 @@
+echo /etc/env.d/05gcc
+echo /etc/env.d/gcc/config
+echo /lib/cpp
+echo /usr/bin/c++
+echo /usr/bin/cc
+echo /usr/bin/cpp
+echo /usr/bin/g++
+echo /usr/bin/gcc
+echo /usr/bin/g++32
+echo /usr/bin/g77
+echo /usr/bin/gcc32
+echo /usr/bin/${CHOST}-c++
+echo /usr/bin/${CHOST}-g++
+echo /usr/bin/${CHOST}-g++32
+echo /usr/bin/${CHOST}-g77
+echo /usr/bin/${CHOST}-gcc
+echo /usr/bin/${CHOST}-gcc32

@@ -1,0 +1,7 @@
+echo /usr/bin/gimp
+echo /usr/bin/gimptool
+echo /usr/share/man/man1/gimp.1.gz
+echo /usr/share/man/man1/gimp-remote.1.gz
+echo /usr/share/man/man1/gimptool.1.gz
+echo /usr/share/man/man5/gimprc.5.gz
+echo /usr/share/mime-info/gimp-$VERSION.keys

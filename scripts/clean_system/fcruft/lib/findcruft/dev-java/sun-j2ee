@@ -1,0 +1,2 @@
+echo /etc/env.d/29sun-j2ee-${VERSION%-r+([[:digit:]])}
+echo /opt/sun-j2ee-${VERSION%-r+([[:digit:]])}/lib/security/secure.seed

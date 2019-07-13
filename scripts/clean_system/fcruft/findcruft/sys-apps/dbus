@@ -1,0 +1,2 @@
+echo /var/lib/dbus/system_bus_socket
+echo /var/run/dbus.pid

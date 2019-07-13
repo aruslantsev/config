@@ -1,0 +1,14 @@
+echo /usr/include/db.h
+echo /usr/include/db_185.h
+echo /usr/lib/libdb.so
+echo /usr/lib/libdb_cxx.so
+echo /usr/lib/libdb_java.a
+echo /usr/lib/libdb_java.so
+echo /usr/lib/libdb_tcl.a
+echo /usr/lib/libdb_tcl.so
+echo /usr/lib/libdb-$SLOT.so
+echo /usr/lib/libdb_cxx-$SLOT.so
+echo /usr/lib/libdb_cxx.so.$SLOT
+echo /usr/lib/libdb_java-$SLOT.so
+echo /usr/lib/libdb_java.so.$SLOT
+echo /usr/lib/libdb.so.$SLOT

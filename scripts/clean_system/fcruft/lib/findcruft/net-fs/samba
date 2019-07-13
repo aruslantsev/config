@@ -1,0 +1,6 @@
+cruftdir /etc/samba/private
+echo /usr/lib/cups/backend/smb
+cruftdir /var/cache/samba
+cruftdir /var/lib/samba
+cruftdir /var/log/samba
+cruftdir /var/run/samba

@@ -1,0 +1,3 @@
+cruftdir /etc/cups
+echo /var/log/cups
+cruftdir /var/spool/cups

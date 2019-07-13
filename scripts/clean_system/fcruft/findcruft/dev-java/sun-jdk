@@ -1,0 +1,2 @@
+echo /opt/sun-jdk-${VERSION%-r+([[:digit:]])}/.systemPrefs/.system.lock
+echo /opt/sun-jdk-${VERSION%-r+([[:digit:]])}/.systemPrefs/.systemRootModFile

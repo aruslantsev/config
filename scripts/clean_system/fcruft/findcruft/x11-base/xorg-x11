@@ -1,0 +1,10 @@
+fontdir 100dpi 75dpi TTF Type1 cyrillic default encodings encodings/large \
+        local misc ukr util
+echo /var/lib/xdm/authfiles
+cruftfile "/var/log/Xorg\..*\.log"
+cruftfile "/var/log/Xorg\..*\.log\.old"
+echo /var/log/xdm.log
+cruftdir "/var/run/xauth"
+echo /var/run/xdmctl
+cruftfile "/var/run/xdmctl/dmctl.*"
+cruftfile "/var/run/xdmctl/xdmctl.*"

@@ -1,0 +1,87 @@
+echo /
+echo /etc/.pwd.lock
+[[ -h /etc/runlevels/boot/clock ]] && echo /etc/adjtime
+[[ -d /proc/asound ]] && echo /etc/asound.state
+echo /etc/csh.env
+echo /etc/dnsdomainname
+echo /etc/env.d/??hostname
+echo /etc/env.d/??games
+echo /etc/fstab
+echo /etc/group
+echo /etc/group-
+echo /etc/gshadow
+echo /etc/gshadow-
+echo /etc/hostname
+echo /etc/hosts
+echo /etc/ioctl.save
+echo /etc/ld.so.cache
+echo /etc/ld.so.conf
+echo /etc/localtime
+echo /etc/make.conf
+echo /etc/make.profile
+echo /etc/modprobe.conf
+echo /etc/modprobe.conf.old
+echo /etc/modprobe.devfs
+echo /etc/modprobe.devfs.old
+echo /etc/modules.conf
+echo /etc/modules.conf.old
+echo /etc/mtab
+echo /etc/passwd
+echo /etc/passwd-
+echo /etc/profile.env
+echo /etc/resolv.conf
+echo /etc/shadow
+echo /etc/shadow-
+echo /usr/src/linux
+echo /var/cache/fonts/ls-R
+cruftdir /var/cache/fonts/pk
+cruftdir /var/cache/fonts/source
+cruftdir /var/cache/fonts/tfm
+echo /var/db
+cruftdir /var/lib/init.d
+echo /var/log/lastlog
+echo /var/log/wtmp
+echo /var/run/random-seed
+echo /var/run/utmp
+echo /var/spool/cron/lastrun/cron.daily
+echo /var/spool/cron/lastrun/cron.hourly
+echo /var/spool/cron/lastrun/cron.monthly
+echo /var/spool/cron/lastrun/cron.weekly
+
+# Contents of /lib64 for AMD64:
+[[ "${ARCH}" == "amd64" ]] && cruftdir /lib64
+
+# modules and sources for installed kernel versions
+# (not really "nopackage", but easier than giving rule files for each and every
+# kernel package)
+for kernel in $(grep '\<virtual/linux-sources\>' /var/db/pkg/sys-kernel/*/PROVIDE | sed 's!^\(/var/db/pkg/sys-kernel/.*\)/PROVIDE:.*$!\1!');
+do
+	for kv in $(bunzip2 -c "${kernel}/environment.bz2" | sed 's:^KV=::;ta;d;:a;q');
+	do
+		cruftdir /lib/modules/$kv
+		cruftdir /usr/src/linux-$kv
+	done
+done
+# additionally modules for the running kernel
+# (although I would always keep the package/sources for the running kernel)
+cruftdir /lib/modules/$(uname -r)
+
+echo /usr/share/mime/XMLnamespaces
+echo /usr/share/mime/application
+echo /usr/share/mime/audio
+echo /usr/share/mime/globs
+echo /usr/share/mime/image
+echo /usr/share/mime/inode
+echo /usr/share/mime/magic
+echo /usr/share/mime/message
+echo /usr/share/mime/model
+echo /usr/share/mime/multipart
+echo /usr/share/mime/text
+echo /usr/share/mime/video
+# shared mime database (borrowed from ecatmur's cruft)
+for package in /usr/share/mime/packages/*.xml; do
+	[[ -f ${package} ]] \
+	&& sed "s!.*<mime-type[[:space:]]\+type=\"\([^\"]*\)\">.*!/usr/share/mime/\1.xml!
+	s!.*<mime-type[[:space:]]\+type='\([^']*\)'>.*!/usr/share/mime/\1.xml!
+	t;d" ${package}
+done

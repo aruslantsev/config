@@ -1,0 +1,10 @@
+if [[ "$SLOT" == "0" ]]
+then
+	cruftdir /usr/lib/eclipse/Uninstaller
+	cruftdir /usr/lib/eclipse/features
+	cruftdir /usr/lib/eclipse/plugins
+else
+	cruftdir /usr/lib/eclipse-${SLOT}/Uninstaller
+	cruftdir /usr/lib/eclipse-${SLOT}/features
+	cruftdir /usr/lib/eclipse-${SLOT}/plugins
+fi

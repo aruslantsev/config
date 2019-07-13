@@ -1,0 +1,1 @@
+echo /var/run/cron.pid

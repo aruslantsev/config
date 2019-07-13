@@ -1,0 +1,2 @@
+echo powersave > /sys/module/pcie_aspm/parameters/policy
+modprobe -r uvcvideo

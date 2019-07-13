@@ -1,0 +1,7 @@
+echo /usr/kde/$SLOT/share/apps/kdm/faces
+echo /usr/kde/$SLOT/share/apps/kdm/faces/.default.face.icon
+echo /usr/kde/$SLOT/share/templates/.source/emptydir
+echo /var/lib/kdm
+echo /var/lib/kdm/kdmsts
+echo /var/log/kdm.log
+echo /var/run/kdm.pid

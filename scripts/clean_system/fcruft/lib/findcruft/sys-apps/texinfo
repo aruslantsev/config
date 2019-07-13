@@ -1,0 +1,4 @@
+for x in ${INFOPATH//:/ } ${INFODIR//:/ }; do
+	echo ${x%/}/dir
+	echo ${x%/}/dir.old
+done

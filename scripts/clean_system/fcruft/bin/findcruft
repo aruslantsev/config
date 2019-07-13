@@ -1,0 +1,400 @@
+#!/bin/bash
+# (c) 2004 Benjamin Braatz <sean@inmymind.de>
+# inspired by "cruft" by Ed Catmur
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA
+# or download it from http://www.gnu.org/licenses/gpl.html
+#
+# Dependencies:
+# app-arch/tar: tar
+# app-shells/bash: bash
+# sys-apps/coreutils: cat comm cut date echo pwd rm rmdir sort tail
+# sys-apps/findutils: find xargs
+# sys-apps/grep: grep
+# sys-apps/sed: sed
+# sys-apps/shadow: su
+
+PROG="findcruft"
+VERSION="1.0.4"
+
+# bash pattern for versions by ecatmur:
+shopt -s extglob
+VER_SHPAT="*(+([[:digit:]]).)+([[:digit:]])?([[:lower:]])?(_@(alpha|beta|pre|rc|p)*([[:digit:]]))?(-r+([[:digit:]]))"
+
+export LC_ALL='C'
+export LC_COLLATE='C'
+
+# settings directory (assumed in /usr/local if not given):
+[[ -z "$FINDCRUFT_CONFDIR" ]] && FINDCRUFT_CONFDIR="/usr/local/lib/findcruft"
+
+# color set up:
+NO=$'\x1b[0;0m'
+BR=$'\x1b[0;01m'
+RD=$'\x1b[31;01m'
+GR=$'\x1b[32;01m'
+YL=$'\x1b[33;01m'
+BL=$'\x1b[34;01m'
+FC=$'\x1b[35;01m'
+CY=$'\x1b[36;01m'
+
+# help output:
+function print_help() {
+	echo "${CY}${PROG}${NO} v${BL}${VERSION}${NO}"
+	echo
+	print_usage
+	cat <<END
+
+${BR}Options:${NO}
+	${CY}-h${NO}:
+		Print this help message and exit.
+	${CY}-?${NO}:
+		Print short usage information and exit.
+	${CY}-D${NO}:
+		Switch to debug mode. Gives some diagnostic
+		information and does not clean the temporary
+		files after finishing.
+	${CY}-f${NO} ${GR}targetdir${NO}:
+		Switch to force mode. Found cruft is packed
+		into a tar.bz2 archive in ${GR}targetdir${NO} and
+		deleted.
+
+This program compares the files on your filesystem to the ones
+managed by ${BR}portage${NO} and prints out files which do not belong to
+any package.
+
+Additionally it uses the files in ${BL}${FINDCRUFT_CONFDIR}${NO} to
+exclude false positives, i.e. configuration and similar files
+which are not managed by ${BR}portage${NO}, but should nevertheless be on
+the system. You can manipulate the location of this directory
+by the ${GR}FINDCRUFT_CONFDIR${NO} environment variable.
+
+All of the files in this directory are sourced into ${CY}${PROG}${NO}
+(and hence processed by ${CY}bash${NO}). Thus, you can use all of bash's
+programming features. Additionally the following ${BR}portage${NO} settings
+are grabbed from the configuration and can be used in all files:
+${GR}\$PORTDIR${NO}, ${GR}\$DISTDIR${NO}, ${GR}\$PKGDIR${NO}, ${GR}\$PORT_LOGDIR${NO}, ${GR}\$PORTDIR_OVERLAY${NO},
+${GR}\$PORTAGE_TMPDIR${NO}, ${GR}\$CCACHE_DIR${NO}, ${GR}\$ARCH${NO}, and ${GR}\$CHOST${NO}
+
+The file ${BL}ignore${NO} should output a list of directories which will
+be completely ignored, i.e. they are neither searched during the
+find phase nor during the building of the false positive list (as
+long as you do not do it in your ${BL}nopackage.local${NO}). You can also
+add your own additions in an ${BL}ignore.local${NO} file. This is handy if
+you have some network file systems or similar which you do not
+want to put under too heavy load.
+
+The file ${BL}symlink${NO} should output a list of ${GR}symlink-target${NO} pairs,
+which is applied to the contents of packages managed by ${BR}portage${NO}.
+This is necessary, because some packages install their files
+e.g. into ${YL}/usr/man${NO}, but this is a symlink to ${YL}/usr/share/man${NO}.
+
+You can add your own symlinks to ${BL}symlink.local${NO}. For example if
+${YL}/opt${NO} is a symlink to ${YL}/usr/opt${NO} (because ${YL}/opt${NO} was too big for the
+root partition and you wanted it to be on the ${YL}/usr${NO} partition
+together with the other large applications) then add a line
+${RD}echo /opt /usr/opt${NO} to ${BL}symlink.local${NO}.
+
+The other files are expected to output a list of false positive
+files one file per line onto ${BL}stdout${NO}. So, if you want to ignore
+a single file you can just do ${RD}echo /full/path/to/file${NO}. You can
+use the predefined functions ${RD}cruftfile /full/path/file_regexp${NO} and
+${RD}cruftdir /full/path/dir_regexp${NO}, which do a grep on the unmanaged
+files and ignore all files matching the given regexp or all
+directories matching the regexp and their contents, respectively.
+Look into the included files for more elaborated examples.
+
+You can also use the functions from the file ${BL}functions${NO} in these
+rule files:
+* ${RD}nsplugin plugin.so plugin.a plugin.la${NO} adds all files given as
+arguments to the false positives in the plugin directory for
+Netscape style browsers (Mozilla, Firefox, ...).
+* ${RD}fontdir relative/path /absolute/path${NO} adds the generated cache,
+directory, and scale files for font directories to the false
+positives. If a relative path is given the directory is assumed
+to reside under ${BL}/usr/share/fonts${NO}.
+* ${RD}xpiapp relative/path /absolute/path${NO} adds the typical false
+positives for XPI applications such as Mozilla and Firefox to
+the list (i.e. things in the ${BL}chrome${NO} and ${BL}components${NO} directories,
+etc.). Relative pathes are assumed under ${BL}/usr/lib${NO}.
+
+The file ${BL}nopackage${NO} contains a list of false positives without
+corresponding package (for some of these one might argue, that
+they belong to some of the base packages, which are present on
+any system, perhaps they will be moved to the corresponding
+package sometime). The file ${BL}nopackage.local${NO} can be used for
+local settings.
+
+The rest of the files is organized in a ${GR}category/package${NO}
+hierarchy. If a package is present on the system (according to
+${BL}/var/db/pkg${NO}) the corresponding file is sourced with the
+variables ${GR}\$VERSION${NO} set to the version and ${GR}\$SLOT${NO} set to the slot
+of the package.
+
+Please make additions to ${BL}ignore${NO}, ${BL}symlink${NO}, and ${BL}nopackage${NO} in the
+corresponding ${BL}*.local${NO} files, so that they do not get overwritten,
+when you unpack a new rule archive into the directory.
+END
+}
+
+function print_usage() {
+	cat <<END
+${BR}Usage:${NO}
+	${CY}${PROG}${NO} [ ${CY}-h${NO} | ${CY}-?${NO} ]
+	${CY}${PROG}${NO} [ ${CY}-D${NO} ] [ ${CY}-f${NO} ${GR}targetdir${NO} ]
+	${CY}${PROG} >${NO} ${GR}cruftlist${NO}
+	${CY}FINDCRUFT_CONFDIR=${GR}/path/to/confdir${NO} ${CY}${PROG}${NO}
+END
+}
+
+# options are -D for debug mode, -f [target dir] for force mode and
+# -?/-h to outout help:
+DEBUG_MODE=""
+FORCE_MODE=""
+while getopts "Df:h\?" OPT; do
+	case $OPT in
+		D )
+		DEBUG_MODE="debug";;
+		f )
+		echo "Force mode set!" >&2
+		echo "Please use this ${RD}only${NO}, if you do not have ${RD}any${NO} false positives." >&2
+		FORCE_MODE="${OPTARG}";;
+		h )
+		print_help
+		exit;;
+		\? )
+		print_usage
+		exit;;
+	esac
+done
+
+# cascade_walk to work with cascading profiles by choenig
+function cascade_walk() {
+        action="$1"; filename="$2"
+        cd -P /etc/make.profile
+        cnt=0
+        while [[ -f parent ]]; do
+                pushd $(cat parent |tail -n1) >> /dev/null
+                cnt=$((cnt+1))
+        done
+        [[ -r "$(pwd)/${filename}" ]] \
+	&& ${action} "`pwd`/${filename}"
+        for ((i=0; i<cnt; i++)); do
+                popd >> /dev/null
+                [[ -r "$(pwd)/${filename}" ]] \
+		&& ${action} "`pwd`/${filename}"
+        done
+}
+
+# grab portage settings by ecatmur:
+function grab_setting() {
+        name="$1"; default="$2"
+        [[ "${!name+ISSET}" ]] && return
+        export $name="$(
+        eval $name="$default"
+        [[ -r /etc/make.globals ]] \
+        && source /etc/make.globals
+        cascade_walk source make.defaults
+        [[ -r /etc/make.conf ]] \
+        && source /etc/make.conf
+        echo ${!name}
+        )"
+}
+
+# useful settings for this script:
+grab_setting PORTDIR /usr/portage
+[[ -n "${DEBUG_MODE}" ]] \
+&& echo "DEBUG: \$PORTDIR=${PORTDIR}" >&2
+grab_setting DISTDIR ${PORTDIR}/distfiles
+[[ -n "${DEBUG_MODE}" ]] \
+&& echo "DEBUG: \$DISTDIR=${DISTDIR}" >&2
+grab_setting PKGDIR ${PORTDIR}/packages
+[[ -n "${DEBUG_MODE}" ]] \
+&& echo "DEBUG: \$PKGDIR=${PKGDIR}" >&2
+grab_setting PORT_LOGDIR /var/log/portage
+[[ -n "${DEBUG_MODE}" ]] \
+&& echo "DEBUG: \$PORT_LOGDIR=${PORT_LOGDIR}" >&2
+grab_setting PORTDIR_OVERLAY ""
+[[ -n "${DEBUG_MODE}" ]] \
+&& echo "DEBUG: \$PORTDIR_OVERLAY=${PORTDIR_OVERLAY}" >&2
+grab_setting PORTAGE_TMPDIR /var/tmp
+[[ -n "${DEBUG_MODE}" ]] \
+&& echo "DEBUG: \$PORTAGE_TMPDIR=${PORTAGE_TMPDIR}" >&2
+grab_setting CCACHE_DIR $PORTAGE_TMPDIR/ccache
+[[ -n "${DEBUG_MODE}" ]] \
+&& echo "DEBUG: \$CCACHE_DIR=${CCACHE_DIR}" >&2
+grab_setting ARCH x86
+[[ -n "${DEBUG_MODE}" ]] \
+&& echo "DEBUG: \$ARCH=${ARCH}" >&2
+grab_setting CHOST i386-pc-linux-gnu
+[[ -n "${DEBUG_MODE}" ]] \
+&& echo "DEBUG: \$CHOST=${CHOST}" >&2
+
+# source ignore list and build find argument:
+IGNORE="$(if [[ -r "${FINDCRUFT_CONFDIR}/ignore" ]]; then
+		[[ -n "${DEBUG_MODE}" ]] \
+		&& echo "DEBUG: Sourcing ${FINDCRUFT_CONFDIR}/ignore." >&2
+		source ${FINDCRUFT_CONFDIR}/ignore \
+		| while read ignore; do
+			echo -n "${ignore} "
+		done
+	  fi
+	  if [[ -r "${FINDCRUFT_CONFDIR}/ignore.local" ]]; then
+		[[ -n "${DEBUG_MODE}" ]] \
+		&& echo "DEBUG: Sourcing ${FINDCRUFT_CONFDIR}/ignore.local." >&2
+	  	source ${FINDCRUFT_CONFDIR}/ignore.local \
+		| while read ignore; do
+			echo -n "${ignore} "
+		done
+	  fi)"
+[[ -n "${DEBUG_MODE}" ]] \
+&& echo "DEBUG: \$IGNORE=${IGNORE}" >&2
+
+echo "Finding files on the filesystem ..." >&2
+NOPERM="$( find / '(' -false $(
+		[[ -n "${IGNORE}" ]] \
+		&& echo "${IGNORE}" \
+		| xargs -n 1 echo -or -path ) ')' -prune -or -print 2>&1 \
+	> /tmp/${PROG}-allunsorted \
+	| sed -e "s/^find: \(.*\): Permission denied$/\1/" \
+	| sed -e ":a;N;s/\n/ /;ba" )"
+if [[ -n "${NOPERM}" ]]; then
+	echo "Using su -c for finding files in:" >&2
+	echo "${NOPERM}" >&2
+	su -c "find ${NOPERM} -print" \
+	>> /tmp/${PROG}-allunsorted
+fi
+cat /tmp/${PROG}-allunsorted \
+| sort -u \
+> /tmp/${PROG}-allfiles
+
+# source symlinks and build sed program to replace them:
+SYMSED="$( if [[ -r "${FINDCRUFT_CONFDIR}/symlink" ]]; then
+		[[ -n "${DEBUG_MODE}" ]] \
+		&& echo "DEBUG: Sourcing ${FINDCRUFT_CONFDIR}/symlink." >&2
+		source ${FINDCRUFT_CONFDIR}/symlink \
+		| while read symlink target; do
+			echo -n "s:^${symlink%/}/:${target%/}/:;"
+		done
+	   fi
+	   if [[ -r "${FINDCRUFT_CONFDIR}/symlink.local" ]]; then
+		[[ -n "${DEBUG_MODE}" ]] \
+		&& echo "DEBUG: Sourcing ${FINDCRUFT_CONFDIR}/symlink.local." >&2
+		source ${FINDCRUFT_CONFDIR}/symlink.local \
+		| while read symlink target; do
+			echo -n "s:^${symlink%/}/:${target%/}/:;"
+		done
+	   fi )"
+[[ -n "${DEBUG_MODE}" ]] \
+&& echo "DEBUG: \$SYMSED=${SYMSED}" >&2
+
+echo "Finding files managed by portage ..." >&2
+cat /var/db/pkg/*/*/CONTENTS \
+| sed -e "s:^obj \(.*\) [[:xdigit:]]\+ [[:digit:]]\+$:\1:
+	s:^sym \(.*\) -> .* .*$:\1:
+	s:^dir \(.*\)$:\1:" \
+| sed -e "s:.*\.py$:\0\n\0c\n\0o:" \
+| sed -e "${SYMSED}" \
+| sort -u \
+> /tmp/${PROG}-portagefiles
+
+echo "Comparing to get unmanaged files ..." >&2
+comm -2 -3 /tmp/${PROG}-allfiles /tmp/${PROG}-portagefiles \
+> /tmp/${PROG}-unmanagedfiles
+
+# functions that can be used by rules in FINDCRUFT_CONFDIR files:
+function cruftfile() {
+	file="$(echo "$1" | sed -e "${SYMSED}")"
+	grep "^${file}$" /tmp/${PROG}-unmanagedfiles
+}
+function cruftdir() {
+	dir="$(echo "$1" | sed -e "${SYMSED}")"
+	grep "^${dir%/}$" /tmp/${PROG}-unmanagedfiles
+	grep "^${dir%/}/" /tmp/${PROG}-unmanagedfiles
+}
+if [[ -r ${FINDCRUFT_CONFDIR}/functions ]]; then
+	[[ -n "${DEBUG_MODE}" ]] \
+	&& echo "DEBUG: Sourcing ${FINDCRUFT_CONFDIR}/functions." >&2
+	source ${FINDCRUFT_CONFDIR}/functions
+fi
+
+echo "Building false positive list ..." >&2
+( if [[ -r "${FINDCRUFT_CONFDIR}/nopackage" ]]; then
+	[[ -n "${DEBUG_MODE}" ]] \
+	&& echo "DEBUG: Sourcing ${FINDCRUFT_CONFDIR}/nopackage." >&2
+	source ${FINDCRUFT_CONFDIR}/nopackage
+  fi
+  if [[ -r "${FINDCRUFT_CONFDIR}/nopackage.local" ]]; then
+	[[ -n "${DEBUG_MODE}" ]] \
+	&& echo "DEBUG: Sourcing ${FINDCRUFT_CONFDIR}/nopackage.local." >&2
+	source ${FINDCRUFT_CONFDIR}/nopackage.local
+  fi
+  for cpv in $(find /var/db/pkg -type d -mindepth 2 -maxdepth 2 | cut -c13-); do
+	cp="${cpv%-$VER_SHPAT}"
+	VERSION="${cpv#$cp-}"
+	SLOT="$(cat /var/db/pkg/${cpv}/SLOT)"
+	if [[ -r ${FINDCRUFT_CONFDIR}/${cp} ]]; then
+		[[ -n "${DEBUG_MODE}" ]] \
+		&& echo "DEBUG: Sourcing ${FINDCRUFT_CONFDIR}/${cp} with \$VERSION=${VERSION} and \$SLOT=${SLOT}." >&2
+		source ${FINDCRUFT_CONFDIR}/${cp}
+	fi
+  done ) \
+| sed -e "${SYMSED}" \
+| sort -u \
+> /tmp/${PROG}-falsepositives
+
+echo "Comparing to get cruft files ..." >&2
+comm -2 -3 /tmp/${PROG}-unmanagedfiles /tmp/${PROG}-falsepositives \
+> /tmp/${PROG}-cruftfiles
+
+CRUFTFILES="$(< /tmp/${PROG}-cruftfiles)"
+if [[ -z "${CRUFTFILES}" ]]; then
+	echo "No Cruft found."
+elif [[ -z "${FORCE_MODE}" ]]; then
+	echo "${PROG} thinks these files are cruft:"
+	echo "---------------------------------------"
+	echo "${CRUFTFILES}"
+	echo "--------------------------------------------------"
+	echo "Please check carefully, before removing any files!"
+else
+	echo "Using force mode!" >&2
+	DIR="${FORCE_MODE%/}"
+	DATE="$(date +"%Y%m%d")"
+	COUNTER="1"
+	while [[ -e "${DIR}/cruft-${DATE}-${COUNTER}.tar.bz2" ]]; do
+		let COUNTER++
+	done
+	echo "Packaging cruft files into ${DIR}/cruft-${DATE}-${COUNTER}.tar.bz2 ..." >&2
+	# use /bin/tar because /usr/bin/tar may be star, which did not
+	# understand some options IIRC
+	su -c "/bin/tar -cPvjf ${DIR}/cruft-${DATE}-${COUNTER}.tar.bz2 --no-recursion$(for file in ${CRUFTFILES}; do echo -n " '${file}'"; done)"
+	echo "Removing cruft files ..." >&2
+	DELETE="$(echo ${CRUFTFILES} | sort -r)"
+	for file in ${DELETE}; do
+		if [[ -d "${file}" ]]; then
+			echo "Removing directory ${file}."
+			su -c "rmdir '${file}'"
+		else
+			echo "Removing file ${file}."
+			su -c "rm -f '${file}'"
+		fi
+	done
+fi
+
+if [[ -z "${DEBUG_MODE}" ]]; then
+	echo "Cleaning up ..." >&2
+	rm /tmp/${PROG}-*
+else
+	echo "DEBUG: Leaving files in /tmp/${PROG}-*." >&2
+fi

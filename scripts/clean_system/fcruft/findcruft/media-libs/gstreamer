@@ -1,0 +1,3 @@
+echo /var/lib/cache
+echo /var/lib/cache/gstreamer-${SLOT}
+echo /var/lib/cache/gstreamer-${SLOT}/registry.xml

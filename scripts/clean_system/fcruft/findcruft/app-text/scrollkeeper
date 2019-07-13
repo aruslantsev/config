@@ -1,0 +1,8 @@
+echo /var/lib/scrollkeeper
+echo /var/lib/scrollkeeper/scrollkeeper_docs
+cruftdir "/var/lib/scrollkeeper/TOC"
+cruftdir "/var/lib/scrollkeeper/index"
+cruftdir "/var/lib/scrollkeeper/C"
+cruftdir "/var/lib/scrollkeeper/.."
+cruftdir "/var/lib/scrollkeeper/.._.."
+cruftdir "/var/lib/scrollkeeper/..@.*"

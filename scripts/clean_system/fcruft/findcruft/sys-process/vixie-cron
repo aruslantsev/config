@@ -1,0 +1,16 @@
+echo /var/run/cron.pid
+
+#
+# vixie-cron stores the different cron jobs of the users in /var/spool/cron/crontabs/
+# only delete the crontabs of users, which don't exist (anymore) on the system
+#
+# by soulwarrior, see http://forums.gentoo.org/viewtopic-p-1825645.html#1825645
+#
+for x in /var/spool/cron/crontabs/*
+do
+    name=`basename $x`
+    if [ `grep "^$name:" /etc/passwd` ]
+    then
+        echo $x
+    fi
+done

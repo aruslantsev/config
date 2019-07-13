@@ -1,0 +1,2 @@
+echo /etc/gtk-2.0/gdk-pixbuf.loaders
+echo /etc/gtk-2.0/gtk.immodules

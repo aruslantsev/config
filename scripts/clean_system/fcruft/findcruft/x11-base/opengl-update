@@ -1,0 +1,12 @@
+echo /etc/env.d/03opengl
+echo /usr/include/GL/glext.h
+echo /usr/include/GL/gl.h
+echo /usr/include/GL/glxext.h
+echo /usr/include/GL/glx.h
+echo /usr/include/GL/glxmd.h
+echo /usr/include/GL/glxproto.h
+echo /usr/include/GL/glxtokens.h
+echo /usr/lib/libGL.a
+echo /usr/lib/libGL.la
+echo /usr/lib/libGL.so
+echo /usr/lib/modules/extensions/libglx.a

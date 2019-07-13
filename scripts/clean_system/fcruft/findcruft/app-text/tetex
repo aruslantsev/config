@@ -1,0 +1,27 @@
+echo /usr/bin/xmltex
+
+cruftdir /usr/share/texmf/dvips/config
+
+echo /usr/share/texmf/web2c/mfw.base
+echo /usr/share/texmf/web2c/plain.base
+echo /usr/share/texmf/web2c/plain.fmt
+echo /usr/share/texmf/web2c/plain.mem
+
+for format in $(
+	cat /usr/share/texmf/web2c/fmtutil.cnf \
+	| grep -v '^[[:space:]]*\(#\|$\)' \
+	| sed 's/[[:space:]]\+/\t/g' \
+	| sed 's/^\t//' \
+	| cut -f1-2 \
+	| sed 's/\t/\n/' \
+	| sort -u); do
+	echo /usr/share/texmf/web2c/${format}.base
+	echo /usr/share/texmf/web2c/${format}.efmt
+	echo /usr/share/texmf/web2c/${format}.fmt
+	echo /usr/share/texmf/web2c/${format}.log
+	echo /usr/share/texmf/web2c/${format}.mem
+	echo /usr/share/texmf/web2c/${format}.oft
+done
+
+echo /usr/bin/pdfxmltex
+echo /usr/share/texmf/ls-R
