@@ -33,3 +33,4 @@ none						/var/log/			tmpfs	defaults					0 0
 none						/tmp/				tmpfs	defaults					0 0
 none						/var/cache/revdep-rebuild	tmpfs	defaults					0 0
 none						/var/lib/upower			tmpfs	defaults					0 0
+none						/usr/src			tmpfs	defaults					0 0

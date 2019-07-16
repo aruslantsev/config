@@ -7,5 +7,5 @@ media-video/vlc vorbis ogg
 sys-libs/zlib minizip
 app-text/poppler qt5 # kfind
 
-kde-plasma/plasma-meta -desktop-portal networkmanager
+kde-plasma/plasma-meta -crypt -desktop-portal networkmanager
 kde-plasma/plasma-nm openconnect
