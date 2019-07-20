@@ -1,0 +1,12 @@
+x11-libs/libxcb xkb
+dev-qt/qtgui egl
+dev-qt/qtcore icu
+media-video/vlc vorbis ogg
+sys-libs/zlib minizip
+dev-libs/libpcre2 pcre16
+app-text/xmlto text
+
+kde-plasma/plasma-meta networkmanager -desktop-portal
+kde-plasma/plasma-nm openconnect
+app-text/poppler qt5
+
