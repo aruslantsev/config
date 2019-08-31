@@ -1,4 +1,3 @@
-app-admin/conky
 app-admin/hddtemp
 app-admin/metalog
 app-arch/p7zip
@@ -26,6 +25,7 @@ kde-apps/spectacle
 kde-plasma/plasma-meta
 mail-client/thunderbird-bin
 media-fonts/terminus-font
+media-gfx/digikam
 media-gfx/gimp
 media-gfx/imagemagick
 media-sound/pavucontrol-qt
