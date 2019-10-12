@@ -8,4 +8,4 @@ sys-libs/zlib minizip
 app-text/poppler qt5 # kfind
 
 kde-plasma/plasma-meta -crypt -desktop-portal networkmanager
-kde-plasma/plasma-nm openconnect
+kde-plasma/plasma-nm openconnect modemmanager

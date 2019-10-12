@@ -1,3 +1,6 @@
+app-emulation/qemu sdl -wayland
+dev-libs/glib -dbus # needs dconf
+net-fs/samba client winbind zeroconf
 sys-apps/man-pages -l10n_ru
 sys-apps/smartmontools -daemon
-dev-libs/glib -dbus # needs dconf
+sys-fs/lvm2 -thin
