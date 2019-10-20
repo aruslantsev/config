@@ -1,11 +1,12 @@
-dev-libs/libpcre2 pcre16
+app-text/poppler qt5 # kfind
 app-text/xmlto text
-x11-libs/libxcb xkb
-dev-qt/qtgui egl
+dev-libs/libpcre2 pcre16
 dev-qt/qtcore icu
+dev-qt/qtgui egl
 media-video/vlc vorbis ogg
 sys-libs/zlib minizip
-app-text/poppler qt5 # kfind
+x11-libs/libxcb xkb
 
+kde-apps/kio-extras mtp
 kde-plasma/plasma-meta -crypt -desktop-portal networkmanager
 kde-plasma/plasma-nm openconnect modemmanager
