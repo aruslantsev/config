@@ -10,3 +10,6 @@ kde-plasma/plasma-meta networkmanager -crypt -desktop-portal
 kde-plasma/plasma-nm openconnect
 app-text/poppler qt5
 
+kde-apps/krdc vnc
+
+dev-qt/qtwebengine jumbo-build

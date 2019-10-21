@@ -1,3 +1,6 @@
+app-misc/mc sftp
+net-fs/samba client
+net-print/cups kerberos zeroconf
 sys-apps/man-pages -l10n_ru
 sys-apps/smartmontools -daemon
-
+sys-firmware/intel-microcode initramfs
