@@ -1,0 +1,12 @@
+echo /var/lib/ntop/ntop_pw.db
+echo /var/lib/ntop/prefsCache.db
+#
+echo /var/lib/ntop/fingerprint.db
+echo /var/lib/ntop/hostSerials.db
+echo /var/lib/ntop/macPrefix.db
+echo /var/lib/ntop/resolverCache.db
+echo /var/lib/ntop/topTalkers.db
+#
+cruftfile "/var/lib/ntop/GeoIPASNum\.dat"
+cruftfile "/var/lib/ntop/GeoLiteCity\.dat"
+

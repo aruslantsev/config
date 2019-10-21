@@ -1,0 +1,2 @@
+cruftdir /etc/lvm
+cruftdir /var/lock/lvm

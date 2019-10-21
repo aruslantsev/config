@@ -1,0 +1,2 @@
+echo /etc/sgml/xml-docbook-${PV}.cat
+echo /etc/xml/catalog

@@ -1,0 +1,5 @@
+VIMVER=$(echo ${PV}|sed 's/\([0-9]\+\)\.\([0-9]\+\).*/\1\2/')
+
+for i in /usr/share/vim/vimfiles/doc/*.txt; do
+	echo /usr/share/vim/vim${VIMVER}/doc/$(basename $i)
+done

@@ -1,0 +1,19 @@
+# alternatives 2 stuff
+echo /etc/env.d/alternatives/blas-int64/_current
+echo /etc/env.d/alternatives/blas-int64/_current_list
+#
+echo /etc/env.d/alternatives/cblas-int64/_current
+echo /etc/env.d/alternatives/cblas-int64/_current_list
+#
+echo /etc/env.d/alternatives/cblas/_current
+echo /etc/env.d/alternatives/cblas/_current_list
+#
+echo /usr/include/cblas.h
+#
+echo /usr/lib64/pkgconfig/blas-int64.pc
+echo /usr/lib64/pkgconfig/cblas-int64.pc
+echo /usr/lib64/pkgconfig/cblas.pc
+#
+echo /usr/share/eselect/modules/auto/blas-int64.eselect
+echo /usr/share/eselect/modules/auto/cblas-int64.eselect
+echo /usr/share/eselect/modules/auto/cblas.eselect

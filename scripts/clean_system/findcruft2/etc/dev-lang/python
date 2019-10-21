@@ -1,0 +1,7 @@
+echo /usr/bin/idle
+echo /usr/bin/pydoc
+echo /usr/bin/python
+echo /usr/bin/python-config
+echo /usr/bin/python2
+#
+cruftfile "/usr/share/man/man1/python\.1\..*"

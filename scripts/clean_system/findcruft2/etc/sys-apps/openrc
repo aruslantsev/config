@@ -1,0 +1,21 @@
+[[ -L /etc/runlevels/boot/hwclock ]] && echo /etc/adjtime
+echo /etc/conf.d/net
+#
+cruftfile "/etc/init.d/net\..*"
+cruftdir "/etc/runlevels"
+#
+# is now under /var/run/openrc
+#cruftdir "/lib/rc/init\.d"
+#
+cruftdir "/lib/rc/cache"
+cruftdir "/lib/rc/console"
+#
+echo /var/log/dmesg
+echo /var/log/rc.log
+#
+# openrc local start dir
+cruftdir "/etc/local\.d"
+#
+# /etc/conf.d/urandom:5:urandom_seed="/var/lib/misc/random-seed"
+cruftfile "/var/lib/misc/random-seed"
+# 

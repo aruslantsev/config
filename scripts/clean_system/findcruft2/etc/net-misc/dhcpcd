@@ -1,0 +1,21 @@
+echo /etc/ntp.conf
+echo /etc/ntp.conf.sv
+echo /etc/resolv.conf
+echo /etc/resolv.conf.sv
+echo /etc/yp.conf
+echo /etc/yp.conf.sv
+#echo /var/lib/dhcpc
+
+for service in /etc/init.d/net.*; do
+	iface=${service##*.}
+	echo /var/cache/dhcpcd-${iface}.cache
+	echo /var/lib/dhcpcd/dhcpcd-${iface}.lease
+#        echo /var/lib/dhcpc/dhcpcd-${iface}.info
+#        echo /var/lib/dhcpc/dhcpcd-${iface}.info.old
+	echo /var/run/dhcpcd-${iface}.pid
+done
+#
+# created
+echo /etc/dhcpcd.duid
+echo /etc/dhcpcd.secret
+#

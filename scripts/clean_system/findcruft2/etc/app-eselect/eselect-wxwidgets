@@ -1,0 +1,9 @@
+echo /usr/share/bakefile/presets/wx.bkl
+echo /usr/share/bakefile/presets/wx_unix.bkl
+echo /usr/share/bakefile/presets/wx_win32.bkl
+echo /usr/share/bakefile/presets/wx_xrc.bkl
+#
+echo /usr/share/bakefile/presets/wx_presets.py
+#
+echo /var/lib/wxwidgets/current
+

@@ -1,0 +1,9 @@
+echo /var/spool/cups-pdf
+echo /var/spool/cups-pdf/SPOOL
+
+for x in /var/spool/cups-pdf/*; do
+	name=$(basename $x)
+	if grep -q "^$name:" /etc/passwd; then
+		echo $x
+	fi
+done

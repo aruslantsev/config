@@ -1,0 +1,7 @@
+cruftfile "/usr/lib/apache2/modules/libphp.\.so"
+#
+#
+echo /usr/bin/php          
+echo /usr/bin/php-config
+echo /usr/bin/php-fpm
+echo /usr/bin/phpize

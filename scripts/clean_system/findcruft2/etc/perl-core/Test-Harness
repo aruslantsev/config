@@ -1,0 +1,2 @@
+echo /usr/bin/prove
+cruftfile "/usr/share/man/man1/prove\.1\..*"

@@ -1,0 +1,84 @@
+echo /usr/lib/libperl.so
+cruftfile "/usr/lib/perl5/${PV}/.*/Encode/ConfigLocal\.pm"
+#
+###################################################
+# hmmm: output not correct in my env ....
+cruftdir $(perl -e 'use Config; print $Config{installsitearch};')
+#
+# only the .ph-files
+cruftfile "/usr/lib/perl5/${PV}/.*\.ph"
+cruftfile "/usr/lib/perl5/${PV}/.*/.*\.ph"
+cruftfile "/usr/lib/perl5/${PV}/.*/.*/.*\.ph"
+#
+cruftonlydir "/usr/lib/perl5/${PV}/.*/asm"
+cruftonlydir "/usr/lib/perl5/${PV}/.*/asm-generic"
+cruftonlydir "/usr/lib/perl5/${PV}/.*/bits"
+cruftonlydir "/usr/lib/perl5/${PV}/.*/gnu"
+cruftonlydir "/usr/lib/perl5/${PV}/.*/linux"
+cruftonlydir "/usr/lib/perl5/${PV}/.*/machine"
+cruftonlydir "/usr/lib/perl5/${PV}/.*/sys"
+#
+###################################################
+#
+echo /usr/bin/podchecker
+cruftfile "/usr/share/man/man1/podchecker\.1\..*"
+echo /usr/bin/pod2usage
+cruftfile "/usr/share/man/man1/pod2usage\.1\..*"
+echo /usr/bin/cpan
+cruftfile "/usr/share/man/man1/cpan\.1\..*"
+echo /usr/bin/cpan2dist  
+cruftfile "/usr/share/man/man1/cpan2dist\.1\..*"
+echo /usr/bin/cpanp
+cruftfile "/usr/share/man/man1/cpanp\.1\..*"
+echo /usr/bin/cpanp-run-perl
+
+echo /usr/bin/pod2man
+cruftfile "/usr/share/man/man1/pod2man\.1\..*"
+echo /usr/bin/pod2text
+cruftfile "/usr/share/man/man1/pod2text\.1\..*"
+
+echo /usr/bin/xsubpp
+cruftfile "/usr/share/man/man1/xsubpp\.1\..*"
+echo /usr/bin/perldoc
+cruftfile "/usr/share/man/man1/perldoc\.1\..*"
+
+cruftfile "/usr/share/man/man1/perlpodstyle\.1\..*"
+
+echo /usr/bin/podselect
+cruftfile "/usr/share/man/man1/podselect\.1\..*"
+
+echo /usr/bin/corelist
+cruftfile "/usr/share/man/man1/corelist\.1\..*"
+
+echo /usr/bin/zipdetails
+cruftfile "/usr/share/man/man1/zipdetails\.1\..*"
+echo /usr/bin/json_pp
+cruftfile "/usr/share/man/man1/json_pp\.1\..*"
+
+# perl-5.20 
+echo /usr/bin/ptar
+cruftfile "/usr/share/man/man1/ptar\.1\..*z2"
+echo /usr/bin/ptardiff
+cruftfile "/usr/share/man/man1/ptardiff\.1\..*"
+echo /usr/bin/ptargrep
+cruftfile "/usr/share/man/man1/ptargrep\.1\..*"
+echo /usr/bin/config_data
+cruftfile "/usr/share/man/man1/config_data\.1\..*"
+echo /usr/bin/enc2xs
+cruftfile "/usr/share/man/man1/enc2xs\.1\..*"
+echo /usr/bin/instmodsh
+cruftfile "/usr/share/man/man1/instmodsh\.1\..*"
+echo /usr/bin/piconv
+cruftfile "/usr/share/man/man1/piconv\.1\..*" 
+echo /usr/bin/prove
+cruftfile "/usr/share/man/man1/prove\.1\..*"
+echo /usr/bin/shasum
+cruftfile "/usr/share/man/man1/shasum\.1\..*"
+
+
+
+####################################################
+# belongs to dev-perl/XML-SAX but we need ${PV}
+#
+cruftfile "/usr/lib/perl5/vendor_perl/${PV}/XML/SAX/ParserDetails\.ini"
+#

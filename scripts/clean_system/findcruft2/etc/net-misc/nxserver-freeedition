@@ -1,0 +1,15 @@
+# configfiles
+#
+cruftfile "/usr/NX/etc/users\.db"
+cruftfile "/usr/NX/etc/users\.db\.lock"
+cruftfile "/usr/NX/etc/server\.lic"
+cruftfile "/usr/NX/etc/server\.cfg"
+cruftfile "/usr/NX/etc/profiles\.db"
+cruftfile "/usr/NX/etc/profiles\.db\.lock"
+cruftfile "/usr/NX/etc/passwords\.db"
+cruftfile "/usr/NX/etc/passwords\.db\.lock"
+cruftfile "/usr/NX/etc/guests\.db"
+cruftfile "/usr/NX/etc/guests\.db\.lock"
+cruftfile "/usr/NX/etc/administrators\.db"
+cruftfile "/usr/NX/etc/administrators\.db\.lock"
+#

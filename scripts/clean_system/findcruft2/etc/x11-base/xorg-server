@@ -1,0 +1,20 @@
+# config file
+echo /etc/X11/xorg.conf
+cruftonlydir "/etc/X11/xorg\.conf\.d"
+#
+# old bin dir 
+cruftfile "/usr/bin/X11"
+#
+# logging
+cruftfile "/var/log/Xorg\..*\.log"
+cruftfile "/var/log/Xorg\..*\.log\.old"
+#
+cruftdir "/var/run/xauth"
+#
+# opengl directories, created but empty
+cruftonlydir "/usr/include/GLES"
+cruftonlydir "/usr/include/GLES2"
+cruftonlydir "/usr/include/GLES3"
+cruftonlydir "/usr/include/VG"
+
+

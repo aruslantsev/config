@@ -1,0 +1,11 @@
+echo /usr/bin/idle          
+echo /usr/bin/python-config
+echo /usr/bin/python
+echo /usr/bin/python2
+echo /usr/bin/python3
+echo /usr/bin/pydoc
+echo /usr/bin/2to3
+#
+cruftfile "/usr/share/man/man1/python\.1\..*"
+#
+echo /etc/env.d/python/config

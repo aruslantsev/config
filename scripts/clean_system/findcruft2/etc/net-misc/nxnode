@@ -1,0 +1,10 @@
+#
+cruftfile "/usr/NX/etc/node\.lic"
+cruftfile "/usr/NX/etc/node\.cfg"
+#
+cruftfile "/usr/NX/etc/nodes\.db"
+cruftfile "/usr/NX/etc/nodes\.db\.lock"
+#
+# link by nxnode 
+cruftfile "/usr/libexec/cups/backend/nx"
+#

@@ -1,0 +1,8 @@
+cruftdir "/usr/lib/nsbrowser"
+cruftdir "/usr/lib/nsbrowser/plugins"
+#
+nsplugin javaplugin.so
+#
+# together with java-config
+echo /etc/java-config-2/current-icedtea-web-vm
+#

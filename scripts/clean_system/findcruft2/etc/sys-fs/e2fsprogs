@@ -1,0 +1,2 @@
+echo /etc/blkid.tab
+echo /etc/blkid.tab.old

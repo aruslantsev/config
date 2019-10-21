@@ -1,0 +1,44 @@
+echo /.rnd
+echo /etc/.pwd.lock
+[[ -d /proc/asound ]] && echo /etc/asound.state
+echo /etc/hosts
+
+# belongs to glibc
+#echo /etc/ld.so.cache
+#echo /etc/ld.so.conf
+
+echo /etc/localtime
+echo /etc/mtab
+echo /etc/resolv.conf
+
+# system logs
+echo /var/log/lastlog
+echo /var/log/wtmp
+echo /var/run/utmp
+
+# modules and sources for kernel versions
+echo /usr/src/linux
+cruftdir /lib/modules/$(uname -r)
+
+for i in $(ls -1 /usr/src/linux-*/ &>/dev/null); do
+	[[ -e ${i} ]] || continue
+	KV=$(unset ARCH; make -s kernelversion -C ${i})
+	cruftdir /lib/modules/${KV}
+	cruftdir ${i}
+done
+
+# lost+found dirs
+for i in $(awk '{ print $2 }' < /proc/mounts); do
+	echo ${i}/lost+found
+done
+
+# vserver init script for style gentoo
+if [[ -e /proc/self/vinfo ]]; then
+	if [[ $(sed 's/^XID:[[:space:]]\+\(.*\)/\1/;tn;d;:n' /proc/self/vinfo) != "0" ]]; then
+		if [[ -e /lib/rc/sh/init-vserver.sh ]]; then
+			echo /lib/rc/sh/init-vserver.sh
+		else
+			echo /lib/rcscripts/sh/init-vserver.sh
+		fi
+	fi
+fi

@@ -1,0 +1,60 @@
+NS_PLUGINS_DIR=$(sed 's/^PLUGINS_DIR="\(.*\)"$/\1/;t;d' ${PORTDIR}/eclass/nsplugins.eclass)
+
+nsplugin()
+{
+	for file in $@; do
+		echo /usr/lib/${NS_PLUGINS_DIR}/${file}
+	done
+}
+
+xpiapp()
+{
+	while [[ "$#" -gt 1 ]]; do
+		xpiapp $1 && shift
+	done
+
+	path=$1
+	[[ "${path}" != /* ]] && path="/usr/lib/${path}"
+	[[ "${path}" == */ ]] && path="${path%/}"
+
+	echo ${path}/chrome/chrome.rdf
+	cruftdir ${path}/chrome/overlayinfo
+	echo ${path}/components/compreg.dat
+	echo ${path}/components/xpti.dat
+	echo ${path}/components.ini
+	cruftdir ${path}/extensions
+	echo ${path}/install.log
+	cruftdir ${path}/searchplugins
+}
+
+fontdir()
+{
+	for dir in $@; do
+		if [[ "${dir}" == /* ]]; then
+			echo ${dir}/encodings.dir
+			echo ${dir}/fonts.cache-1
+			echo ${dir}/fonts.dir
+			echo ${dir}/fonts.list
+			echo ${dir}/fonts.scale
+		elif [[ "${dir}" ]]; then
+			fontdir /usr/share/fonts/${dir}
+		fi
+	done
+}
+
+svcdir()
+{
+	path=$1
+
+	echo ${path}/supervise
+	echo ${path}/supervise/control
+	echo ${path}/supervise/lock
+	echo ${path}/supervise/ok
+	echo ${path}/supervise/status
+
+	echo ${path}/log/supervise
+	echo ${path}/log/supervise/control
+	echo ${path}/log/supervise/lock
+	echo ${path}/log/supervise/ok
+	echo ${path}/log/supervise/status
+}

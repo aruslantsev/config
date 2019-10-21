@@ -1,0 +1,17 @@
+echo /var/run/fcron.pid
+echo /var/run/fcron.fifo
+
+echo /var/spool/cron/lastrun/cron.daily
+echo /var/spool/cron/lastrun/cron.hourly
+echo /var/spool/cron/lastrun/cron.monthly
+echo /var/spool/cron/lastrun/cron.weekly
+
+echo /var/spool/fcron/systab
+echo /var/spool/fcron/systab.orig
+
+for x in /var/spool/fcron/*.orig; do
+	if getent passwd $(basename ${x/.orig}) >/dev/null; then
+		echo ${x/.orig}
+		echo $x
+	fi
+done

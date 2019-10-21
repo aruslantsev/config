@@ -1,0 +1,3 @@
+cruftfile "/usr/lib/python.*/site-packages/wx\.pth"
+cruftfile "/usr/lib/python.*/site-packages/wxversion\.py"
+

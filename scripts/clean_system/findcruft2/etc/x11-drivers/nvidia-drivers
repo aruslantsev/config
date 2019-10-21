@@ -1,0 +1,16 @@
+cruftfile "/usr/lib/libXvMCNVIDIA_dynamic\.so\..*"
+cruftfile "/usr/lib64/libOpenCL\.so.*"
+#
+# include files
+cruftonlydir "/usr/include/GLES"
+cruftonlydir "/usr/include/GLES2"
+cruftonlydir "/usr/include/GLES3"
+cruftonlydir "/usr/include/VG"
+#
+# created by nvidia-settings 
+echo /etc/X11/edid.bin
+#
+# because of linux-mod.eclass
+cruftonlydir "/var/lib/module-rebuild"
+cruftfile "/var/lib/module-rebuild/moduledb"
+

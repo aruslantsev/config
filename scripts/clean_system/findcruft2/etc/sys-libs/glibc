@@ -1,0 +1,13 @@
+echo /etc/locale.gen
+echo /usr/lib/gconv/gconv-modules.cache
+echo /usr/lib/locale/locale-archive
+echo /var/run/nscd
+echo /var/run/nscd/nscd.pid
+echo /var/run/nscd/socket
+# 
+# glibc linker stuff
+echo /etc/ld.so.cache
+echo /etc/ld.so.conf
+cruftonlydir /etc/ld.so.conf.d
+cruftdir /var/cache/ldconfig
+#

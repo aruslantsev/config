@@ -1,0 +1,33 @@
+for format in $(
+	cat /etc/texmf/web2c/fmtutil.cnf \
+	| grep -v '^[[:space:]]*\(#\|$\)' \
+	| sed 's/[[:space:]]\+/\t/g' \
+	| sed 's/^\t//' \
+	| cut -f1-2 \
+	| sed 's/\t/\n/' \
+	| sort -u); do
+	echo /var/lib/texmf/web2c/${format}.base
+	echo /var/lib/texmf/web2c/${format}.efmt
+	echo /var/lib/texmf/web2c/${format}.fmt
+	echo /var/lib/texmf/web2c/${format}.log
+	echo /var/lib/texmf/web2c/${format}.mem
+	echo /var/lib/texmf/web2c/${format}.oft
+done
+
+echo /etc/texmf/web2c/fmtutil.cnf
+echo /etc/texmf/web2c/texmf.cnf
+echo /etc/texmf/web2c/updmap.cfg
+echo /usr/bin/amstex
+echo /usr/bin/elatex
+echo /usr/bin/eplain
+echo /usr/bin/lambda
+echo /usr/bin/lamed
+echo /usr/bin/latex
+echo /usr/bin/pdfamstex
+echo /usr/bin/pdflatex
+echo /usr/bin/pdftex
+echo /usr/share/texmf-site/ls-R
+echo /usr/share/texmf/ls-R
+echo /var/lib/texmf/ls-R
+echo /var/lib/texmf/web2c/updmap.log
+cruftdir /var/lib/texmf/fonts

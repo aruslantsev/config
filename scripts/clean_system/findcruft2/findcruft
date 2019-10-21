@@ -1,0 +1,312 @@
+#!/bin/bash
+# (c) 2007-2008 Benedikt Böhm <hollow@gentoo.org>
+# (c) 2004 Benjamin Braatz <sean@inmymind.de>
+# inspired by "cruft" by Ed Catmur
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA
+# or download it from http://www.gnu.org/licenses/gpl.html
+#
+# Dependencies:
+# app-shells/bash: bash
+# sys-apps/coreutils: cat comm rm sort tail
+# sys-apps/findutils: find xargs
+# sys-apps/grep: grep
+# sys-apps/sed: sed
+
+shopt -s extglob
+export LC_ALL=C
+export LC_COLLATE=C
+
+PROG="findcruft"
+VERSION="2.0"
+
+if [[ -z ${FINDCRUFT_CONFDIR} ]]; then
+	if [[ -d /etc/findcruft ]]; then
+		FINDCRUFT_CONFDIR=/etc/findcruft
+	else
+		FINDCRUFT_CONFDIR=$(pwd)/etc
+	fi
+fi
+
+NO=$'\x1b[0;0m'
+BR=$'\x1b[0;01m'
+RD=$'\x1b[31;01m'
+GR=$'\x1b[32;01m'
+YL=$'\x1b[33;01m'
+BL=$'\x1b[34;01m'
+FC=$'\x1b[35;01m'
+CY=$'\x1b[36;01m'
+
+usage() {
+	cat <<EOF
+This program compares the files on your filesystem to the ones
+managed by ${BR}portage${NO} and prints out files which do not belong to
+any package.
+
+Additionally it uses the files in ${BL}${FINDCRUFT_CONFDIR}${NO} to
+exclude false positives, i.e. configuration and similar files
+which are not managed by ${BR}portage${NO}, but should nevertheless be on
+the system. You can manipulate the location of this directory
+by the ${GR}FINDCRUFT_CONFDIR${NO} environment variable.
+
+All of the files in this directory are sourced into ${CY}${PROG}${NO}
+(and hence processed by ${CY}bash${NO}). Thus, you can use all of bash's
+programming features. Additionally the following ${BR}portage${NO} settings
+are grabbed from the configuration and can be used in all files:
+${GR}\$PORTDIR${NO}, ${GR}\$DISTDIR${NO}, ${GR}\$PKGDIR${NO}, ${GR}\$PORT_LOGDIR${NO}, ${GR}\$PORTDIR_OVERLAY${NO},
+${GR}\$PORTAGE_TMPDIR${NO}, ${GR}\$CCACHE_DIR${NO}, ${GR}\$ARCH${NO}, and ${GR}\$CHOST${NO}
+
+The file ${BL}ignore${NO} should output a list of directories which will
+be completely ignored, i.e. they are neither searched during the
+find phase nor during the building of the false positive list (as
+long as you do not do it in your ${BL}nopackage.local${NO}). You can also
+add your own additions in an ${BL}ignore.local${NO} file. This is handy if
+you have some network file systems or similar which you do not
+want to put under too heavy load.
+
+The file ${BL}symlink${NO} should output a list of ${GR}symlink-target${NO} pairs,
+which is applied to the contents of packages managed by ${BR}portage${NO}.
+This is necessary, because some packages install their files
+e.g. into ${YL}/usr/man${NO}, but this is a symlink to ${YL}/usr/share/man${NO}.
+
+You can add your own symlinks to ${BL}symlink.local${NO}. For example if
+${YL}/opt${NO} is a symlink to ${YL}/usr/opt${NO} (because ${YL}/opt${NO} was too big for the
+root partition and you wanted it to be on the ${YL}/usr${NO} partition
+together with the other large applications) then add a line
+${RD}echo /opt /usr/opt${NO} to ${BL}symlink.local${NO}.
+
+The other files are expected to output a list of false positive
+files one file per line onto ${BL}stdout${NO}. So, if you want to ignore
+a single file you can just do ${RD}echo /full/path/to/file${NO}. You can
+use the predefined functions ${RD}cruftfile /full/path/file_regexp${NO} and
+${RD}cruftdir /full/path/dir_regexp${NO}, ${RD}cruftonlydir /full/path/dir_regexp${NO}, 
+which do a grep on the unmanaged files and ignore all files matching the given regexp
+or all directories matching the regexp and their contents (or without
+their contents), respectively. Look into the included files for more elaborated
+examples.
+
+You can also use the functions from the file ${BL}functions${NO} in these
+rule files:
+* ${RD}nsplugin plugin.so plugin.a plugin.la${NO} adds all files given as
+arguments to the false positives in the plugin directory for
+Netscape style browsers (Mozilla, Firefox, ...).
+* ${RD}fontdir relative/path /absolute/path${NO} adds the generated cache,
+directory, and scale files for font directories to the false
+positives. If a relative path is given the directory is assumed
+to reside under ${BL}/usr/share/fonts${NO}.
+* ${RD}xpiapp relative/path /absolute/path${NO} adds the typical false
+positives for XPI applications such as Mozilla and Firefox to
+the list (i.e. things in the ${BL}chrome${NO} and ${BL}components${NO} directories,
+etc.). Relative pathes are assumed under ${BL}/usr/lib${NO}.
+
+The file ${BL}nopackage${NO} contains a list of false positives without
+corresponding package (for some of these one might argue, that
+they belong to some of the base packages, which are present on
+any system, perhaps they will be moved to the corresponding
+package sometime). The file ${BL}nopackage.local${NO} can be used for
+local settings.
+
+The rest of the files is organized in a ${GR}category/package${NO}
+hierarchy. If a package is present on the system (according to
+${BL}/var/db/pkg${NO}) the corresponding file is sourced with the
+variables ${GR}\$VERSION${NO} set to the version and ${GR}\$SLOT${NO} set to the slot
+of the package.
+
+Please make additions to ${BL}ignore${NO}, ${BL}symlink${NO}, and ${BL}nopackage${NO} in the
+corresponding ${BL}*.local${NO} files, so that they do not get overwritten,
+when you unpack a new rule archive into the directory.
+EOF
+}
+
+source()
+{
+	[[ -r "$1" ]] || return
+	builtin source "$1"
+}
+
+log()
+{
+	echo "$@" >&2
+}
+
+generate_ignore()
+{
+	source "${FINDCRUFT_CONFDIR}"/ignore \
+	| while read ignore; do
+		echo -n "${ignore} "
+	done
+
+	source "${FINDCRUFT_CONFDIR}"/ignore.local \
+	| while read ignore; do
+		echo -n "${ignore} "
+	done
+}
+
+
+generate_symlink_cache()
+{
+	source "${FINDCRUFT_CONFDIR}"/symlink \
+	| while read symlink target; do
+		echo -n "s:^${target%/}/:${symlink%/}/:;"
+	done
+
+	source "${FINDCRUFT_CONFDIR}"/symlink.local \
+	| while read symlink target; do
+        	echo -n "s:^${target%/}/:${symlink%/}/:;"
+        done
+}
+
+generate_symlink()
+{
+        echo -n "${SYMLINK_CACHE}"
+}
+
+multilib_sed()
+{
+	if [[ -L /lib ]]; then
+		sed -e 's:^\(/usr\)\?/lib/:\1/lib64/:'
+	else
+		cat
+	fi
+}
+
+collect_all()
+{
+	log "Collecting files on the filesystem ..."
+
+	local ignore=$(generate_ignore) find_arg=
+
+	if [[ -n "${ignore}" ]]; then
+		find_arg=$(echo "${ignore}" | xargs -n1 echo -or -path)
+	fi
+
+	find / '(' -false ${find_arg} ')' -prune -or -print \
+        | sed -e "$(generate_symlink)" \
+        | multilib_sed
+}
+
+collect_portage()
+{
+	log "Collecting files managed by portage ..."
+
+	cat /var/db/pkg/*/*/CONTENTS \
+	| sed \
+		-e "s:^obj \(.*\) [[:xdigit:]]\+ [[:digit:]]\+$:\1:" \
+		-e "s:^sym \(.*\) -> .* .*$:\1:" \
+		-e "s:^dir \(.*\)$:\1:" \
+	| sed -e "s:.*\.py$:\0\n\0c\n\0o:" \
+	| sed -e "$(generate_symlink)" \
+	| multilib_sed
+}
+
+collect_unmanaged()
+{
+	local allfiles=$(mktemp)
+	local portfiles=$(mktemp)
+
+        collect_all | sort -u > ${allfiles}
+	collect_portage | sort -u > ${portfiles}
+
+	log "Collecting unmanaged files ..."
+	comm -2 -3 ${allfiles} ${portfiles}
+
+	rm -f ${allfiles} ${portfiles}
+}
+
+collect_fp()
+{
+	log "Collecting false positives ..."
+
+	local unfiles="$1"
+
+	cruftfile()
+	{
+		file="$(echo "$1" | sed -e "$(generate_symlink)" | multilib_sed)"
+		grep "^${file}$" ${unfiles}
+	}
+
+	cruftdir()
+	{
+		dir="$(echo "$1" | sed -e "$(generate_symlink)" | multilib_sed)"
+		grep "^${dir%/}$" ${unfiles}
+		grep "^${dir%/}/" ${unfiles}
+	}
+
+        cruftonlydir()
+        {
+                dir="$(echo "$1" | sed -e "$(generate_symlink)" | multilib_sed)"
+                grep "^${dir%/}$" ${unfiles}
+        }
+
+	source "${FINDCRUFT_CONFDIR}"/functions
+	source "${FINDCRUFT_CONFDIR}"/nopackage
+	source "${FINDCRUFT_CONFDIR}"/nopackage.local
+
+	local pat="*(+([[:digit:]]).)+([[:digit:]])?([[:lower:]])?(_@(alpha|beta|pre|rc|p)*([[:digit:]]))?(-r+([[:digit:]]))"
+
+	pushd /var/db/pkg >/dev/null
+	for i in */*; do
+		if [[ -d ${i} ]]; then
+			CPN=${i%-$pat}
+			PVR=${i#$CPN-}
+			PV=${PVR%-r+([[:digit:]])}
+			SLOT=$(</var/db/pkg/${i}/SLOT)
+			if [[ -r ${FINDCRUFT_CONFDIR}/${CPN} ]]; then
+				log "  ${CPN}"
+				source ${FINDCRUFT_CONFDIR}/${CPN}
+			fi
+		fi
+	done
+	popd >/dev/null
+}
+
+collect_cruft()
+{
+	local unfiles=$(mktemp)
+	local fpfiles=$(mktemp)
+
+	collect_unmanaged > ${unfiles}
+	collect_fp ${unfiles} \
+	| sed -e "$(generate_symlink)" \
+	| multilib_sed \
+	| sort -u > ${fpfiles}
+
+	log "Collecting cruft files ..."
+	log
+	comm -2 -3 ${unfiles} ${fpfiles}
+
+	rm -f ${unfiles} ${fpfiles}
+}
+
+if [[ $# -ne 0 ]]; then
+	usage
+	exit 1
+fi
+
+log "Collecting portage environment ..."
+
+ARCH=$(portageq envvar ARCH)
+CCACHE_DIR=$(portageq envvar CCACHE_DIR)
+CHOST=$(portageq envvar CHOST)
+DISTDIR=$(portageq distdir)
+PKGDIR=$(portageq pkgdir)
+PORTAGE_TMPDIR=$(portageq envvar PORTAGE_TMPDIR)
+PORTDIR=$(portageq portdir)
+PORTDIR_OVERLAY=$(portageq portdir_overlay)
+PORT_LOGDIR=$(portageq envvar PORT_LOGDIR)
+
+SYMLINK_CACHE=$(generate_symlink_cache)
+
+collect_cruft

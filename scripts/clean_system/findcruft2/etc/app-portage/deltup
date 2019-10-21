@@ -1,0 +1,4 @@
+echo /etc/deltup
+echo /etc/deltup/do_not_remove
+echo /etc/deltup/getdelta.rc
+

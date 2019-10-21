@@ -1,0 +1,2 @@
+ echo /usr/bin/json_pp
+ cruftfile "/usr/share/man/man1/json_pp\.1\..*"

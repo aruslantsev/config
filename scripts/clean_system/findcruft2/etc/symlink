@@ -1,0 +1,3 @@
+# for FHS compatibility /var/tmp is symlinked to /usr/tmp
+echo /var/tmp /usr/tmp
+echo /usr/local/man /usr/local/share/man

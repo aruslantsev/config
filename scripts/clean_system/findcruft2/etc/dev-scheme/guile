@@ -1,0 +1,3 @@
+echo /usr/share/guile/slibcat
+#
+cruftfile "/usr/share/guile/.*\..*/slibcat"

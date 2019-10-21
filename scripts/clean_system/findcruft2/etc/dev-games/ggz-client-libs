@@ -1,0 +1,5 @@
+#
+# GGZ Gaming Zone module configuration file 
+#
+cruftfile "/etc/ggz\.modules"
+#

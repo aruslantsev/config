@@ -1,0 +1,5 @@
+echo /usr/sbin/fix_libtool_files.sh
+echo /usr/share/gcc-data/fixlafiles.awk
+#
+# env.d stuff created by toolchain.eclass
+cruftfile "/etc/env.d/04gcc-.*-.*-linux-gnu"

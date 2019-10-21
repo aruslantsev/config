@@ -1,0 +1,5 @@
+cruftonlydir /var/cache/eix
+echo /var/cache/eix/portage.eix
+echo /var/cache/eix/previous.eix
+#
+echo /var/log/eix-sync.log

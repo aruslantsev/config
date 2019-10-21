@@ -1,0 +1,7 @@
+echo /etc/ssh/ssh_host_dsa_key
+echo /etc/ssh/ssh_host_dsa_key.pub
+echo /etc/ssh/ssh_host_key
+echo /etc/ssh/ssh_host_key.pub
+echo /etc/ssh/ssh_host_rsa_key
+echo /etc/ssh/ssh_host_rsa_key.pub
+echo /var/run/sshd.pid

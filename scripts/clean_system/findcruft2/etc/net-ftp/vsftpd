@@ -1,0 +1,3 @@
+echo /etc/vsftpd/vsftpd.conf
+echo /var/log/vsftpd.log
+echo /var/run/vsftpd.pid

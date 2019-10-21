@@ -1,0 +1,2 @@
+echo /usr/bin/zipdetails
+cruftfile "/usr/share/man/man1/zipdetails\.1\..*"

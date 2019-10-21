@@ -1,0 +1,7 @@
+cruftdir /etc/vservers
+cruftdir /vservers
+cruftdir /var/run/vshelper
+cruftdir /var/run/vservers
+cruftdir /var/run/vservers\.rev
+cruftdir /var/lock/vservers
+cruftfile /var/lock/vserver\..*

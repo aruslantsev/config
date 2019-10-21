@@ -1,0 +1,22 @@
+echo /usr/lib/dri/swrast_dri.so
+#
+# symlinks /usr/include
+cruftonlydir "/usr/include/KHR"
+echo /usr/include/KHR/khrplatform.h
+#
+cruftonlydir "/usr/include/EGL"
+echo /usr/include/EGL/egl.h
+echo /usr/include/EGL/eglext.h
+echo /usr/include/EGL/eglmesaext.h
+echo /usr/include/EGL/eglplatform.h
+#
+# libs
+cruftfile "/usr/lib/libEGL\.so.*"
+cruftfile "/usr/lib/libGL\.so.*"
+#
+# symlinks
+cruftfile "/usr/lib/dri/r300_dri\.so"
+cruftfile "/usr/lib/dri/r600_dri\.so"
+cruftfile "/usr/lib/dri/i915_dri\.so"
+cruftfile "/usr/lib/dri/i965_dri\.so"
+#

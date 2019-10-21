@@ -1,0 +1,3 @@
+echo /var/run/amuled.pid
+echo /var/log/amuled.log
+echo /var/log/amuleweb.log

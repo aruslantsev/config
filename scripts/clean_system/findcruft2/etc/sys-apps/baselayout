@@ -1,0 +1,36 @@
+echo /
+echo /etc/fstab
+echo /etc/group
+echo /etc/group-
+echo /etc/gshadow
+echo /etc/gshadow-
+echo /etc/passwd
+echo /etc/passwd-
+echo /etc/shadow
+echo /etc/shadow-
+
+for i in lib lib32; do
+	echo /$i
+	echo /$i/.keep
+	echo /usr/$i
+	echo /usr/$i/.keep
+	echo /usr/local/$i
+	echo /usr/local/$i/.keep
+done
+
+for i in /boot /dev /etc/profile.d /home /mnt /proc /root \
+		/sys /tmp /usr/local/bin /usr/local/sbin \
+		/usr/local/share/doc /usr/local/share/man \
+		/var/lock /var/run /var/empty /var/tmp; do
+	echo $i
+	echo $i/.keep
+done
+
+if [[ ${PVR/.*} == "1" ]]; then
+	[[ -L /etc/runlevels/boot/clock ]] && echo /etc/adjtime
+	echo /etc/conf.d/net
+	cruftfile "/etc/init\.d/net\..*"
+	cruftdir "/etc/runlevels"
+	cruftdir "/var/lib/init\.d"
+	echo /var/log/dmesg
+fi

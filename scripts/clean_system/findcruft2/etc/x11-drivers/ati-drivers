@@ -1,0 +1,18 @@
+echo /etc/ati/amdpcsdb
+#
+cruftfile "/usr/lib/libamdocl64\.so"
+cruftfile "/usr/lib/libOpenCL\.so\..*"
+cruftfile "/usr/lib/libOpenCL\.so"
+#
+cruftfile "/usr/lib/libamdocl12cl64\.so"
+#
+# includes
+cruftonlydir "/usr/include/GLES"
+cruftonlydir "/usr/include/GLES2"
+cruftonlydir "/usr/include/GLES3"
+cruftonlydir "/usr/include/VG"
+#
+# because of linux-mod.eclass
+cruftonlydir "/var/lib/module-rebuild"
+cruftfile "/var/lib/module-rebuild/moduledb"
+

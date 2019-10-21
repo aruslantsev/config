@@ -1,0 +1,2 @@
+echo /usr/bin/corelist
+cruftfile "/usr/share/man/man1/corelist\.1\..*"

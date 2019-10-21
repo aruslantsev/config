@@ -1,0 +1,35 @@
+echo /var/lib/shorewall/.dynamic
+echo /var/lib/shorewall/.iptables-restore-input
+echo /var/lib/shorewall/.modules
+echo /var/lib/shorewall/.modulesdir
+echo /var/lib/shorewall/.restart
+echo /var/lib/shorewall/.start
+echo /var/lib/shorewall/firewall
+echo /var/lib/shorewall/marks
+echo /var/lib/shorewall/nat
+echo /var/lib/shorewall/policies
+echo /var/lib/shorewall/proxyarp
+echo /var/lib/shorewall/restarted
+echo /var/lib/shorewall/state
+echo /var/lib/shorewall/zones
+#
+echo /var/log/shorewall-init.log
+#
+#
+echo /var/lib/shorewall6/.dynamic
+echo /var/lib/shorewall6/.ip6tables-restore-input
+echo /var/lib/shorewall6/.modules
+echo /var/lib/shorewall6/.modulesdir
+echo /var/lib/shorewall6/.restart
+echo /var/lib/shorewall6/.start
+echo /var/lib/shorewall6/firewall
+echo /var/lib/shorewall6/marks
+echo /var/lib/shorewall6/nat
+echo /var/lib/shorewall6/policies
+echo /var/lib/shorewall6/proxyndp
+echo /var/lib/shorewall6/restarted
+echo /var/lib/shorewall6/state
+echo /var/lib/shorewall6/zones
+#
+echo /var/log/shorewall6-init.log
+#

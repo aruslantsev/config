@@ -1,0 +1,8 @@
+cruftonlydir "/etc/ssl/dovecot"
+echo /etc/ssl/dovecot/server.key
+echo /etc/ssl/dovecot/server.pem
+#
+cruftonlydir "/var/lib/dovecot"
+cruftfile "/var/lib/dovecot/instances"
+cruftfile "/var/lib/dovecot/mounts"
+cruftfile "/var/lib/dovecot/ssl-parameters\.dat"

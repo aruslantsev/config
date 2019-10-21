@@ -1,0 +1,6 @@
+echo /var/log/genkernel.log
+#
+cruftonlydir "/etc/kernels"
+#
+cruftdir "/var/cache/genkernel"
+#

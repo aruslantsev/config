@@ -1,0 +1,9 @@
+# local aliases
+echo /etc/mail/aliases.db
+#
+echo /var/lib/postfix/master.lock
+echo /var/lib/postfix/prng_exch
+#
+echo /etc/ssl/postfix
+#
+cruftdir /var/spool/postfix

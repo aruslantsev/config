@@ -1,0 +1,12 @@
+# not in my environment ....
+#echo /etc/gtk-2.0/gdk-pixbuf.loaders
+#echo /etc/gtk-2.0/gtk.immodules
+#
+cruftfile "/etc/gtk-2.0/.*-.*-.*-.*/gdk-pixbuf\.loaders"
+cruftfile "/etc/gtk-2.0/.*-.*-.*-.*/gtk\.immodules"
+#
+# Created by gtk-query-immodules-2.0 from gtk+-2...
+cruftfile "/usr/lib/gtk-2\.0/.*\..*\..*/immodules\.cache"
+#
+# Created by gtk-query-immodules-3.0 from gtk+-3.6.3
+cruftfile "/usr/lib/gtk-3\.0/.*\..*\..*/immodules\.cache"

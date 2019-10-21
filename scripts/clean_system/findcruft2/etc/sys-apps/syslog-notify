@@ -1,0 +1,2 @@
+# fifo
+cruftfile "/var/spool/syslog-notify"

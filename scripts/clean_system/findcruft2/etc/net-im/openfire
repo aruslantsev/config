@@ -1,0 +1,14 @@
+echo /opt/openfire/conf/available-plugins.xml
+echo /opt/openfire/conf/openfire.xml
+echo /opt/openfire/conf/openfire.xml.bak
+echo /opt/openfire/conf/server-update.xml
+echo /opt/openfire/logs/stats.txt
+
+for i in debug error info warn; do
+	echo /opt/openfire/logs/${i}.log
+	cruftfile "/opt/openfire/logs/${i}_[0-9]\.log"
+done
+
+cruftdir /opt/openfire/plugins
+echo /var/log/openfire.log
+echo /var/run/jabber/openfire.pid

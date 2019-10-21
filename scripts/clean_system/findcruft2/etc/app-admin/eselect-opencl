@@ -1,0 +1,12 @@
+# include files
+cruftonlydir "/usr/include/CL"
+cruftfile "/usr/include/CL/cl\.h"
+cruftfile "/usr/include/CL/cl\.hpp"
+cruftfile "/usr/include/CL/cl_ext\.h"
+cruftfile "/usr/include/CL/cl_gl\.h"
+cruftfile "/usr/include/CL/cl_gl_ext\.h"
+cruftfile "/usr/include/CL/cl_platform\.h"
+cruftfile "/usr/include/CL/opencl\.h"
+#
+# env file
+echo /etc/env.d/03opencl 

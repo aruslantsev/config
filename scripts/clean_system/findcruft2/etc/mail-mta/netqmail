@@ -1,0 +1,10 @@
+echo /etc/tcprules.d/tcp.qmail-pop3.cdb
+echo /etc/tcprules.d/tcp.qmail-pop3s.cdb
+echo /etc/tcprules.d/tcp.qmail-qmqp.cdb
+echo /etc/tcprules.d/tcp.qmail-qmtp.cdb
+echo /etc/tcprules.d/tcp.qmail-smtp.cdb
+#
+# symbolic link to /usr/sbin/sendmail
+cruftfile "/usr/bin/newaliases"
+cruftfile "/usr/bin/mailq"
+#

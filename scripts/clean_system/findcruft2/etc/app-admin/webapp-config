@@ -1,0 +1,6 @@
+for i in /var/db/webapps/*/*/installs; do
+	if [[ -n "$(<$i)" ]]; then
+		echo $i
+		echo $(dirname $i)
+	fi
+done

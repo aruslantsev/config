@@ -1,0 +1,4 @@
+#
+cruftfile "/usr/bin/pgsql2shp.*"
+cruftfile "/usr/bin/raster2pgsql.*"
+cruftfile "/usr/bin/shp2pgsql.*"

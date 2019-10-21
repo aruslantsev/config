@@ -1,0 +1,11 @@
+cruftdir /var/www
+#
+cruftdir /var/log/apache2
+#
+echo /var/run/apache2.pid
+cruftfile "/var/run/cgisock\..*"
+#
+echo /etc/ssl/apache2
+#
+echo /var/lib/dav/lockdb.dir
+echo /var/lib/dav/lockdb.pag

@@ -1,0 +1,20 @@
+# some symlinks (aleph)
+cruftfile "/usr/bin/lamed"
+#
+# some symlinks (pdfetex)
+cruftfile "/usr/bin/eplain"
+#
+# created files (via /usr/sbin/texmf-update)
+cruftfile "/etc/texmf/ls-R"
+cruftfile "/etc/texmf/web2c/fmtutil\.cnf"
+cruftfile "/etc/texmf/web2c/texmf\.cnf"
+cruftfile "/etc/texmf/web2c/updmap\.cfg"
+#
+cruftfile "/usr/share/texmf-dist/ls-R"
+cruftonlydir "/usr/share/texmf-doc"
+cruftfile "/usr/share/texmf-doc/ls-R"
+cruftfile "/usr/share/texmf-site/ls-R"
+cruftfile "/usr/share/texmf/ls-R"
+#
+cruftfile "/var/lib/texmf/ls-R"
+#

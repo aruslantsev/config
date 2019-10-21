@@ -1,0 +1,3 @@
+echo /etc/blkid.tab
+echo /var/lib/cache/hald/fdi-cache
+echo /var/run/hald.pid

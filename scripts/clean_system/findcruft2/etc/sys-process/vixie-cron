@@ -1,0 +1,11 @@
+echo /var/run/cron.pid
+echo /var/spool/cron/lastrun/cron.daily
+echo /var/spool/cron/lastrun/cron.hourly
+echo /var/spool/cron/lastrun/cron.monthly
+echo /var/spool/cron/lastrun/cron.weekly
+
+for x in /var/spool/cron/crontabs/*; do
+	if getent passwd $(basename $x) >/dev/null; then
+		echo $x
+	fi
+done

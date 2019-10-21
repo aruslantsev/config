@@ -1,0 +1,4 @@
+cruftfile "/usr/lib/libfreebl.*\.chk"
+cruftfile "/usr/lib/libnssdbm.*\.chk"
+cruftfile "/usr/lib/libsoftokn.*\.chk"
+

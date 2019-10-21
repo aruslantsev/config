@@ -1,0 +1,3 @@
+echo /var/lib/powerdns/pdns_recursor.controlsocket
+echo /var/lib/powerdns/pdns_recursor.pid
+

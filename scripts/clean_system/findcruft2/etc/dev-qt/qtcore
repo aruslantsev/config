@@ -1,0 +1,4 @@
+echo /usr/share/qt4/mkspecs/qconfig.pri
+#
+#
+echo /usr/include/qt4/Gentoo/gentoo-qconfig.h

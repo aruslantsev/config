@@ -1,0 +1,8 @@
+cruftdir /var/run/dbus
+echo /var/run/dbus.pid
+#
+# machine-id
+echo /var/lib/dbus/machine-id
+echo /etc/machine-id
+# 
+

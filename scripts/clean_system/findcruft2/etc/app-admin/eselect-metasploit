@@ -1,0 +1,18 @@
+echo /usr/bin/msfbinscan
+echo /usr/bin/msfcli
+echo /usr/bin/msfconsole
+echo /usr/bin/msfd
+echo /usr/bin/msfelfscan
+echo /usr/bin/msfencode
+echo /usr/bin/msfmachscan
+echo /usr/bin/msfpayload
+echo /usr/bin/msfpescan
+echo /usr/bin/msfrop
+echo /usr/bin/msfrpc
+echo /usr/bin/msfrpcd
+echo /usr/bin/msfupdate
+echo /usr/bin/msfvenom
+echo /usr/bin/msfgui
+#
+cruftfile "/usr/lib.*/metasploit" 
+#

@@ -1,0 +1,6 @@
+for pyslot in $(cat /var/db/pkg/dev-lang/python-*/SLOT); do
+	echo /usr/lib/python${pyslot}/site-packages/pygtk.pth
+	echo /usr/lib/python${pyslot}/site-packages/pygtk.py
+	echo /usr/lib/python${pyslot}/site-packages/pygtk.pyc
+	echo /usr/lib/python${pyslot}/site-packages/pygtk.pyo
+done

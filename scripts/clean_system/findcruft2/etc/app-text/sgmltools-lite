@@ -1,0 +1,2 @@
+echo /etc/env.d/93sgmltools-lite
+echo /etc/sgml/sgml-lite.cat

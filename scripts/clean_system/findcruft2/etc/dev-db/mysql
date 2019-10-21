@@ -1,0 +1,5 @@
+echo /var/run/svc-started-mysqld
+echo /var/run/mysqld/mysqld.pid
+echo /var/run/mysqld/mysqld.sock
+cruftdir /var/lib/mysql
+cruftdir /var/log/mysql

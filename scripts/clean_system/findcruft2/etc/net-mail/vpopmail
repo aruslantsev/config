@@ -1,0 +1,2 @@
+cruftdir /var/vpopmail/domains
+cruftdir /var/log/vpopmail

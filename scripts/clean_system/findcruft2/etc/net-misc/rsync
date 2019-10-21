@@ -1,0 +1,2 @@
+echo /var/run/rsyncd.lock
+echo /var/run/rsyncd.pid

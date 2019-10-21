@@ -1,0 +1,18 @@
+# include files
+echo /usr/include/db.h
+echo /usr/include/db_185.h
+echo /usr/lib/libdb.a
+echo /usr/lib/libdb.so
+echo /usr/lib/libdb_cxx.a
+echo /usr/lib/libdb_cxx.so
+#
+# library symlinks
+cruftfile "/usr/lib/libdb_sql\.a"
+cruftfile "/usr/lib/libdb_sql\.so"
+cruftfile "/usr/lib/libdb_stl\.a"
+cruftfile "/usr/lib/libdb_stl\.so"
+#
+# java
+cruftfile "/usr/lib/libdb_java\.a"
+cruftfile "/usr/lib/libdb_java\.so"
+#

@@ -1,0 +1,2 @@
+cruftdir /service
+echo /var/run/svscan.pid

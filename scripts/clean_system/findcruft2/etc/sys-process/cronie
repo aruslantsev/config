@@ -1,0 +1,5 @@
+echo /var/spool/cron/lastrun/cron.daily
+echo /var/spool/cron/lastrun/cron.hourly
+echo /var/spool/cron/lastrun/cron.monthly
+echo /var/spool/cron/lastrun/cron.weekly
+#

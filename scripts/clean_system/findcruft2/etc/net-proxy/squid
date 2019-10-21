@@ -1,0 +1,4 @@
+cruftdir "/var/log/squid"
+#
+# squid-3.3.10
+echo /var/lib/squid/netdb.state

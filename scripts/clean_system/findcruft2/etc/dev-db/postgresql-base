@@ -1,0 +1,72 @@
+#
+cruftfile "/usr/include/pg_config_manual\.h"
+cruftfile "/usr/include/pg_config_ext\.h"
+#
+cruftfile "/usr/lib/postgresql"
+#
+cruftfile "/usr/lib/libecpg\.a"
+cruftfile "/usr/lib/libecpg\.so"
+cruftfile "/usr/lib/libecpg\.so\..*"
+cruftfile "/usr/lib/libecpg_compat\.a"
+cruftfile "/usr/lib/libecpg_compat\.so"
+cruftfile "/usr/lib/libecpg_compat\.so\..*"
+cruftfile "/usr/lib/libpq\.a"
+cruftfile "/usr/lib/libpq\.so"
+cruftfile "/usr/lib/libpq\.so\..*"
+cruftfile "/usr/lib/libpqwalreceiver\.so"
+cruftfile "/usr/lib/libpgport\.a"
+cruftfile "/usr/lib/libpgtypes\.a"
+cruftfile "/usr/lib/libpgtypes\.so"
+cruftfile "/usr/lib/libpgtypes\.so\..*"
+cruftfile "/usr/lib/libpgcommon.a"
+#
+cruftdir "/var/lib/postgresql"
+#
+echo /usr/bin/vacuumlo
+echo /usr/bin/pgbench
+echo /usr/bin/oid2name
+echo /usr/bin/reindexdb
+echo /usr/bin/vacuumdb
+echo /usr/bin/clusterdb
+echo /usr/bin/pg_config
+echo /usr/bin/dropuser
+echo /usr/bin/psql
+echo /usr/bin/createuser
+echo /usr/bin/pg_dumpall
+echo /usr/bin/droplang
+echo /usr/bin/pg_restore
+echo /usr/bin/createlang
+echo /usr/bin/pg_dump
+echo /usr/bin/dropdb
+echo /usr/bin/createdb
+echo /usr/bin/ecpg
+echo /usr/bin/pg_isready
+echo /usr/bin/pg_xlogdump
+#
+# env.d stuff
+cruftfile "/etc/env\.d/.*postgresql"
+# 
+# slot
+#
+SHORTSLOT=`echo -n ${SLOT} | sed 's/\.//g'`
+#
+echo /usr/bin/vacuumlo${SHORTSLOT}
+echo /usr/bin/pgbench${SHORTSLOT}
+echo /usr/bin/oid2name${SHORTSLOT}
+echo /usr/bin/reindexdb${SHORTSLOT}
+echo /usr/bin/vacuumdb${SHORTSLOT}
+echo /usr/bin/clusterdb${SHORTSLOT}
+echo /usr/bin/pg_config${SHORTSLOT}
+echo /usr/bin/dropuser${SHORTSLOT}
+echo /usr/bin/psql${SHORTSLOT}
+echo /usr/bin/createuser${SHORTSLOT}
+echo /usr/bin/pg_dumpall${SHORTSLOT}
+echo /usr/bin/droplang${SHORTSLOT}
+echo /usr/bin/pg_restore${SHORTSLOT}
+echo /usr/bin/createlang${SHORTSLOT}
+echo /usr/bin/pg_dump${SHORTSLOT}
+echo /usr/bin/dropdb${SHORTSLOT}
+echo /usr/bin/createdb${SHORTSLOT}
+echo /usr/bin/ecpg${SHORTSLOT}
+echo /usr/bin/pg_isready${SHORTSLOT}
+#

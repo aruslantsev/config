@@ -1,0 +1,2 @@
+echo /var/log/wifi-radar.log
+echo /etc/wifi-radar.conf

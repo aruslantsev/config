@@ -1,0 +1,3 @@
+cruftdir /usr/kde/${SLOT}/share/apps/kdm
+cruftdir /var/lib/kdm
+echo /var/log/kdm.log

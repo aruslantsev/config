@@ -1,0 +1,78 @@
+cruftdir /etc/env.d/binutils
+echo /etc/env.d/05binutils
+#
+# symlinks in /usr/include
+echo /usr/include/demangle.h
+echo /usr/include/dyn-string.h
+echo /usr/include/fibheap.h
+echo /usr/include/hashtab.h
+echo /usr/include/objalloc.h
+echo /usr/include/plugin-api.h
+echo /usr/include/splay-tree.h
+#
+echo /usr/include/libiberty
+#
+echo /usr/bin/addr2line
+echo /usr/bin/ar
+echo /usr/bin/as
+echo /usr/bin/c++filt
+echo /usr/bin/coffdump
+echo /usr/bin/dlltool
+echo /usr/bin/dllwrap
+echo /usr/bin/dwp
+echo /usr/bin/elfedit
+echo /usr/bin/gprof
+echo /usr/bin/ld
+echo /usr/bin/ld.bfd
+echo /usr/bin/ld.gold
+echo /usr/bin/nlmconv
+echo /usr/bin/nm
+echo /usr/bin/objcopy
+echo /usr/bin/objdump
+echo /usr/bin/ranlib
+echo /usr/bin/readelf
+echo /usr/bin/size
+echo /usr/bin/srconv
+echo /usr/bin/strings
+echo /usr/bin/strip
+echo /usr/bin/sysdump
+echo /usr/bin/windmc
+echo /usr/bin/windres
+#
+cruftfile "/usr/bin/.*-.*-.*-.*-addr2line"
+cruftfile "/usr/bin/.*-.*-.*-.*-ar"
+cruftfile "/usr/bin/.*-.*-.*-.*-as"
+cruftfile "/usr/bin/.*-.*-.*-.*-c++filt"
+cruftfile "/usr/bin/.*-.*-.*-.*-coffdump"
+cruftfile "/usr/bin/.*-.*-.*-.*-dlltool"
+cruftfile "/usr/bin/.*-.*-.*-.*-dllwrap"
+cruftfile "/usr/bin/.*-.*-.*-.*-dwp"
+cruftfile "/usr/bin/.*-.*-.*-.*-elfedit"
+cruftfile "/usr/bin/.*-.*-.*-.*-gprof"
+cruftfile "/usr/bin/.*-.*-.*-.*-ld"
+cruftfile "/usr/bin/.*-.*-.*-.*-ld.bfd"
+cruftfile "/usr/bin/.*-.*-.*-.*-ld.gold"
+cruftfile "/usr/bin/.*-.*-.*-.*-nlmconv"
+cruftfile "/usr/bin/.*-.*-.*-.*-nm"
+cruftfile "/usr/bin/.*-.*-.*-.*-objcopy"
+cruftfile "/usr/bin/.*-.*-.*-.*-objdump"
+cruftfile "/usr/bin/.*-.*-.*-.*-ranlib"
+cruftfile "/usr/bin/.*-.*-.*-.*-readelf"
+cruftfile "/usr/bin/.*-.*-.*-.*-size"
+cruftfile "/usr/bin/.*-.*-.*-.*-srconv"
+cruftfile "/usr/bin/.*-.*-.*-.*-strings"
+cruftfile "/usr/bin/.*-.*-.*-.*-strip"
+cruftfile "/usr/bin/.*-.*-.*-.*-sysdump"
+cruftfile "/usr/bin/.*-.*-.*-.*-windmc"
+cruftfile "/usr/bin/.*-.*-.*-.*-windres"
+#
+cruftdir "/usr/.*-.*-.*-.*/bin"
+cruftdir "/usr/.*-.*-.*-.*/lib"
+cruftdir "/usr/share/binutils-data/.*-.*-.*-.*/${PV}/info"
+#
+echo /usr/include/ansidecl.h
+echo /usr/include/bfd.h
+echo /usr/include/bfdlink.h
+echo /usr/include/dis-asm.h
+echo /usr/include/libiberty.h
+echo /usr/include/symcat.h

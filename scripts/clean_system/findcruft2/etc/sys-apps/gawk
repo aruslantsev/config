@@ -1,0 +1,4 @@
+echo /bin/awk
+echo /usr/bin/awk
+#
+cruftfile "/usr/share/man/man1/awk\.1\..*"

@@ -1,0 +1,5 @@
+echo /usr/bin/ctags
+echo /usr/bin/etags
+#
+cruftfile "/usr/share/man/man1/ctags\.1\..*"
+cruftfile "/usr/share/man/man1/etags\.1\..*"

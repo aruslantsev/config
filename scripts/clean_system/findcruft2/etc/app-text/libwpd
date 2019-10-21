@@ -1,0 +1,4 @@
+echo /usr/bin/wpd2html
+echo /usr/bin/wpd2raw
+echo /usr/bin/wpd2text
+

@@ -1,0 +1,3 @@
+echo /var/log/lynis-report.dat
+echo /var/log/lynis.log
+

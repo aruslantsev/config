@@ -1,0 +1,11 @@
+# after running of geoipupdate.sh
+#
+echo /usr/share/GeoIP/GeoIP.dat
+echo /usr/share/GeoIP/GeoIPASNum.dat
+echo /usr/share/GeoIP/GeoIPv6.dat
+echo /usr/share/GeoIP/GeoLiteCity.dat
+echo /usr/share/GeoIP/GeoLiteCityv6.dat
+#
+echo /usr/share/GeoIP/GeoIPCity.dat
+echo /usr/share/GeoIP/GeoIPCityv6.dat
+#

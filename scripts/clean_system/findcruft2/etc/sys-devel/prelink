@@ -1,0 +1,2 @@
+echo /etc/prelink.cache
+cruftonlydir "/etc/prelink.conf.d"

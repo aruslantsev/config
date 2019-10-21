@@ -1,0 +1,25 @@
+[[ -r /etc/dispatch-conf.conf ]] && cruftdir $(sed 's/[[:space:]]*archive-dir=\("\?\)\(.*\)\1$/\2/;t;d' /etc/dispatch-conf.conf)
+#
+# is now in /etc/portage
+#echo /etc/make.conf
+#
+echo /etc/make.profile
+#
+cruftdir /etc/portage
+#
+echo /var/db
+echo /var/db/pkg
+#
+cruftdir /var/log/portage
+cruftdir /var/lib/portage
+#
+# log files
+echo /var/log/emerge.log
+echo /var/log/emerge-fetch.log
+echo /var/log/dispatch-conf.log
+#
+# created by env-update
+echo /etc/prelink.conf.d/portage.conf
+echo /etc/profile.env
+echo /etc/csh.env
+echo /etc/ld.so.conf

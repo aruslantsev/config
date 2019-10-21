@@ -1,0 +1,18 @@
+echo /usr/bin/b2m
+#
+echo /usr/bin/etags
+cruftfile "/usr/share/man/man1/etags\.1\..*"
+#
+cruftfile "/usr/share/man/man1/ctags\.1"
+cruftfile "/usr/share/man/man1/gnuattach\.1"
+cruftfile "/usr/share/man/man1/gnuclient\.1"
+cruftfile "/usr/share/man/man1/gnudoit\.1"
+#
+#
+cruftfile "/usr/share/man/man1/gnuserv\.1\..*"
+#
+# symlinks
+echo /usr/bin/gnuclient
+echo /usr/bin/gnuattach
+echo /usr/bin/gnudoit
+#

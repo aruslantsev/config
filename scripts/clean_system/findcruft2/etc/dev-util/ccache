@@ -1,0 +1,19 @@
+cruftonlydir "/usr/lib/ccache"
+cruftonlydir "/usr/lib/ccache/bin"
+#
+cruftfile "/usr/lib/ccache/bin/.*-.*-.*-.*-c++"
+cruftfile "/usr/lib/ccache/bin/.*-.*-.*-.*-clang"
+cruftfile "/usr/lib/ccache/bin/.*-.*-.*-.*-clang++"
+cruftfile "/usr/lib/ccache/bin/.*-.*-.*-.*-g++"
+cruftfile "/usr/lib/ccache/bin/.*-.*-.*-.*-gcc"
+#
+echo /usr/lib/ccache/bin/c++
+echo /usr/lib/ccache/bin/cc
+echo /usr/lib/ccache/bin/g++
+echo /usr/lib/ccache/bin/gcc
+echo /usr/lib/ccache/bin/clang
+echo /usr/lib/ccache/bin/clang++
+#
+# config
+echo /etc/ccache.conf
+#

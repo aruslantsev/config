@@ -1,0 +1,17 @@
+echo /etc/distcc
+echo /etc/distcc/hosts
+echo /etc/env.d/02distcc
+echo /var/run/distccd/distccd.pid
+echo /usr/lib/distcc/bin/c++
+echo /usr/lib/distcc/bin/cc
+echo /usr/lib/distcc/bin/g++
+echo /usr/lib/distcc/bin/gcc
+cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-c++"
+cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-cc"
+cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-g++"
+cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-gcc"
+#
+cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-c++-.*"
+cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-g++-.*"
+cruftfile "/usr/lib/distcc/bin/.*-.*-.*-.*-gcc-.*"
+#

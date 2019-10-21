@@ -1,0 +1,3 @@
+echo /var/run/avahi-daemon
+echo /var/run/avahi-daemon/pid
+echo /var/run/avahi-daemon/socket

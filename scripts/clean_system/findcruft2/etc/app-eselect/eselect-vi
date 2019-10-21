@@ -1,0 +1,8 @@
+echo /usr/bin/vi
+echo /usr/bin/view
+echo /usr/bin/ex
+#
+cruftfile "/usr/share/man/man1/vi\.1\..*"
+cruftfile "/usr/share/man/man1/view\.1\..*"
+cruftfile "/usr/share/man/man1/ex\.1\..*"
+

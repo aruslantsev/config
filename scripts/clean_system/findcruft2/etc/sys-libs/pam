@@ -1,0 +1,6 @@
+cruftfile "/lib/security/pam_unix_acct\.so"
+cruftfile "/lib/security/pam_unix_auth\.so"
+cruftfile "/lib/security/pam_unix_passwd\.so"
+cruftfile "/lib/security/pam_unix_session\.so"
+#
+cruftfile "/var/log/tallylog"

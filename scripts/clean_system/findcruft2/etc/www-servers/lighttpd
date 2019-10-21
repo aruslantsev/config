@@ -1,0 +1,3 @@
+cruftdir /var/www
+cruftdir /var/log/lighttpd
+echo /var/run/lighttpd.pid

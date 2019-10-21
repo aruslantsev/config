@@ -1,0 +1,4 @@
+echo /var/log/rkhunter.log
+echo /var/log/rkhunter.log.old
+cruftdir /var/lib/rkhunter/db
+cruftdir /var/lib/rkhunter/tmp

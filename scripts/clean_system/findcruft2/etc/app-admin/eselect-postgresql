@@ -1,0 +1,10 @@
+echo /usr/share/postgresql
+echo /etc/eselect/postgresql/active
+#
+echo /usr/include/libpq
+echo /usr/include/libpq-fe.h
+echo /usr/include/postgresql
+echo /usr/include/postgres_ext.h
+#
+#
+cruftfile "/etc/eselect/postgresql/active\.links.*"

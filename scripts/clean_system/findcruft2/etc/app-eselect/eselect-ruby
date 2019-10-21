@@ -1,0 +1,13 @@
+echo /usr/bin/gem
+#
+echo /usr/bin/ruby
+echo /usr/bin/irb
+echo /usr/bin/erb
+echo /usr/bin/ri
+echo /usr/bin/testrb
+echo /usr/bin/rdoc
+#
+cruftfile "/usr/share/man/man1/ruby\.1\..*"
+cruftfile "/usr/share/man/man1/irb\.1\..*"
+cruftfile "/usr/share/man/man1/erb\.1\..*"
+cruftfile "/usr/share/man/man1/ri\.1\..*"

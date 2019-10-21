@@ -1,0 +1,5 @@
+cruftdir /etc/puppet/modules
+cruftdir /etc/puppet/manifests
+cruftdir /var/lib/puppet
+echo /var/puppet
+echo /var/run/puppet/puppetd.pid

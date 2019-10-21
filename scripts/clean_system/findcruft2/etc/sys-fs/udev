@@ -1,0 +1,5 @@
+#
+echo /etc/udev/rules.d/70-persistent-cd.rules
+echo /etc/udev/rules.d/70-persistent-net.rules
+#
+echo /etc/udev/hwdb.bin

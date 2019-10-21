@@ -1,0 +1,8 @@
+if [ -x /bin/pidof ]; then
+ if [ -n "`/bin/pidof mysqld`" ]; then
+  echo /var/run/mysqld/mysqld.pid
+  echo /var/run/mysqld/mysqld.sock
+ fi
+fi
+cruftdir /var/lib/mysql
+cruftdir /var/log/mysql

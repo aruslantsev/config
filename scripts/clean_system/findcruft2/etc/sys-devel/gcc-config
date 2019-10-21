@@ -1,0 +1,90 @@
+if [[ ${PV%.*} == "1.3" ]]; then
+	echo "/etc/env.d/05gcc"
+else
+	cruftfile "/etc/env.d/04gcc-.*-.*-.*-.*"
+fi
+#
+cruftdir /etc/env.d/gcc/
+#
+echo /lib/cpp
+#
+echo /usr/bin/aot-compile
+echo /usr/bin/c89
+echo /usr/bin/c99
+echo /usr/bin/cc
+echo /usr/bin/c++
+echo /usr/bin/cpp
+echo /usr/bin/g++
+echo /usr/bin/g77
+echo /usr/bin/gappletviewer
+echo /usr/bin/gc-analyze
+echo /usr/bin/gcc
+echo /usr/bin/gcc-ar
+echo /usr/bin/gcc-nm
+echo /usr/bin/gcc-ranlib
+echo /usr/bin/gcj
+echo /usr/bin/gcj-dbtool
+echo /usr/bin/gcjh
+echo /usr/bin/gcov
+echo /usr/bin/gfortran
+echo /usr/bin/gij
+echo /usr/bin/gjar
+echo /usr/bin/gjarsigner
+echo /usr/bin/gjavah
+echo /usr/bin/gjdoc
+echo /usr/bin/gkeytool
+echo /usr/bin/gnative2ascii
+echo /usr/bin/gorbd
+echo /usr/bin/grmic
+echo /usr/bin/grmid
+echo /usr/bin/grmiregistry
+echo /usr/bin/gserialver
+echo /usr/bin/gtnameserv
+echo /usr/bin/jcf-dump
+echo /usr/bin/rebuild-gcj-db
+#
+echo /usr/bin/jv-convert
+#
+cruftfile "/usr/bin/.*-.*-.*-.*-aot-compile"
+cruftfile "/usr/bin/.*-.*-.*-.*-c++"
+cruftfile "/usr/bin/.*-.*-.*-.*-cpp"
+cruftfile "/usr/bin/.*-.*-.*-.*-g++"
+cruftfile "/usr/bin/.*-.*-.*-.*-g77"
+cruftfile "/usr/bin/.*-.*-.*-.*-gappletviewer"
+cruftfile "/usr/bin/.*-.*-.*-.*-gc-analyze"
+cruftfile "/usr/bin/.*-.*-.*-.*-gcc"
+cruftfile "/usr/bin/.*-.*-.*-.*-gcc-ar"
+cruftfile "/usr/bin/.*-.*-.*-.*-gcc-nm"
+cruftfile "/usr/bin/.*-.*-.*-.*-gcc-ranlib"
+cruftfile "/usr/bin/.*-.*-.*-.*-gcj"
+cruftfile "/usr/bin/.*-.*-.*-.*-gcj-dbtool"
+cruftfile "/usr/bin/.*-.*-.*-.*-gcjh"
+cruftfile "/usr/bin/.*-.*-.*-.*-gcov"
+cruftfile "/usr/bin/.*-.*-.*-.*-gfortran"
+cruftfile "/usr/bin/.*-.*-.*-.*-gij"
+cruftfile "/usr/bin/.*-.*-.*-.*-gjar"
+cruftfile "/usr/bin/.*-.*-.*-.*-gjarsigner"
+cruftfile "/usr/bin/.*-.*-.*-.*-gjavah"
+cruftfile "/usr/bin/.*-.*-.*-.*-gjdoc"
+cruftfile "/usr/bin/.*-.*-.*-.*-gkeytool"
+cruftfile "/usr/bin/.*-.*-.*-.*-gnative2ascii"
+cruftfile "/usr/bin/.*-.*-.*-.*-gorbd"
+cruftfile "/usr/bin/.*-.*-.*-.*-grmic"
+cruftfile "/usr/bin/.*-.*-.*-.*-grmid"
+cruftfile "/usr/bin/.*-.*-.*-.*-grmiregistry"
+cruftfile "/usr/bin/.*-.*-.*-.*-gserialver"
+cruftfile "/usr/bin/.*-.*-.*-.*-gtnameserv"
+cruftfile "/usr/bin/.*-.*-.*-.*-jcf-dump"
+cruftfile "/usr/bin/.*-.*-.*-.*-jv-convert"
+cruftfile "/usr/bin/.*-.*-.*-.*-rebuild-gcj-db"
+#
+#
+cruftfile "/usr/share/gcc-data/.*-.*-.*-.*/.*/info"
+cruftfile "/usr/share/gcc-data/.*-.*-.*-.*/.*/info/dir"
+#
+cruftfile "/lib/libgcc_s\.so\.1"
+#
+cruftfile "/usr/lib/pkgconfig/libgcj\.pc"
+cruftfile "/usr/lib/pkgconfig/libgcj-.*\.pc"
+#
+cruftfile "/etc/ld\.so\.conf\.d/05gcc-.*-pc-linux-gnu\.conf"

@@ -1,0 +1,3 @@
+for pyslot in $(cat /var/db/pkg/dev-lang/python-*/SLOT); do
+    echo /usr/lib64/python${pyslot}/site-packages/py_rrdtool-0.2.2-py${pyslot}.egg-info.backup.0000
+done

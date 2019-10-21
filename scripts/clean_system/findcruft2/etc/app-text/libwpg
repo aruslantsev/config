@@ -1,0 +1,4 @@
+echo /usr/bin/wpg2raw
+echo /usr/bin/wpg2svg
+echo /usr/bin/wpg2svgbatch.pl
+

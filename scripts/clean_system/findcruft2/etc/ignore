@@ -1,0 +1,32 @@
+# Not managed "by default":
+echo /boot
+echo /dev
+echo /home
+echo /media
+echo /mnt
+echo /proc
+echo /root
+echo /run
+echo /sys
+echo /tmp
+echo /usr/local
+echo /usr/tmp
+echo /var/tmp
+
+# Portage stuff (partly too large to be ignored
+# in package rules):
+echo ${PORTDIR%/}
+echo ${DISTDIR%/}
+echo ${PKGDIR%/}
+echo ${PORT_LOGDIR%/}
+for overlay in ${PORTDIR_OVERLAY}; do
+	echo ${overlay%/}
+done
+echo ${PORTAGE_TMPDIR%/}/portage
+echo ${PORTAGE_TMPDIR%/}/portage-pkg
+echo ${CCACHE_DIR%/}
+echo /var/cache/edb
+echo /var/db/pkg
+
+# ignore findcruft config dir
+echo ${FINDCRUFT_CONFDIR}

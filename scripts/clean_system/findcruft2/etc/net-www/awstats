@@ -1,0 +1,2 @@
+cruftdir /etc/awstats
+cruftdir /var/lib/awstats

@@ -1,0 +1,4 @@
+echo /etc/exports
+cruftdir /var/lib/nfs
+echo /var/run/rpc.statd.pid
+echo /var/run/sm-notify.pid

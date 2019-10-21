@@ -1,0 +1,6 @@
+cruftdir /etc/cups
+cruftdir /var/log/cups
+cruftdir /var/run/cups
+cruftdir /var/spool/cups
+cruftdir /var/cache/cups
+echo /etc/printcap
