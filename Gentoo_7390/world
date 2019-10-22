@@ -2,6 +2,7 @@ app-admin/hddtemp
 app-admin/metalog
 app-arch/p7zip
 app-arch/unrar
+app-editors/nano
 app-emulation/aqemu
 app-emulation/docker
 app-emulation/libvirt
@@ -13,7 +14,7 @@ app-misc/jq
 app-misc/mc
 app-misc/tmux
 app-misc/vlock
-app-office/libreoffice
+app-office/libreoffice-bin
 app-portage/gentoolkit
 app-text/tree
 dev-db/dbeaver-bin

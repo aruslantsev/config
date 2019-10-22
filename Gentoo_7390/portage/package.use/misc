@@ -1,3 +1,4 @@
+app-office/libreoffice-bin kde
 app-misc/mc sftp
 net-fs/samba client
 net-print/cups kerberos zeroconf
