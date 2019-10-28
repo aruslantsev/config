@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+# Copyright (c) 2019 Andrei Ruslantsev <aruslantsev@ozon.ru>
+# Distributed under the terms of the GNU General Public License v2
+
+description="Cisco VPN service"
+
+depend() {
+	need dbus
+	after NetworkManager
+}
+
+start() {
+	ebegin "Starting Cisco VPN"
+	/etc/init.d/ciscod restart && /etc/init.d/vpnagentd restart
+	local _retval=$?
+	eend "${_retval}"
+	return "${_retval}"
+}
+
+stop() {
+	ebegin "Stopping NetworkManager"
+	/etc/init.d/ciscod stop && /etc/init.d/vpnagentd stop
+	local _retval=$?
+	eend "${_retval}"
+	return "${_retval}"
+}
+
+# vim: set ft=gentoo-init-d ts=4 :
