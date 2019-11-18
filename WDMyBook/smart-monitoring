@@ -1,0 +1,15 @@
+#!/bin/sh
+
+###############################################################################
+#                                                                             #
+#            Script for weekly dumping smart information of disks             #
+#                                                                             #
+###############################################################################
+
+#!/bin/sh
+
+/usr/sbin/smartctl -iA /dev/sda >> /var/log/smart-info.log
+/usr/sbin/smartctl -iA /dev/sdb >> /var/log/smart-info.log
+
+exit 0
+
