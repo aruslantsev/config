@@ -1,9 +1,11 @@
 app-admin/metalog
 app-arch/p7zip
 app-arch/unrar
+app-editors/nano
 app-emulation/qemu
 app-laptop/laptop-mode-tools
 app-misc/fdupes
+app-misc/mc
 app-misc/tmux
 app-office/libreoffice
 app-portage/gentoolkit
@@ -40,10 +42,11 @@ sys-firmware/intel-microcode
 sys-fs/dosfstools
 sys-fs/exfat-utils
 sys-fs/fuse-exfat
+sys-fs/lvm2
+sys-fs/mdadm
 sys-fs/ntfs3g
 sys-kernel/gentoo-sources
 sys-kernel/linux-firmware
-sys-power/pm-utils
 sys-power/powertop
 sys-process/cronie
 sys-process/htop
