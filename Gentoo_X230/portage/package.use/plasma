@@ -9,4 +9,4 @@ x11-libs/libxcb xkb
 
 kde-apps/kio-extras mtp
 kde-plasma/plasma-meta -crypt -desktop-portal networkmanager
-kde-plasma/plasma-nm openconnect modemmanager
+kde-frameworks/purpose -kaccounts
