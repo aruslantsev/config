@@ -23,11 +23,12 @@
 #       documentation for details on setting a label. To obtain the UUID, use
 #       the blkid(8) command.
 
-#LABEL=boot		/boot			ext4		noauto,noatime	1 2
-LABEL=GENTOO		/			ext4		noatime		0 1
-LABEL=SWAP		none			swap		sw		0 0
-LABEL=HOME		/home			ext4		noatime,nofail	1 2
+LABEL=boot		/boot			ext4		noatime		1 2
+/dev/mapper/system-root	/			ext4		noatime		0 1
+/dev/mapper/system-swap	none			swap		sw		0 0
+/dev/mapper/system-home	/home			ext4		noatime,nofail	1 2
 none			/tmp			tmpfs		defaults	0 0
 none			/var/tmp		tmpfs		defaults	0 0
 none			/var/log		tmpfs		defaults	0 0
 none			/var/cache/edb/dep	tmpfs		defaults	0 0
+UUID=F2FD-4F05		/boot/EFI		vfat		defaults,discard	1 2
