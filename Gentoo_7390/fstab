@@ -26,7 +26,7 @@
 #LABEL=boot		/boot			ext4		noauto,noatime	1 2
 LABEL=GENTOO		/			ext4		noatime		0 1
 LABEL=SWAP		none			swap		sw		0 0
-LABEL=HOME		/home			ext4		noatime		1 2
+LABEL=HOME		/home			ext4		noatime,nofail	1 2
 none			/tmp			tmpfs		defaults	0 0
 none			/var/tmp		tmpfs		defaults	0 0
 none			/var/log		tmpfs		defaults	0 0

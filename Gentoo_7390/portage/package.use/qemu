@@ -1,2 +1,2 @@
-media-libs/libsdl2 gles sound
-app-emulation/qemu sdl systemtap usb vde
+app-emulation/qemu sdl
+media-libs/libsdl2 gles
