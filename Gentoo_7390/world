@@ -6,7 +6,6 @@ app-editors/nano
 app-emulation/docker
 app-emulation/libvirt
 app-emulation/qemu
-app-emulation/virtualbox
 app-eselect/eselect-repository
 app-laptop/laptop-mode-tools
 app-misc/fdupes
@@ -48,15 +47,16 @@ net-vpn/openvpn
 sys-apps/hdparm
 sys-apps/irqbalance
 sys-apps/lm-sensors
-sys-apps/lshw
 sys-apps/sdparm
 sys-apps/smartmontools
 sys-apps/usbutils
 sys-boot/grub
 sys-firmware/intel-microcode
+sys-fs/btrfs-progs
 sys-fs/dosfstools
 sys-fs/exfat-utils
 sys-fs/fuse-exfat
+sys-fs/lvm2
 sys-fs/mdadm
 sys-fs/ntfs3g
 sys-kernel/genkernel
@@ -68,6 +68,8 @@ sys-power/pm-utils
 sys-power/powertop
 sys-process/cronie
 sys-process/htop
+sys-process/lsof
 www-client/firefox-bin
 x11-base/xorg-x11
 x11-libs/pangox-compat
+x11-terms/xterm
