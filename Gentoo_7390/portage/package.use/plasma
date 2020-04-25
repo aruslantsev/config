@@ -1,15 +1,13 @@
-x11-libs/libxcb xkb
-dev-qt/qtgui egl
-dev-qt/qtcore icu
-media-video/vlc vorbis ogg
-sys-libs/zlib minizip
-dev-libs/libpcre2 pcre16
 app-text/xmlto text
-
+app-text/poppler qt5
+dev-libs/libpcre2 pcre16
+dev-qt/qtcore icu
+dev-qt/qtgui egl
+dev-qt/qtwebengine jumbo-build
+kde-apps/krdc vnc
+kde-frameworks/purpose -kaccounts
 kde-plasma/plasma-meta networkmanager -crypt -desktop-portal
 kde-plasma/plasma-nm openconnect
-app-text/poppler qt5
-
-kde-apps/krdc vnc
-
-dev-qt/qtwebengine jumbo-build
+media-video/vlc vorbis ogg
+x11-libs/libxcb xkb
+sys-libs/zlib minizip
