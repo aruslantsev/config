@@ -1,2 +1,2 @@
 app-emulation/qemu sdl
-media-libs/libsdl2 gles
+media-libs/libsdl2 gles2
