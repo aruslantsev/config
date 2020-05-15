@@ -7,6 +7,7 @@ app-laptop/laptop-mode-tools
 app-misc/fdupes
 app-misc/mc
 app-misc/tmux
+app-misc/vlock
 app-office/libreoffice
 app-portage/gentoolkit
 dev-vcs/git
@@ -27,6 +28,7 @@ media-fonts/terminus-font
 media-gfx/digikam
 media-gfx/gimp
 media-gfx/imagemagick
+media-gfx/ufraw
 media-sound/pavucontrol-qt
 net-misc/networkmanager
 net-misc/ntp
