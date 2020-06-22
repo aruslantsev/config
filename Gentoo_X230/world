@@ -30,6 +30,7 @@ media-gfx/gimp
 media-gfx/imagemagick
 media-gfx/ufraw
 media-sound/pavucontrol-qt
+net-fs/nfs-utils
 net-misc/networkmanager
 net-misc/ntp
 net-p2p/qbittorrent
