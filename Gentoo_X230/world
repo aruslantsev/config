@@ -7,7 +7,6 @@ app-laptop/laptop-mode-tools
 app-misc/fdupes
 app-misc/mc
 app-misc/tmux
-app-misc/vlock
 app-office/libreoffice
 app-portage/gentoolkit
 dev-vcs/git
