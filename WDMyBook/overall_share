@@ -1,0 +1,56 @@
+
+
+## BEGIN ## sharename = Public #
+[Public]
+  path = /DataVolume/shares/Public
+  comment = Public Share
+  public = yes
+  browseable = yes
+  writable = yes
+  guest ok = yes
+  map read only = no
+## END ##
+
+## BEGIN ## sharename = SmartWare #
+[SmartWare]
+  path = /shares/SmartWare
+  comment = SmartWare
+  public = yes
+  browseable = yes
+  writable = yes
+  guest ok = yes
+  map read only = no
+## END ##
+## BEGIN ## sharename = TimeMachineBackup #
+[TimeMachineBackup]
+  path = /shares/TimeMachineBackup
+  comment = TimeMachine
+  public = yes
+  browseable = yes
+  writable = yes
+  guest ok = yes
+  map read only = no
+## END ##
+## BEGIN ## sharename = andrei #
+[andrei]
+  path = /shares/andrei
+  comment = 
+  invalid users =
+  valid users = elena,andrei
+  read list = elena
+  write list = andrei
+  map read only = no
+## END ##
+## BEGIN ## sharename = elena #
+[elena]
+  path = /shares/elena
+  comment = 
+  invalid users =
+  valid users = andrei,elena
+  read list = 
+  write list = andrei,elena
+  map read only = no
+  # We need this to use symlinks
+  follow symlinks = yes
+  wide links = yes
+## END ##

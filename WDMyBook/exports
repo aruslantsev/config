@@ -1,0 +1,5 @@
+# Use guest user (uid 500) for nfs guest.  This is restricted from private
+# shares by trustees.
+#
+# /nfs *(rw,all_squash,sync,no_subtree_check,insecure,anonuid=500,anongid=1000)
+/nfs *(rw,no_root_squash,sync,no_subtree_check,insecure,anonuid=500,anongid=1000)
