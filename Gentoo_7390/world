@@ -1,4 +1,3 @@
-app-admin/hddtemp
 app-admin/metalog
 app-arch/p7zip
 app-arch/unrar
@@ -9,7 +8,6 @@ app-emulation/qemu
 app-eselect/eselect-repository
 app-laptop/laptop-mode-tools
 app-misc/fdupes
-app-misc/jq
 app-misc/mc
 app-misc/tmux
 app-office/libreoffice-bin
@@ -26,7 +24,6 @@ kde-apps/kcharselect
 kde-apps/kfind
 kde-apps/kolourpaint
 kde-apps/konsole
-kde-apps/krdc
 kde-apps/okular
 kde-apps/spectacle
 kde-plasma/plasma-meta
@@ -36,13 +33,11 @@ media-gfx/imagemagick
 media-gfx/ufraw
 media-sound/alsa-utils
 media-sound/pavucontrol-qt
+net-fs/nfs-utils
 net-im/slack
 net-misc/ntp
-net-misc/rclone
-net-misc/s3cmd
 net-p2p/qbittorrent
 net-print/cups
-net-vpn/networkmanager-openvpn
 net-vpn/openvpn
 sys-apps/hdparm
 sys-apps/irqbalance
@@ -52,7 +47,6 @@ sys-apps/smartmontools
 sys-apps/usbutils
 sys-boot/grub
 sys-firmware/intel-microcode
-sys-fs/btrfs-progs
 sys-fs/dosfstools
 sys-fs/exfat-utils
 sys-fs/fuse-exfat
@@ -72,4 +66,3 @@ sys-process/lsof
 www-client/firefox-bin
 x11-base/xorg-x11
 x11-libs/pangox-compat
-x11-terms/xterm
