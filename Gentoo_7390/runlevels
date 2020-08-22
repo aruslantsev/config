@@ -2,11 +2,10 @@
 /etc/runlevels/default
 /etc/runlevels/default/laptop_mode
 /etc/runlevels/default/acpid
-/etc/runlevels/default/libvirt-guests
 /etc/runlevels/default/cronie
 /etc/runlevels/default/local
 /etc/runlevels/default/bluetooth
-/etc/runlevels/default/libvirtd
+/etc/runlevels/default/openvpn
 /etc/runlevels/default/metalog
 /etc/runlevels/default/cupsd
 /etc/runlevels/default/xdm
@@ -15,7 +14,6 @@
 /etc/runlevels/default/netmount
 /etc/runlevels/default/mdadm
 /etc/runlevels/default/lvm
-/etc/runlevels/default/cisco_vpn
 /etc/runlevels/default/NetworkManager
 /etc/runlevels/sysinit
 /etc/runlevels/sysinit/sysfs
