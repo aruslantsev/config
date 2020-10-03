@@ -1,2 +1,5 @@
+# gimp
 media-libs/gegl cairo
 app-text/poppler cairo
+# luminance-hdr
+sci-libs/fftw threads

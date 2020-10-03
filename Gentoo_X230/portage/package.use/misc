@@ -1,4 +1,3 @@
-app-emulation/qemu sdl -wayland
 dev-libs/glib -dbus # needs dconf
 media-gfx/imagemagick xml # for svg
 net-fs/nfs-utils nfsv41

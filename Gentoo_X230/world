@@ -27,6 +27,7 @@ media-fonts/terminus-font
 media-gfx/digikam
 media-gfx/gimp
 media-gfx/imagemagick
+media-gfx/luminance-hdr
 media-gfx/ufraw
 media-sound/pavucontrol-qt
 net-fs/nfs-utils
