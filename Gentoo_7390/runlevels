@@ -2,10 +2,12 @@
 /etc/runlevels/default
 /etc/runlevels/default/laptop_mode
 /etc/runlevels/default/acpid
+/etc/runlevels/default/libvirt-guests
 /etc/runlevels/default/cronie
 /etc/runlevels/default/local
 /etc/runlevels/default/bluetooth
 /etc/runlevels/default/openvpn
+/etc/runlevels/default/libvirtd
 /etc/runlevels/default/metalog
 /etc/runlevels/default/cupsd
 /etc/runlevels/default/xdm

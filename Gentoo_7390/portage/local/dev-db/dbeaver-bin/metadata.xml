@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>steve@erayd.net</email>
+		<name>Steve Gilberd</name>
+	</maintainer>
+	<upstream>
+		<maintainer status="active">
+			<email>serge@jkiss.org</email>
+			<name>Serge Rider</name>
+		</maintainer>
+		<remote-id type="github">serge-rider/dbeaver</remote-id>
+	</upstream>
+	<longdescription lang="en">
+		Free multi-platform database tool for developers, SQL programmers,
+		database administrators and analysts. Supports all popular databases:
+		MySQL, PostgreSQL, SQLite, Oracle, DB2, SQL Server, Sybase, Teradata,
+		MongoDB, Cassandra, Redis, etc.
+	</longdescription>
+</pkgmetadata>

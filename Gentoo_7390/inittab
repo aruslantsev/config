@@ -22,7 +22,7 @@ rc::bootwait:/sbin/openrc boot
 
 l0u:0:wait:/sbin/telinit u
 l0:0:wait:/sbin/openrc shutdown
-l0s:0:wait:/sbin/halt.sh
+l0s:0:wait:/sbin/halt -dhnp
 l1:1:wait:/sbin/openrc single
 l2:2:wait:/sbin/openrc nonetwork
 l3:3:wait:/sbin/openrc nox
@@ -39,7 +39,7 @@ su1:S:wait:/sbin/sulogin
 
 # TERMINALS
 #x1:12345:respawn:/sbin/agetty 38400 console linux
-c1:12345:respawn:/sbin/agetty 38400 tty1 linux
+c1:12345:respawn:/sbin/agetty --noclear 38400 tty1 linux
 c2:2345:respawn:/sbin/agetty 38400 tty2 linux
 c3:2345:respawn:/sbin/agetty 38400 tty3 linux
 c4:2345:respawn:/sbin/agetty 38400 tty4 linux

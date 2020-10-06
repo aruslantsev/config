@@ -5,6 +5,8 @@ app-editors/nano
 app-emulation/docker
 app-emulation/libvirt
 app-emulation/qemu
+app-emulation/virt-manager
+app-emulation/virt-viewer
 app-eselect/eselect-repository
 app-laptop/laptop-mode-tools
 app-misc/fdupes
@@ -29,8 +31,6 @@ kde-apps/spectacle
 kde-plasma/plasma-meta
 media-fonts/terminus-font
 media-gfx/gimp
-media-gfx/imagemagick
-media-gfx/ufraw
 media-sound/alsa-utils
 media-sound/pavucontrol-qt
 net-fs/nfs-utils
@@ -42,7 +42,6 @@ net-vpn/openvpn
 sys-apps/hdparm
 sys-apps/irqbalance
 sys-apps/lm-sensors
-sys-apps/sdparm
 sys-apps/smartmontools
 sys-apps/usbutils
 sys-boot/grub
@@ -63,6 +62,6 @@ sys-power/powertop
 sys-process/cronie
 sys-process/htop
 sys-process/lsof
-www-client/firefox-bin
+www-client/google-chrome
 x11-base/xorg-x11
 x11-libs/pangox-compat
