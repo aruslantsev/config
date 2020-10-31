@@ -1,0 +1,6 @@
+SUBSYSTEM="usb_device", ACTION="add", GOTO="minolta_rules_end"
+
+# Minolta Dimage Scan Dual IV AF 3200
+ATTR{idVendor}="123b", ATTR{idProduct}="000a", SYMLINK+="scan-minolta", MODE="0666", OWNER="andrei", GROUP="scanner"
+
+LABEL="minolta_rules_end"
