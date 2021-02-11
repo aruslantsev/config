@@ -1,12 +1,27 @@
-app-text/poppler qt5 # kfind
-app-text/xmlto text
-dev-libs/libpcre2 pcre16
-dev-qt/qtcore icu
-dev-qt/qtgui egl
-media-video/vlc vorbis ogg
-sys-libs/zlib minizip
-x11-libs/libxcb xkb
+app-text/poppler qt5 # okular, kfind
+app-text/xmlto text # xdg utils
+dev-libs/libpcre2 pcre16 # core functionality
+dev-qt/qtcore icu # core functionality
+dev-qt/qtgui egl # wayland
+media-video/vlc vorbis ogg opus vpx # phonon-vlc
+sys-libs/zlib minizip # vlc and qtwebengine
 
-kde-apps/kio-extras mtp
-kde-plasma/plasma-meta -crypt -desktop-portal networkmanager
+kde-frameworks/kitemmodels qml # kwin
+kde-frameworks/prison qml # plasma calendar and fontconfig
+
+# disable opendesktop integration
 kde-frameworks/purpose -kaccounts
+kde-plasma/plasma-desktop -kaccounts
+
+# general features
+kde-apps/kio-extras mtp # cellphone file transfer
+kde-plasma/plasma-meta -crypt -desktop-portal networkmanager
+
+# digikam dependencies
+dev-libs/boost python # vigra -> digikam
+dev-libs/libxml2 icu # qtwebengine
+dev-qt/qtwebchannel qml # qtwebengine
+dev-qt/qtwebengine widgets # digikam
+media-libs/libvpx svc # qtwebengine
+media-libs/opencv qt5 contribdnn contrib # opengl needs qt5
+media-gfx/digikam gphoto2 # only digikam needs qtwebengine

@@ -1,8 +1,0 @@
-dev-qt/qtwebengine widgets
-media-libs/vigra openexr
-dev-libs/boost python
-dev-qt/qtwebchannel qml
-dev-libs/libxml2 icu
-media-libs/libvpx svc
-media-libs/opencv qt5
-media-gfx/digikam gphoto2

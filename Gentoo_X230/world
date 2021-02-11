@@ -26,8 +26,10 @@ mail-client/thunderbird-bin
 media-fonts/terminus-font
 media-gfx/digikam
 media-gfx/gimp
+media-gfx/hugin
 media-gfx/imagemagick
 media-gfx/luminance-hdr
+media-gfx/rawtherapee
 media-gfx/ufraw
 media-sound/pavucontrol-qt
 net-fs/nfs-utils
