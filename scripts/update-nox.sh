@@ -2,6 +2,7 @@ cd /etc/runlevels
 rm -r nox
 cp -r default nox
 rc-update del xdm nox
+rc-update del display-manager
 rc-update del dbus nox
 rc-update del consolekit nox
 rc-update del bluetooth nox

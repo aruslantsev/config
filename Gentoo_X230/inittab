@@ -9,6 +9,8 @@
 # Modified by:  Mike Frysinger, <vapier@gentoo.org>
 # Modified by:  Robin H. Johnson, <robbat2@gentoo.org>
 # Modified by:  William Hubbs, <williamh@gentoo.org>
+# Modified by:  Lars Wendler, <polynomial-c@gentoo.org>
+# Modified by:  Aisha Tammy, <gentoo@aisha.cc>
 #
 
 # Default runlevel.
@@ -53,9 +55,9 @@ c6:2345:respawn:/sbin/agetty 38400 tty6 linux
 # What to do at the "Three Finger Salute".
 ca:12345:ctrlaltdel:/sbin/shutdown -r now
 
-# Used by /etc/init.d/xdm to control DM startup.
-# Read the comments in /etc/init.d/xdm for more
+# Used by /etc/init.d/display-manager to control DM startup.
+# Read the comments in /etc/init.d/display-manager for more
 # info. Do NOT remove, as this will start nothing
-# extra at boot if /etc/init.d/xdm is not added
+# extra at boot if /etc/init.d/display-manager is not added
 # to the "default" runlevel.
-x:a:once:/etc/X11/startDM.sh
+x:a:once:/usr/bin/startDM
