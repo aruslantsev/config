@@ -34,9 +34,9 @@
 /etc/runlevels/default/irqbalance
 /etc/runlevels/default/metalog
 /etc/runlevels/default/cronie
-/etc/runlevels/default/xdm
 /etc/runlevels/default/bluetooth
 /etc/runlevels/default/local
+/etc/runlevels/default/display-manager
 /etc/runlevels/default/laptop_mode
 /etc/runlevels/default/NetworkManager
 /etc/runlevels/default/netmount

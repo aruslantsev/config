@@ -23,6 +23,9 @@ media-libs/harfbuzz icu
 app-emulation/qemu sdl -wayland
 media-libs/libsdl2 gles2
 
+# fdupes
+dev-libs/libpcre2 pcre32
+
 # gimp, svg support
 app-text/poppler cairo
 media-libs/gegl cairo
