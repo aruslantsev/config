@@ -28,7 +28,7 @@ UUID=DC18-715D					/boot/efi			vfat	umask=0077,noatime				0 2
 UUID=47bc28c1-cbff-4941-8c22-1ae58e1a651b	none				swap	defaults,discard				0 0
 UUID=d03d15f5-d913-4b70-a982-8c5c3fa9b80d	/home				ext4	defaults,noatime,barrier=0			0 2
 none						/var/cache/edb/dep/		tmpfs	defaults					0 0
-none						/var/tmp/			tmpfs	defaults,nodev,nosuid,noexec			0 0
+none						/var/tmp/			tmpfs	defaults,nodev					0 0
 none						/var/log/			tmpfs	defaults,nodev,nosuid,noexec			0 0
 none						/tmp/				tmpfs	defaults,nodev,nosuid,noexec			0 0
 none						/var/cache/revdep-rebuild/	tmpfs	defaults,nodev,nosuid,noexec			0 0
