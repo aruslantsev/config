@@ -19,6 +19,7 @@ kde-apps/kcharselect
 kde-apps/kfind
 kde-apps/kolourpaint
 kde-apps/konsole
+kde-apps/krdc
 kde-apps/okular
 kde-apps/spectacle
 kde-plasma/plasma-meta
@@ -32,6 +33,7 @@ media-gfx/luminance-hdr
 media-gfx/rawtherapee
 media-gfx/ufraw
 media-sound/pavucontrol-qt
+net-analyzer/nmap
 net-fs/nfs-utils
 net-misc/networkmanager
 net-misc/ntp
@@ -52,6 +54,7 @@ sys-fs/mdadm
 sys-fs/ntfs3g
 sys-kernel/gentoo-sources
 sys-kernel/linux-firmware
+sys-power/cpupower
 sys-power/powertop
 sys-process/cronie
 sys-process/htop
