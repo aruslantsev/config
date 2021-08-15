@@ -8,6 +8,7 @@
 /etc/runlevels/sysinit/udev
 /etc/runlevels/sysinit/opentmpfiles-dev
 /etc/runlevels/sysinit/sysfs
+/etc/runlevels/sysinit/stmpfiles-dev
 /etc/runlevels/boot
 /etc/runlevels/boot/save-termencoding
 /etc/runlevels/boot/swap
@@ -17,6 +18,7 @@
 /etc/runlevels/boot/localmount
 /etc/runlevels/boot/mtab
 /etc/runlevels/boot/termencoding
+/etc/runlevels/boot/stmpfiles-setup
 /etc/runlevels/boot/bootmisc
 /etc/runlevels/boot/keymaps
 /etc/runlevels/boot/hostname
