@@ -9,6 +9,7 @@ app-misc/mc
 app-misc/tmux
 app-office/libreoffice
 app-portage/gentoolkit
+dev-util/strace
 dev-vcs/git
 kde-apps/ark
 kde-apps/dolphin
@@ -31,7 +32,6 @@ media-gfx/hugin
 media-gfx/imagemagick
 media-gfx/luminance-hdr
 media-gfx/rawtherapee
-media-gfx/ufraw
 media-sound/pavucontrol-qt
 net-analyzer/nmap
 net-fs/nfs-utils
@@ -58,5 +58,6 @@ sys-power/cpupower
 sys-power/powertop
 sys-process/cronie
 sys-process/htop
+sys-process/iotop
 www-client/firefox-bin
 x11-base/xorg-x11
