@@ -1,4 +1,5 @@
-app-text/poppler qt5 # okular, kfind
+# general flags
+app-text/poppler nss qt5 # okular, kfind
 app-text/xmlto text # xdg utils
 dev-libs/libpcre2 pcre16 # core functionality
 dev-qt/qtcore icu # core functionality
@@ -16,6 +17,7 @@ kde-plasma/plasma-desktop -kaccounts
 # general features
 kde-apps/kio-extras mtp # cellphone file transfer
 kde-plasma/plasma-meta -crypt -desktop-portal networkmanager
+kde-plasma/plasma-workspace -calculator
 
 # digikam dependencies
 dev-libs/boost python # vigra -> digikam
