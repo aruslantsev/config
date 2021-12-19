@@ -51,7 +51,7 @@ sys-fs/fuse-exfat
 sys-fs/lvm2
 sys-fs/mdadm
 sys-fs/ntfs3g
-sys-kernel/gentoo-sources
+sys-kernel/gentoo-kernel-bin
 sys-kernel/linux-firmware
 sys-power/cpupower
 sys-power/powertop
