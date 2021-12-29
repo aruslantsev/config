@@ -38,6 +38,3 @@ media-libs/vigra openexr
 
 # imagemagick, svg support
 media-gfx/imagemagick xml # for svg support
-
-# rawtherapee
-media-libs/libcanberra gtk3

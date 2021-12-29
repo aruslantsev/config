@@ -9,6 +9,7 @@ sys-libs/zlib minizip # vlc and qtwebengine
 
 kde-frameworks/kitemmodels qml # kwin
 kde-frameworks/prison qml # plasma calendar and fontconfig
+kde-frameworks/sonnet qml # plasma
 
 # disable opendesktop integration
 kde-frameworks/purpose -kaccounts

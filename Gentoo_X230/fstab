@@ -34,4 +34,4 @@ none						/tmp/				tmpfs	defaults,size=1g,nodev,nosuid,noexec		0 0
 none						/var/cache/revdep-rebuild/	tmpfs	defaults,size=512m,nodev,nosuid,noexec		0 0
 none						/var/lib/upower/		tmpfs	defaults,size=512m				0 0
 none						/var/cache/powertop		tmpfs	defaults,size=128m,nodev,nosuid,noexec		0 0
-none						/usr/src/			tmpfs	defaults,nodev					0 0
+# none						/usr/src/			tmpfs	defaults,nodev					0 0
