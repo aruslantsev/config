@@ -23,7 +23,7 @@ dev-libs/xmlsec nss
 media-libs/harfbuzz icu
 
 # qemu
-app-emulation/qemu sdl -wayland
+app-emulation/qemu sdl usb -wayland
 media-libs/libsdl2 gles2
 
 # fdupes

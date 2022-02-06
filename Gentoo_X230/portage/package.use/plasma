@@ -4,6 +4,7 @@ app-text/xmlto text # xdg utils
 dev-libs/libpcre2 pcre16 # core functionality
 dev-qt/qtcore icu # core functionality
 dev-qt/qtgui egl # wayland
+media-fonts/noto -extra
 media-video/vlc vorbis ogg opus vpx # phonon-vlc
 sys-libs/zlib minizip # vlc and qtwebengine
 
