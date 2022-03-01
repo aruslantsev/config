@@ -1,0 +1,1 @@
+fcontext -a -f a -t samba_share_t -r 's0' '/srv/shares(/.*)?'
