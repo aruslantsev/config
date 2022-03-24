@@ -1,3 +1,0 @@
-echo /etc/default/lxc
-#
-cruftonlydir /var/cache/lxc

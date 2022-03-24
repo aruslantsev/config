@@ -1,5 +1,0 @@
-cat /etc/syslog-ng/syslog-ng.conf \
-| grep -v '^[[:space:]]*\(#\|$\)' \
-| grep '^destination' \
-| sed 's/^.*file("\([^"]\+\)");.*/\1/'
-echo /var/run/syslog-ng.pid

@@ -1,2 +1,0 @@
-echo /etc/sgml/xml-simple-docbook-${VERSION%-r+([[:digit:]])}.cat
-echo /etc/xml/catalog

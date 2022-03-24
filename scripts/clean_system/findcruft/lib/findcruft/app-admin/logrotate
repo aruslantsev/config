@@ -1,3 +1,0 @@
-echo /var/lib/logrotate.status
-# TODO: parse /etc/logrotate.conf and includes instead of this:
-cruftfile "/var/log/.*\.[0-9]\.gz"

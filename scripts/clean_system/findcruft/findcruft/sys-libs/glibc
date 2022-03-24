@@ -1,2 +1,0 @@
-echo /etc/locales.build
-echo /usr/lib/gconv/gconv-modules.cache

@@ -1,4 +1,0 @@
-echo /usr/bin/ecj
-#
-cruftonlydir "/usr/share/eclipse-ecj"
-echo /usr/share/eclipse-ecj/ecj.jar

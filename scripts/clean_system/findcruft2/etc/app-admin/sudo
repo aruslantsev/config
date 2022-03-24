@@ -1,5 +1,0 @@
-cruftdir "/var/run/sudo"
-#
-# timestamp files
-cruftdir "/var/db/sudo"
-

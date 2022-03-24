@@ -1,2 +1,0 @@
-echo /etc/mydns.conf
-echo /var/run/mydns.pid

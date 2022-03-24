@@ -1,3 +1,0 @@
-echo /usr/bin/php
-echo /usr/bin/php-config
-echo /usr/bin/phpize

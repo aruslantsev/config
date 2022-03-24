@@ -1,3 +1,0 @@
-echo /usr/qt/$SLOT/etc/settings/kconfigrc
-echo /usr/qt/$SLOT/etc/settings/qt_plugins_${VERSION%.*}rc
-echo /usr/qt/$SLOT/etc/settings/.qt_plugins_${VERSION%.*}rc.lock

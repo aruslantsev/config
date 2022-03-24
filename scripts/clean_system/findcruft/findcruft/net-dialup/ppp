@@ -1,2 +1,0 @@
-echo /etc/ppp/chap-secrets
-echo /etc/ppp/pap-secrets

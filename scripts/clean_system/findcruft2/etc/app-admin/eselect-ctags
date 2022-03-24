@@ -1,2 +1,0 @@
-echo /usr/bin/ctags
-cruftfile "/usr/share/man/man1/ctags\.1\..*"

@@ -1,3 +1,0 @@
-# default home of gitolite usr 'git'
-#
-cruftdir "/var/lib/gitolite"

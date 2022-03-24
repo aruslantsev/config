@@ -1,4 +1,0 @@
-echo /usr/share/man/whatis
-for x in /usr/share/man/man*/*.bz2; do
-	echo "/var/cache/man/cat${x#/usr/share/man/man}"
-done

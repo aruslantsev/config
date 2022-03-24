@@ -1,5 +1,0 @@
-echo /var/lib/xdm/authfiles
-echo /var/log/xdm.log
-echo /var/run/xdmctl
-cruftfile "/var/run/xdmctl/dmctl.*"
-cruftfile "/var/run/xdmctl/xdmctl.*"

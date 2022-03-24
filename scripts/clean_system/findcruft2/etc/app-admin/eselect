@@ -1,9 +1,0 @@
-echo /var/lib/eselect
-echo /var/lib/eselect/env
-echo /var/lib/eselect/env/ld-mtimedb
-#
-# news
-cruftdir "/var/lib/gentoo/news"
-#
-cruftonlydir "/usr/share/eselect/modules/auto"
-#

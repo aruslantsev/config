@@ -1,3 +1,0 @@
-cruftfile "/var/lib/:.*\.Xauth"
-cruftfile "/var/lib/entrance_ipc_$(</var/run/entranced.pid)|.*"
-echo /var/run/entranced.pid

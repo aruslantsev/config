@@ -1,3 +1,0 @@
-echo /etc/sgml/sgml.cenv
-echo /etc/sgml/sgml.env
-echo /etc/sgml/sgml-docbook-${SLOT}.cat

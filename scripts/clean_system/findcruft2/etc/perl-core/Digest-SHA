@@ -1,3 +1,0 @@
-echo /usr/bin/shasum 
-cruftfile "/usr/share/man/man1/shasum\.1\..*"
-

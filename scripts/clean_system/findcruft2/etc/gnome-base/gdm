@@ -1,4 +1,0 @@
-cruftdir /var/gdm
-cruftdir /var/lib/gdm
-cruftdir /var/log/gdm
-echo /var/run/gdm.pid

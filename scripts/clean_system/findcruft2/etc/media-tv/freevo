@@ -1,3 +1,0 @@
-echo /etc/freevo/lircrc
-echo /var/cache/freevo
-cruftfile "/var/run/freevo-.*\.pid"

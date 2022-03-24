@@ -1,4 +1,0 @@
-cruftdir /etc/vmware
-echo /var/lock/subsys/vmware
-cruftdir /var/run/vmware
-cruftfile "/var/run/vmnet-bridge-.*\.pid"

@@ -1,3 +1,0 @@
-cruftdir /etc/openvpn
-cruftfile "/etc/init.d/openvpn\..*"
-cruftfile "/var/run/openvpn\..*\.pid"

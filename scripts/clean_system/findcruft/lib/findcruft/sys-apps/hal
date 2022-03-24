@@ -1,3 +1,0 @@
-echo /etc/blkid.tab
-echo /usr/bin/hal-device-manager
-echo /var/run/hald/hald.pid

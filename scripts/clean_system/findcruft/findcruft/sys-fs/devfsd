@@ -1,2 +1,0 @@
-echo /etc/devfs.d
-cruftdir /lib/dev-state

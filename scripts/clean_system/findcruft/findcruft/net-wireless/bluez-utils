@@ -1,3 +1,0 @@
-echo /etc/bluetooth/link_key
-cruftdir "/var/lib/bluetooth/..:..:..:..:..:.."
-echo /var/run/sdp
