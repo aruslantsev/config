@@ -36,6 +36,7 @@ net-fs/nfs-utils
 net-misc/networkmanager
 net-misc/ntp
 net-p2p/qbittorrent
+net-vpn/networkmanager-openvpn
 sys-apps/hdparm
 sys-apps/irqbalance
 sys-apps/lm-sensors
