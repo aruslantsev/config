@@ -4,6 +4,7 @@
 
 dev-libs/glib -dbus # needs dconf
 media-video/vlc opus vpx
+net-analyzer/nmap ncat
 net-fs/nfs-utils nfsv41
 net-fs/samba client winbind
 sys-apps/man-pages -l10n_ru
