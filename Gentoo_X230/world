@@ -40,14 +40,11 @@ net-vpn/networkmanager-openvpn
 sys-apps/hdparm
 sys-apps/irqbalance
 sys-apps/lm-sensors
-sys-apps/sdparm
-sys-apps/smartmontools
 sys-apps/usbutils
 sys-boot/grub
 sys-firmware/intel-microcode
 sys-fs/dosfstools
 sys-fs/exfat-utils
-sys-fs/fuse-exfat
 sys-fs/lvm2
 sys-fs/mdadm
 sys-fs/ntfs3g
@@ -59,4 +56,3 @@ sys-process/cronie
 sys-process/htop
 sys-process/iotop
 www-client/firefox-bin
-x11-base/xorg-x11
