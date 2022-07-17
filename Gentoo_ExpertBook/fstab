@@ -1,0 +1,28 @@
+# /etc/fstab: static file system information.
+#
+# noatime turns off atimes for increased performance (atimes normally aren't 
+# needed); notail increases performance of ReiserFS (at the expense of storage 
+# efficiency).  It's safe to drop the noatime options if you want and to 
+# switch between notail / tail freely.
+#
+# The root filesystem should have a pass number of either 0 or 1.
+# All other filesystems should have a pass number of 0 or greater than 1.
+#
+# See the manpage fstab(5) for more information.
+#
+
+# <fs>				<mountpoint>			<type>	<opts>							<dump/pass>
+#									# I use fstrim instead of discard
+/dev/expertbook/root		/				ext4	defaults,noatime,barrier=0,errors=remount-ro		0 1
+UUID=1E86-2B94			/boot/efi			vfat	umask=0077,noatime					0 2
+/dev/expertbook/swap		none				swap	defaults,discard					0 0
+/dev/expertbook/home		/home				ext4	defaults,noatime,barrier=0				0 2
+/dev/expertbook/distfiles	/var/cache/distfiles		ext4	defaults,noatime,nodev,barrier=0			0 2
+none				/var/tmp/			tmpfs	defaults,nodev						0 0
+none				/tmp/				tmpfs	defaults,size=1g,nodev,nosuid,noexec			0 0
+none				/var/log/			tmpfs	defaults,size=1g,nodev,nosuid,noexec,mode=0755		0 0
+none				/var/cache/edb/dep/		tmpfs	defaults,nodev,size=1g,mode=0755			0 0
+none				/var/cache/revdep-rebuild/	tmpfs	defaults,size=512m,nodev,nosuid,noexec,mode=0755	0 0
+none				/var/cache/powertop		tmpfs	defaults,size=128m,nodev,nosuid,noexec,mode=0755	0 0
+none				/var/lib/upower/		tmpfs	defaults,size=512m,mode=0755				0 0
+# none				/usr/src/			tmpfs	defaults,nodev,mode=0755				0 0

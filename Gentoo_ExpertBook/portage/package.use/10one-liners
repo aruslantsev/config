@@ -1,0 +1,6 @@
+dev-libs/glib -dbus  # needs dconf otherwise
+net-analyzer/nmap ncat
+net-fs/nfs-utils nfsv41
+net-fs/samba client winbind
+sys-apps/smartmontools -daemon -update-drivedb
+sys-fs/lvm2 -thin
