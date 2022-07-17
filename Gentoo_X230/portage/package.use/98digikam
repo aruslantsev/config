@@ -1,5 +1,0 @@
-dev-libs/libxml2 icu
-dev-qt/qtwebengine widgets
-dev-qt/qtwebchannel qml
-media-libs/opencv contrib contribdnn qt5
-media-gfx/digikam gphoto2

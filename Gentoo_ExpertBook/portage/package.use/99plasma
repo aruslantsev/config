@@ -5,7 +5,7 @@ app-text/poppler qt5 # core
 dev-libs/libpcre2 pcre32  # kfind
 dev-qt/qtcore icu  # core
 dev-qt/qtgui egl  # qtwayland
-kde-apps/kio-extras -man
+kde-apps/kio-extras -man mtp
 kde-frameworks/kitemmodels qml # core
 kde-frameworks/prison qml # core
 kde-frameworks/sonnet qml # core
