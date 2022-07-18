@@ -7,6 +7,7 @@ app-laptop/laptop-mode-tools
 app-misc/fdupes
 app-misc/mc
 app-misc/tmux
+app-office/libreoffice
 app-portage/gentoolkit
 dev-util/strace
 dev-vcs/git
@@ -24,6 +25,7 @@ kde-apps/spectacle
 kde-plasma/plasma-meta
 mail-client/thunderbird-bin
 media-fonts/terminus-font
+media-gfx/digikam
 media-gfx/gimp
 media-gfx/hugin
 media-gfx/imagemagick
