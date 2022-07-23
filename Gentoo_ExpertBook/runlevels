@@ -31,8 +31,10 @@
 /etc/runlevels/default/NetworkManager
 /etc/runlevels/default/sshd
 /etc/runlevels/nonetwork/local
+/etc/runlevels/nox/acpid
 /etc/runlevels/nox/cronie
 /etc/runlevels/nox/irqbalance
+/etc/runlevels/nox/laptop_mode
 /etc/runlevels/nox/local
 /etc/runlevels/nox/metalog
 /etc/runlevels/nox/netmount
