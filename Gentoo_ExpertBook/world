@@ -29,6 +29,8 @@ media-gfx/digikam
 media-gfx/gimp
 media-gfx/hugin
 media-gfx/imagemagick
+media-sound/alsa-tools
+media-sound/alsa-utils
 media-sound/pavucontrol-qt
 net-analyzer/nmap
 net-fs/nfs-utils
@@ -36,9 +38,11 @@ net-misc/networkmanager
 net-misc/ntp
 net-p2p/qbittorrent
 net-vpn/networkmanager-openvpn
+sys-apps/dmidecode
 sys-apps/hdparm
 sys-apps/irqbalance
 sys-apps/lm-sensors
+sys-apps/lshw
 sys-apps/usbutils
 sys-boot/grub
 sys-firmware/intel-microcode

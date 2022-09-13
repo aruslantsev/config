@@ -35,7 +35,7 @@ PermitRootLogin no
 #MaxAuthTries 6
 #MaxSessions 10
 
-#PubkeyAuthentication yes
+PubkeyAuthentication yes
 
 # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
 # but this is overridden so installations will only check .ssh/authorized_keys
@@ -80,7 +80,8 @@ PasswordAuthentication no
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and KbdInteractiveAuthentication to 'no'.
-UsePAM yes
+# UsePAM yes
+UsePAM no
 
 #AllowAgentForwarding yes
 #AllowTcpForwarding yes

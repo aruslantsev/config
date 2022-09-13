@@ -6,6 +6,7 @@ dev-libs/libpcre2 pcre32  # kfind
 dev-qt/qtcore icu  # core
 dev-qt/qtgui egl  # qtwayland
 kde-apps/kio-extras -man mtp
+kde-frameworks/kconfig qml
 kde-frameworks/kitemmodels qml # core
 kde-frameworks/prison qml # core
 kde-frameworks/sonnet qml # core
