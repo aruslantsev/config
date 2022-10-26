@@ -60,6 +60,7 @@ PasswordAuthentication no
 
 # Change to no to disable s/key passwords
 #KbdInteractiveAuthentication yes
+KbdInteractiveAuthentication no
 
 # Kerberos options
 #KerberosAuthentication no
@@ -81,7 +82,7 @@ PasswordAuthentication no
 # PAM authentication, then enable this but set PasswordAuthentication
 # and KbdInteractiveAuthentication to 'no'.
 # UsePAM yes
-UsePAM no
+UsePAM yes
 
 #AllowAgentForwarding yes
 #AllowTcpForwarding yes
