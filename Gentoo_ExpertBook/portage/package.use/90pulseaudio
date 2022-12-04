@@ -1,1 +1,2 @@
 media-libs/libsndfile minimal  # circular dependencies
+net-wireless/bluez experimental

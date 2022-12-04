@@ -1,7 +1,7 @@
 dev-libs/glib -dbus  # needs dconf otherwise
-media-sound/alsa-tools gtk
 net-analyzer/nmap ncat
 net-fs/nfs-utils nfsv41
 net-fs/samba client winbind
+net-wireless/wpa_supplicant tkip
 sys-apps/smartmontools -daemon -update-drivedb
 sys-fs/lvm2 -thin

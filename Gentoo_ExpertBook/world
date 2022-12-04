@@ -22,6 +22,7 @@ kde-apps/kolourpaint
 kde-apps/konsole
 kde-apps/okular
 kde-apps/spectacle
+kde-misc/kdeconnect
 kde-plasma/plasma-meta
 mail-client/thunderbird-bin
 media-fonts/terminus-font
@@ -29,7 +30,6 @@ media-gfx/digikam
 media-gfx/gimp
 media-gfx/hugin
 media-gfx/imagemagick
-media-sound/alsa-tools
 media-sound/alsa-utils
 media-sound/pavucontrol-qt
 net-analyzer/nmap
@@ -48,7 +48,7 @@ sys-boot/grub
 sys-firmware/intel-microcode
 sys-firmware/sof-firmware
 sys-fs/dosfstools
-sys-fs/exfat-utils
+sys-fs/exfatprogs
 sys-fs/lvm2
 sys-fs/mdadm
 sys-kernel/gentoo-kernel-bin

@@ -5,11 +5,13 @@ app-text/poppler qt5 # core
 dev-libs/libpcre2 pcre32  # kfind
 dev-qt/qtcore icu  # core
 dev-qt/qtgui egl  # qtwayland
+dev-qt/qtmultimedia qml # kdeconnect
 kde-apps/kio-extras -man mtp
 kde-frameworks/kconfig qml
 kde-frameworks/kitemmodels qml # core
 kde-frameworks/prison qml # core
 kde-frameworks/sonnet qml # core
+kde-plasma/kwin lock
 kde-plasma/plasma-meta -crypt -desktop-portal thubderbolt
 media-video/vlc ogg # phonon-vlc
 media-fonts/noto -extra
