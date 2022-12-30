@@ -14,11 +14,11 @@
 /etc/runlevels/boot/root
 /etc/runlevels/boot/save-keymaps
 /etc/runlevels/boot/save-termencoding
+/etc/runlevels/boot/seedrng
 /etc/runlevels/boot/swap
 /etc/runlevels/boot/sysctl
 /etc/runlevels/boot/systemd-tmpfiles-setup
 /etc/runlevels/boot/termencoding
-/etc/runlevels/boot/urandom
 /etc/runlevels/default/acpid
 /etc/runlevels/default/bluetooth
 /etc/runlevels/default/cronie

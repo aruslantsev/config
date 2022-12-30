@@ -57,4 +57,5 @@ sys-power/cpupower
 sys-power/powertop
 sys-process/cronie
 sys-process/htop
+sys-process/lsof
 www-client/firefox-bin
