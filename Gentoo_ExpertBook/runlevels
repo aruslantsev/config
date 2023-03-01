@@ -20,7 +20,9 @@
 /etc/runlevels/boot/systemd-tmpfiles-setup
 /etc/runlevels/boot/termencoding
 /etc/runlevels/default/acpid
+/etc/runlevels/default/avahi-daemon
 /etc/runlevels/default/bluetooth
+/etc/runlevels/default/boltd
 /etc/runlevels/default/cronie
 /etc/runlevels/default/display-manager
 /etc/runlevels/default/irqbalance
@@ -29,6 +31,7 @@
 /etc/runlevels/default/metalog
 /etc/runlevels/default/netmount
 /etc/runlevels/default/NetworkManager
+/etc/runlevels/default/nftables
 /etc/runlevels/default/sshd
 /etc/runlevels/nonetwork/local
 /etc/runlevels/nox/acpid

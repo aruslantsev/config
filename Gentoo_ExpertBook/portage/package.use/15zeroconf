@@ -1,0 +1,2 @@
+*/* zeroconf
+net-dns/avahi mdnsresponder-compat
