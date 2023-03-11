@@ -1,5 +1,5 @@
 */* pulseaudio screencast
 media-libs/libsndfile minimal  # circular dependencies
-media-video/pipewire sound-server
+media-video/pipewire sound-server extra
 media-sound/pulseaudio -daemon
 net-wireless/bluez experimental

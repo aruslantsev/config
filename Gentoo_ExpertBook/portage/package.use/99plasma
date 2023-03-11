@@ -13,7 +13,7 @@ kde-frameworks/prison qml # core
 kde-frameworks/sonnet qml # core
 kde-plasma/kwin lock
 kde-plasma/plasma-meta -crypt -desktop-portal thunderbolt
-media-video/vlc ogg # phonon-vlc
+media-video/vlc ogg opus # phonon-vlc
 media-fonts/noto -extra
 sys-auth/polkit introspection # thunderbolt
 sys-libs/zlib minizip  # vlc, qtwebengine

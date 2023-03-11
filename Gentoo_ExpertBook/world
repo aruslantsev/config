@@ -54,7 +54,7 @@ sys-fs/dosfstools
 sys-fs/exfatprogs
 sys-fs/lvm2
 sys-fs/mdadm
-sys-kernel/gentoo-kernel-bin
+sys-kernel/gentoo-sources
 sys-kernel/linux-firmware
 sys-power/cpupower
 sys-power/powertop
