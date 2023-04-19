@@ -13,7 +13,9 @@ table inet filter {
                 ip protocol icmp counter accept comment "accept all ICMP types"
                 ip6 nexthdr icmpv6 counter accept comment "accept all ICMP types"
                 tcp dport 22 counter accept comment "accept SSH"
-                udp dport 5353 counter accept comment "accept avahi"
+                udp dport 5353 counter accept comment "accept mdns (avahi)"
+                tcp dport 1714-1764 counter accept comment "accept kdeconnect"
+                udp dport 1714-1764 counter accept comment "accept kdeconnect"
                 counter comment "count dropped packets"
         }
 
