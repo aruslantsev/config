@@ -1,0 +1,15 @@
+
+module mysql_custom 1.0;
+
+require {
+	type mysqld_t;
+	type var_lib_t;
+	type unlabeled_t;
+	class file { getattr read write };
+	class dir write;
+}
+
+#============= mysqld_t ==============
+allow mysqld_t unlabeled_t:dir write;
+allow mysqld_t unlabeled_t:file { getattr read write };
+allow mysqld_t var_lib_t:file { read write };
