@@ -31,7 +31,6 @@
 /etc/runlevels/default/metalog
 /etc/runlevels/default/netmount
 /etc/runlevels/default/NetworkManager
-/etc/runlevels/default/nftables
 /etc/runlevels/default/sshd
 /etc/runlevels/nonetwork/local
 /etc/runlevels/nox/acpid
