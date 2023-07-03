@@ -26,7 +26,6 @@ kde-apps/okular
 kde-apps/spectacle
 kde-misc/kdeconnect
 kde-plasma/plasma-meta
-mail-client/thunderbird-bin
 media-fonts/terminus-font
 media-gfx/gimp
 media-gfx/hugin
@@ -50,11 +49,12 @@ sys-auth/nss-mdns
 sys-boot/grub
 sys-firmware/intel-microcode
 sys-firmware/sof-firmware
+sys-fs/cryptsetup
 sys-fs/dosfstools
 sys-fs/exfatprogs
 sys-fs/lvm2
 sys-fs/mdadm
-sys-kernel/gentoo-sources
+sys-kernel/dracut
 sys-kernel/linux-firmware
 sys-power/cpupower
 sys-power/powertop

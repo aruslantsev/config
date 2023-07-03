@@ -14,7 +14,7 @@
 # <fs>				<mountpoint>			<type>	<opts>							<dump/pass>
 #									# I use fstrim instead of discard
 /dev/expertbook/root		/				ext4	defaults,noatime,barrier=0,errors=remount-ro		0 1
-UUID=1E86-2B94			/boot/efi			vfat	umask=0077,noatime					0 2
+UUID=1E86-2B94			/boot				vfat	umask=0077,noatime					0 2
 /dev/expertbook/swap		none				swap	defaults,discard					0 0
 /dev/expertbook/home		/home				ext4	defaults,noatime,barrier=0				0 2
 /dev/expertbook/distfiles	/var/cache/distfiles		ext4	defaults,noatime,nodev,barrier=0			0 2
