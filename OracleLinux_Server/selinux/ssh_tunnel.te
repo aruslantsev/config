@@ -1,0 +1,14 @@
+module ssh_tunnel 1.0;
+
+require {
+        type init_t;
+        type ssh_exec_t;
+        type ssh_port_t;
+        class file { execute execute_no_trans open read map };
+        class tcp_socket name_connect;
+}
+
+#============= init_t ==============
+
+allow init_t ssh_exec_t:file { execute execute_no_trans open read map };
+allow init_t ssh_port_t:tcp_socket name_connect;
