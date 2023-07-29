@@ -1,7 +1,0 @@
-# Try to stop disks twice a day
-0 */2 * * * root /usr/bin/logger "Stopping all disks"
-0 */2 * * * root /usr/sbin/hdparm -yY /dev/sda
-0 */2 * * * root /usr/sbin/hdparm -yY /dev/sdb
-0 */2 * * * root /usr/sbin/hdparm -yY /dev/sdc
-0 */2 * * * root /usr/sbin/hdparm -yY /dev/sdd
-

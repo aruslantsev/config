@@ -10,7 +10,8 @@ start() {
     hdparm -B 20 -S 240 /dev/sdb
     hdparm -B 20 -S 240 /dev/sdc
     hdparm -B 20 -S 240 /dev/sdd
-    hdparm -B 255 -S 0 /dev/sde
+    hdparm -B 20 -S 240 /dev/sde
+    hdparm -B 20 -S 240 /dev/sdf
     return 0
 }
 
@@ -23,6 +24,7 @@ stop() {
     hdparm -B 255 -S 0 /dev/sdc
     hdparm -B 255 -S 0 /dev/sdd
     hdparm -B 255 -S 0 /dev/sde
+    hdparm -B 255 -S 0 /dev/sdf
     return 0
 }
 
