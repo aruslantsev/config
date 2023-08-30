@@ -3,6 +3,7 @@ app-arch/p7zip
 app-arch/unrar
 app-editors/nano
 app-emulation/qemu
+app-forensics/chkrootkit
 app-laptop/laptop-mode-tools
 app-misc/fdupes
 app-misc/mc
@@ -21,6 +22,7 @@ kde-apps/kcalc
 kde-apps/kcharselect
 kde-apps/kfind
 kde-apps/kolourpaint
+kde-apps/kompare
 kde-apps/konsole
 kde-apps/kwalletmanager
 kde-apps/okular

@@ -18,11 +18,16 @@ UUID=1E86-2B94			/boot				vfat	umask=0077,noatime					0 2
 /dev/expertbook/swap		none				swap	defaults,discard					0 0
 /dev/expertbook/home		/home				ext4	defaults,noatime,barrier=0				0 2
 /dev/expertbook/distfiles	/var/cache/distfiles		ext4	defaults,noatime,nodev,barrier=0			0 2
-none				/var/tmp/			tmpfs	defaults,nodev						0 0
-none				/tmp/				tmpfs	defaults,size=1g,nodev,nosuid,noexec			0 0
-none				/var/log/			tmpfs	defaults,size=1g,nodev,nosuid,noexec,mode=0755		0 0
-none				/var/cache/edb/dep/		tmpfs	defaults,nodev,size=1g,mode=0755			0 0
-none				/var/cache/revdep-rebuild/	tmpfs	defaults,size=512m,nodev,nosuid,noexec,mode=0755	0 0
-none				/var/cache/powertop		tmpfs	defaults,size=128m,nodev,nosuid,noexec,mode=0755	0 0
-none				/var/lib/upower/		tmpfs	defaults,size=512m,mode=0755				0 0
-# none				/usr/src/			tmpfs	defaults,nodev,mode=0755				0 0
+none				/var/tmp			tmpfs	defaults,size=16g,nodev					0 0
+none				/tmp/				tmpfs	defaults,size=512m,nodev,nosuid,noexec			0 0
+none				/var/log			tmpfs	defaults,size=128m,nodev,nosuid,noexec,mode=0755	0 0
+none				/var/cache/edb/dep		tmpfs	defaults,size=1g,nodev,nosuid,noexec,mode=0755		0 0
+none				/var/cache/revdep-rebuild	tmpfs	defaults,size=8m,nodev,nosuid,noexec,mode=0755		0 0
+none				/var/cache/powertop		tmpfs	defaults,size=8m,nodev,nosuid,noexec			0 0
+none				/usr/src			tmpfs	defaults,size=1m,nodev,nosuid,noexec			0 0
+none				/var/lib/bluetooth		tmpfs	defaults,size=4m,nodev,nosuid,noexec			0 0
+none				/var/lib/dhcpcd			tmpfs	defaults,size=1m,mode=0700,nodev,nosuid,noexec		0 0
+none				/var/lib/module-rebuild		tmpfs	defaults,size=1m,mode=0700,nodev,nosuid,noexec		0 0
+none				/var/lib/upower			tmpfs	defaults,size=4m,nodev,nosuid,noexec			0 0
+none				/var/lib/NetworkManager		tmpfs	defaults,size=4m,nodev,nosuid,noexec			0 0
+# none				/var/lib/gentoo/news		tmpfs	defaults,size=1m,mode=0700,nodev,nosuid,noexec		0 0
