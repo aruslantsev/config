@@ -1,4 +1,4 @@
-*/* -handbook -kaccounts -semantic-desktop
+*/* networkmanager -handbook -kaccounts -semantic-desktop
 app-text/xmlto text
 app-text/poppler nss  # okular
 app-text/poppler qt5 # core
