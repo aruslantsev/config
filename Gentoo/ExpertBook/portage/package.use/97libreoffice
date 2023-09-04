@@ -1,3 +1,2 @@
-app-office/libreoffice -bluetooth -dbus -mariadb
-dev-libs/xmlsec nss
+app-office/libreoffice-bin kde
 media-libs/harfbuzz icu

@@ -23,11 +23,11 @@ none				/tmp/				tmpfs	defaults,size=512m,nodev,nosuid,noexec			0 0
 none				/var/log			tmpfs	defaults,size=128m,nodev,nosuid,noexec,mode=0755	0 0
 none				/var/cache/edb/dep		tmpfs	defaults,size=1g,nodev,nosuid,noexec,mode=0755		0 0
 none				/var/cache/revdep-rebuild	tmpfs	defaults,size=8m,nodev,nosuid,noexec,mode=0755		0 0
-none				/var/cache/powertop		tmpfs	defaults,size=8m,nodev,nosuid,noexec			0 0
-none				/usr/src			tmpfs	defaults,size=1m,nodev,nosuid,noexec			0 0
-none				/var/lib/bluetooth		tmpfs	defaults,size=4m,nodev,nosuid,noexec			0 0
-none				/var/lib/dhcpcd			tmpfs	defaults,size=1m,mode=0700,nodev,nosuid,noexec		0 0
-none				/var/lib/module-rebuild		tmpfs	defaults,size=1m,mode=0700,nodev,nosuid,noexec		0 0
-none				/var/lib/upower			tmpfs	defaults,size=4m,nodev,nosuid,noexec			0 0
-none				/var/lib/NetworkManager		tmpfs	defaults,size=4m,nodev,nosuid,noexec			0 0
-# none				/var/lib/gentoo/news		tmpfs	defaults,size=1m,mode=0700,nodev,nosuid,noexec		0 0
+none				/var/cache/powertop		tmpfs	defaults,size=8m,nodev,nosuid,noexec,mode=0755		0 0
+none				/usr/src			tmpfs	defaults,size=1m,nodev,nosuid,noexec,mode=0755		0 0
+none				/var/lib/bluetooth		tmpfs	defaults,size=4m,nodev,nosuid,noexec,mode=0755		0 0
+none				/var/lib/dhcpcd			tmpfs	defaults,size=1m,nodev,nosuid,noexec,mode=0700		0 0
+none				/var/lib/module-rebuild		tmpfs	defaults,size=1m,nodev,nosuid,noexec,mode=0700		0 0
+none				/var/lib/upower			tmpfs	defaults,size=4m,nodev,nosuid,noexec,mode=0700		0 0
+none				/var/lib/NetworkManager		tmpfs	defaults,size=4m,nodev,nosuid,noexec,mode=0700		0 0
+# none				/var/lib/gentoo/news		tmpfs	defaults,size=1m,nodev,nosuid,noexec,mode=0700		0 0

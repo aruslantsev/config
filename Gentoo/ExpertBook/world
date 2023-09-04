@@ -8,7 +8,7 @@ app-laptop/laptop-mode-tools
 app-misc/fdupes
 app-misc/mc
 app-misc/tmux
-app-office/libreoffice
+app-office/libreoffice-bin
 app-portage/gentoolkit
 app-shells/bash-completion
 dev-util/strace
