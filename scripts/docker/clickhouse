@@ -1,0 +1,10 @@
+docker run \
+    --name clickhouse-server \
+    -p 8123:8123 \
+    -p 9000:9000 \
+    -v /data/clickhouse/data/:/var/lib/clickhouse/ \
+    -v /data/clickhouse/log/:/var/log/clickhouse-server/ \
+    -v /data/clickhouse/config.xml:/etc/clickhouse-server/config.xml \
+    -v /data/clickhouse/users.xml:/etc/clickhouse-server/users.xml \
+    --restart=always \
+    -d yandex/clickhouse-server

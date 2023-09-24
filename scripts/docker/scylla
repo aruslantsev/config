@@ -1,0 +1,13 @@
+docker run \
+    --name scylla-db \
+    --hostname scylla-db \
+    -p 7500:7000 \
+    -p 7501:7001 \
+    -p 7699:7199 \
+    -p 9542:9042 \
+    -p 9660:9160 \
+    -p 9680:9180 \
+    -p 10500:10000 \
+    -v /data/scylla/data:/var/lib/scylla \
+    --restart=always \
+    -d scylladb/scylla

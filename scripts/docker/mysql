@@ -1,0 +1,13 @@
+MYSQL_ROOT_PASSWORD=""
+
+docker run \
+	--name mysql-server \
+	-e MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD \
+	-v /srv/data/mysql/:/var/lib/mysql/:Z \
+	--restart=always \
+	--net=host \
+	--memory=2g \
+	--cpus=0.5 \
+	-d mysql:latest \
+	--character-set-server=utf8 --collation-server=utf8_bin \
+	--default-authentication-plugin=mysql_native_password

@@ -1,0 +1,13 @@
+[Unit]
+Description=AutoSSH tunnel to %I
+After=network-online.target
+
+[Service]
+User=andrei
+Group=andrei
+Environment="AUTOSSH_GATETIME=0"
+ExecStart=/usr/bin/autossh -N -F /home/andrei/.ssh/config -R 10023:localhost:22 %i
+# Type=forking
+
+[Install]
+WantedBy=multi-user.target

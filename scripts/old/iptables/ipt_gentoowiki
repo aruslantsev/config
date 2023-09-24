@@ -1,0 +1,41 @@
+# Allow ssh
+iptables -A INPUT -p TCP --dport ssh -j ACCEPT
+ip6tables -A INPUT -p TCP --dport ssh -j ACCEPT
+# Allow webserver
+iptables -A INPUT -p TCP --dport http -j ACCEPT
+ip6tables -A INPUT -p TCP --dport http -j ACCEPT
+# Allow ftp
+iptables -A INPUT -p TCP --dport ftp -j ACCEPT
+ip6tables -A INPUT -p TCP --dport ftp -j ACCEPT
+# Mailserver
+iptables -A INPUT -p TCP --dport 143 -j ACCEPT
+ip6tables -A INPUT -p TCP --dport 143 -j ACCEPT
+iptables -A INPUT -p TCP --dport 110 -j REJECT
+ip6tables -A INPUT -p TCP --dport 110 -j REJECT
+iptables -A INPUT -p TCP --dport 195 -j ACCEPT
+ip6tables -A INPUT -p TCP --dport 195 -j ACCEPT
+iptables -A INPUT -p TCP --dport 443 -j ACCEPT
+ip6tables -A INPUT -p TCP --dport 443 -j ACCEPT
+iptables -A INPUT -p TCP --dport 465 -j ACCEPT
+ip6tables -A INPUT -p TCP --dport 465 -j ACCEPT
+iptables -A INPUT -p TCP --dport 587 -j ACCEPT
+ip6tables -A INPUT -p TCP --dport 587 -j ACCEPT
+iptables -A INPUT -p TCP --dport 873 -j ACCEPT
+ip6tables -A INPUT -p TCP --dport 873 -j ACCEPT
+iptables -A INPUT -p TCP --dport 943 -j ACCEPT
+ip6tables -A INPUT -p TCP --dport 943 -j ACCEPT
+iptables -A INPUT -p TCP --dport 993 -j ACCEPT
+ip6tables -A INPUT -p TCP --dport 993 -j ACCEPT
+
+iptables -A INPUT -p TCP --dport 631 -j ACCEPT
+ip6tables -A INPUT -p TCP --dport 631 -j ACCEPT
+iptables -A INPUT -p TCP --dport 111 -j ACCEPT
+ip6tables -A INPUT -p TCP --dport 111 -j ACCEPT
+iptables -A INPUT -p TCP --dport 25 -j ACCEPT
+ip6tables -A INPUT -p TCP --dport 25 -j ACCEPT
+
+# DNS server
+iptables -A INPUT -p udp --dport 53 -j ACCEPT
+ip6tables -A INPUT -p udp --dport 53 -j ACCEPT
+iptables -A INPUT -p tcp --sport 53 -j ACCEPT
+ip6tables -A INPUT -p tcp --sport 53 -j ACCEPT
