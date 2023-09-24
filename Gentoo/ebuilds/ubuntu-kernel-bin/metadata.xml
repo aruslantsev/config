@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>andreiruslantsev@gmail.com</email>
+		<name>Andrei Ruslantsev</name
+	</maintainer>
+	<use>
+		<flag name="initramfs">Build initramfs using (<pkg>sys-kernel/dracut</pkg>) during installation</flag>
+	</use>
+</pkgmetadata>

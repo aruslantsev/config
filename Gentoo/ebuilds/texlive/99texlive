@@ -1,0 +1,3 @@
+MANPATH="/opt/texlive/2023/texmf-dist/doc/man:${MANPATH}"
+INFOPATH="/opt/texlive/2023/texmf-dist/doc/info:${INFOPATH}"
+PATH="{$PATH}:/opt/texlive/2023/bin/x86_64-linux"

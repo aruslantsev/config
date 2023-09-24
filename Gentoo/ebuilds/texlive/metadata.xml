@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>andreiruslantsev@gmail.com</email>
+		<name>Andrei Ruslantsev</name
+	</maintainer>
+	<use>
+		<flag name="fontutils">install tools for font management</flag>
+		<flag name="texi2html">install (<pkg>app-text/texi2html</pkg>)</flag>
+		<flag name="imagemagick">install (<pkg>media-gfx/imagemagick</pkg>)</flag>
+	</use>
+</pkgmetadata>
