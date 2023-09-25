@@ -15,3 +15,5 @@ ENV PATH ${CONDA_DIR}/bin:${PATH}
 RUN conda install -y jupyterlab
 RUN pip install torch torchvision --index-url https://download.pytorch.org/whl/cu117
 RUN pip install pandas pyarrow numpy transformers clickhouse-driver
+
+ENTRYPOINT ["jupyterlab", "--ip", "0.0.0.0", "--no-browser", "--allow-root"]
