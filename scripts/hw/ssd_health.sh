@@ -20,7 +20,7 @@ BYTES_PER_TB=1099511627776
 #######################################
 
 # Get SMART attributes
-SMART_INFO=$(sudo /usr/sbin/smartctl -A "$SSD_DEVICE")
+SMART_INFO=$(/usr/sbin/smartctl -A "$SSD_DEVICE")
 
 # Extract required attributes
 ON_TIME=$(echo "$SMART_INFO" | grep "$ON_TIME_TAG" | awk '{print $10}')
