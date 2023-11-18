@@ -1,0 +1,30 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+
+######################################################################
+# /etc/network/interfaces -- configuration file for ifup(8), ifdown(8)
+# See the interfaces(5) manpage for information on what options are
+# available.
+######################################################################
+
+# We always want the loopback interface.
+#
+auto lo
+iface lo inet loopback
+
+# To use dhcp:
+#
+# auto eth0
+# iface eth0 inet dhcp
+
+# An example static IP setup: (broadcast and gateway are optional)
+#
+# auto eth0
+# iface eth0 inet static
+#     address 192.168.0.42
+#     network 192.168.0.0
+#     netmask 255.255.255.0
+#     broadcast 192.168.0.255
+#     gateway 192.168.0.1
+
+# Include files from /etc/network/interfaces.d:
+source /etc/network/interfaces.d/*

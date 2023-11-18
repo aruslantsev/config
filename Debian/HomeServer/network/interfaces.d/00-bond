@@ -1,0 +1,13 @@
+auto eno1
+iface eno1 inet manual
+
+auto eno2
+iface eno2 inet manual
+
+auto bond0
+iface bond0 inet dhcp
+	bond_slaves eno1 eno2
+	bond_mode active-backup
+	bond-miimon 100
+	bond-downdelay 200
+	bond-updelay 200
