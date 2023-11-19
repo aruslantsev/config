@@ -1,6 +1,5 @@
 /etc/runlevels/boot/binfmt
 /etc/runlevels/boot/bootmisc
-/etc/runlevels/boot/consolefont
 /etc/runlevels/boot/fsck
 /etc/runlevels/boot/hostname
 /etc/runlevels/boot/hwclock
@@ -23,6 +22,7 @@
 /etc/runlevels/default/avahi-daemon
 /etc/runlevels/default/bluetooth
 /etc/runlevels/default/boltd
+/etc/runlevels/default/consolefont
 /etc/runlevels/default/cronie
 /etc/runlevels/default/display-manager
 /etc/runlevels/default/irqbalance
