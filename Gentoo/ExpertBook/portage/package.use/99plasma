@@ -4,7 +4,7 @@ app-text/poppler nss  # okular
 app-text/poppler qt5 # core
 dev-libs/libpcre2 pcre32  # kfind
 dev-qt/qtcore icu  # core
-dev-qt/qtgui egl  # qtwayland
+dev-qt/qtgui egl accessibility # qtwayland, kwin
 dev-qt/qtmultimedia qml # kdeconnect
 kde-apps/kio-extras -man mtp
 kde-frameworks/kconfig qml

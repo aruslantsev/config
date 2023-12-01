@@ -1,10 +1,13 @@
 app-admin/rsyslog
 app-arch/p7zip
 app-arch/unrar
+app-crypt/efitools
+app-crypt/sbsigntools
 app-editors/nano
 app-emulation/qemu
 app-forensics/chkrootkit
 app-laptop/laptop-mode-tools
+app-misc/evtest
 app-misc/fdupes
 app-misc/mc
 app-misc/tmux
@@ -47,6 +50,7 @@ sys-apps/hdparm
 sys-apps/irqbalance
 sys-apps/lm-sensors
 sys-apps/lshw
+sys-apps/nvme-cli
 sys-apps/usbutils
 sys-auth/nss-mdns
 sys-boot/grub
