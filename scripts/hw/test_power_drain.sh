@@ -28,7 +28,8 @@ discharging_string="Discharging"
 # discharging_string="discharging"
 
 # suspend command
-suspend_func () { pm-suspend $pm_params; }
+# suspend_func () { pm-suspend $pm_params; }
+suspend_func () { echo mem > /sys/power/state; echo $pm_params; }
 
 # here is an older version of the suspend command; you can uncomment it if you want to use it
 # suspend_func () {
