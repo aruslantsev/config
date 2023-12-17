@@ -1,4 +1,4 @@
-dev-libs/glib -dbus  # needs dconf otherwise
+dev-libs/glib -dbus # needs dconf otherwise
 media-video/ffmpeg libdrm
 net-analyzer/nmap ncat
 net-fs/nfs-utils nfsv41

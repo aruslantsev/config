@@ -1,19 +1,17 @@
 */* networkmanager -handbook -kaccounts -semantic-desktop
-app-text/xmlto text
-app-text/poppler nss  # okular
+# app-text/poppler nss # okular
 app-text/poppler qt5 # core
-dev-libs/libpcre2 pcre32  # kfind
+# dev-libs/libpcre2 pcre32  # kfind
 dev-qt/qtcore icu  # core
-dev-qt/qtgui egl accessibility # qtwayland, kwin
-dev-qt/qtmultimedia qml # kdeconnect
+dev-qt/qtgui accessibility # kwin
+# dev-qt/qtmultimedia qml # kdeconnect
 kde-apps/kio-extras -man mtp
-kde-frameworks/kconfig qml
+kde-frameworks/kconfig qml # plasma-meta[+sddm,+display-manager]
 kde-frameworks/kitemmodels qml # core
 kde-frameworks/prison qml # core
 kde-frameworks/sonnet qml # core
-kde-plasma/kwin lock
+kde-plasma/kwin lock # plasma-meta[+thunderbolt]
 kde-plasma/plasma-meta -crypt -desktop-portal thunderbolt
-media-video/vlc ogg opus # phonon-vlc
 media-fonts/noto -extra
-sys-auth/polkit introspection # thunderbolt
-sys-libs/zlib minizip  # vlc, qtwebengine
+sys-auth/polkit introspection
+# sys-libs/zlib minizip  # vlc, qtwebengine
