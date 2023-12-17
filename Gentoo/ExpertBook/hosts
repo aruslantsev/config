@@ -14,6 +14,7 @@
 #
 
 # IPv4 and IPv6 localhost aliases
+# 127.0.0.1	localhost
 127.0.0.1	expertbook.localdomain expertbook localhost
 ::1		localhost
 
