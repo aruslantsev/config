@@ -4,6 +4,7 @@ echo "Mounting temporary filesystems"
 # Strictly needed
 mount -o bind /dev dev
 mount -o bind /dev/pts dev/pts
+mount -o bind /dev/shm dev/shm
 mount -o bind /sys sys
 mount -o bind /proc proc
 mount -t tmpfs none run
@@ -59,5 +60,6 @@ umount var/tmp/
 umount run
 umount proc
 umount sys
+umount dev/shm
 umount dev/pts
 umount dev
