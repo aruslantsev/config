@@ -1,2 +1,3 @@
 app-office/libreoffice-bin kde
+dev-libs/xmlsec nss
 media-libs/harfbuzz icu
