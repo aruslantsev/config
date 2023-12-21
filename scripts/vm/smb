@@ -1,3 +1,0 @@
-\\10.0.2.4
-\\smbserver
-sed -e 's/\[qemu\]/min protocol = NT1\n\[share\]/' -i /tmp/qemu-smb.*/smb.conf
