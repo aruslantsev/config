@@ -1,7 +1,0 @@
-app-emulation/qemu sdl spice vde usb usbredir
-media-libs/libsdl2 gles2
-# virt-manager
-app-emulation/libvirt-glib introspection
-sys-libs/libosinfo introspection
-# virt-viewer
-net-misc/spice-gtk gtk3

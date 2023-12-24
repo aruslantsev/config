@@ -1,9 +1,0 @@
-app-misc/mc sftp
-media-gfx/imagemagick xml
-net-fs/samba client
-sys-apps/i2c-tools perl python
-sys-apps/man-pages -l10n_ru
-sys-apps/smartmontools -daemon
-sys-firmware/intel-microcode initramfs
-sys-fs/lvm2 -thin
-sys-process/lsof rpc

@@ -1,2 +1,0 @@
-dev-lang/python sqlite
-dev-libs/glib -dbus # needs dconf
