@@ -1,44 +1,45 @@
-#!/bin/bash
-if [ -z "$1" ]
+#!/usr/bin/env bash
+
+HOST=$1
+PORT_REMOTE=$2
+PORT_LOCAL=$3
+IDENTITY=$4
+INTERVAL=10
+
+if [ -z ${SSH_AGENT_PID} ]
 then
-	HOST="zabbix.lan"
+	# ssh agent is not running
+	KILL_AGENT=1
 else
-	HOST=$1
+	# ssh agent is runninga
+	KILL_AGENT=0
 fi
 
-if [ -z "$2" ]
+if [ $KILL_AGENT -eq 1 ]
 then
-	PORT_REMOTE=80
+	trap "echo \"Caught SIGINT\"; echo \"Killing ssh-agent\"; ssh-agent -k; exit" SIGINT SIGTERM SIGKILL
 else
-	PORT_REMOTE=$2
+	trap "exit"  SIGINT SIGTERM SIGKILL
 fi
 
-if [ -z "$3" ]
+if [ $KILL_AGENT -eq 1 ]
 then
-	PORT_LOCAL=8080
-else
-	PORT_LOCAL=$3
+	echo "Starting ssh-agent"
+	eval $(ssh-agent)
+	ssh-add ${IDENTITY}
 fi
-
-if [ -z "$4" ]
-then
-	INTERVAL=300
-else
-	INTERVAL=$4
-fi
-
-
-CMD1="ssh -o TCPKeepAlive=no -o ExitOnForwardFailure=yes -o ConnectTimeout=15 -f -N -L ${PORT_LOCAL}:localhost:${PORT_REMOTE} ${HOST}"
-
-echo "Executing $CMD1, refresh interval: $INTERVAL seconds"
-
-trap "echo \"Caught SIGINT\"; pgrep -f \"$CMD1\" | xargs kill; ssh-agent -k; exit" SIGINT
-
-eval $(ssh-agent)
-ssh-add
 
 while true
 do
-        pgrep -f "$CMD1" &>/dev/null && echo "$(date +'%Y.%m.%d %H:%M:%S'): OK" || ( echo "$(date +'%Y.%m.%d %H:%M:%S'): Reconnecting..."; $CMD1 & )
-        sleep $INTERVAL
+	ssh \
+		-o TCPKeepAlive=no \
+		-o ExitOnForwardFailure=yes \
+		-o ConnectTimeout=15 \
+		-o ServerAliveInterval=30 \
+		-o ServerAliveCountMax=3 \
+		-o StrictHostKeyChecking=no \
+		-o UserKnownHostsFile=/dev/null \
+		-N -L ${PORT_LOCAL}:localhost:${PORT_REMOTE} ${HOST}
+	echo Restarting...
+	sleep $INTERVAL
 done

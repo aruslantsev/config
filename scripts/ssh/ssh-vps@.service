@@ -8,9 +8,7 @@ After=network-online.target
 # User=andrei
 # Group=andrei
 ExecStartPre=/bin/sleep 30
-# Easy way: ExecStart=/usr/bin/ssh -o TCPKeepAlive=no -o ExitOnForwardFailure=yes -o ConnectTimeout=15 -N -R 10022:localhost:22 %i
-# Ubuntu:   ExecStart=/usr/bin/ssh -o TCPKeepAlive=no -o ExitOnForwardFailure=yes -o ConnectTimeout=15 -N -R 10022:localhost:22 -i /path-to-key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null andrei@%i
-# RHEL:     ExecStart=/usr/bin/ssh -o TCPKeepAlive=no -o ExitOnForwardFailure=yes -o ConnectTimeout=15 -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -N -R 10020:localhost:22 -i /usr/local/lib/systemd/system/nopasswd_id_ed25519 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null andrei@%i
+ExecStart=/usr/bin/ssh -o TCPKeepAlive=no -o ExitOnForwardFailure=yes -o ConnectTimeout=15 -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -N -R PORT:localhost:22 -i KEY -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null USER@%i
 Restart=always
 RestartSec=5
 
