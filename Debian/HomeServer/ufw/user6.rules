@@ -23,6 +23,15 @@
 ### tuple ### allow udp 5353 ::/0 any ::/0 in
 -A ufw6-user-input -p udp --dport 5353 -j ACCEPT
 
+### tuple ### allow tcp 139 ::/0 any ::/0 in
+-A ufw6-user-input -p tcp --dport 139 -j ACCEPT
+
+### tuple ### allow tcp 445 ::/0 any ::/0 in
+-A ufw6-user-input -p tcp --dport 445 -j ACCEPT
+
+### tuple ### allow tcp 2049 ::/0 any ::/0 in
+-A ufw6-user-input -p tcp --dport 2049 -j ACCEPT
+
 ### END RULES ###
 
 ### LOGGING ###

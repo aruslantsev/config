@@ -33,6 +33,7 @@ mc
 mdadm
 memtest86+
 nano
+nfs-kernel-server
 numactl
 openssh-client
 openssh-server
@@ -42,6 +43,7 @@ pciutils
 rclone
 rsync
 rsyslog
+samba
 smartmontools
 strace
 sudo
