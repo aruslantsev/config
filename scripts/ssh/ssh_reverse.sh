@@ -21,7 +21,6 @@ then
 else
 	trap "exit"  SIGINT SIGTERM SIGKILL
 fi
-fi
 
 if [ $KILL_AGENT -eq 1 ]
 then
