@@ -1,1 +1,3 @@
 dev-qt/qtgui egl # vlc[+gui]
+media-video/ffmpeg -vaapi
+media-video/vlc -vaapi
