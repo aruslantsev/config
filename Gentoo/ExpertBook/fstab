@@ -33,4 +33,3 @@ none				/var/lib/upower			tmpfs	defaults,size=4m,nodev,nosuid,noexec,mode=0755		
 none				/var/lib/NetworkManager		tmpfs	defaults,size=4m,nodev,nosuid,noexec,mode=0700		0 0
 # none				/var/lib/bluetooth		tmpfs	defaults,size=4m,nodev,nosuid,noexec,mode=0755		0 0
 # none				/var/lib/gentoo/news		tmpfs	defaults,size=1m,nodev,nosuid,noexec,mode=0775		0 0
-# tmpfs  /run   tmpfs  mode=0755,nosuid,nodev,rootcontext=system_u:object_r:var_run_t  0 0

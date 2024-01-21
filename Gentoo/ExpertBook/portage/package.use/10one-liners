@@ -5,6 +5,6 @@ net-analyzer/nmap ncat
 net-fs/nfs-utils nfsv41
 net-fs/samba client
 net-wireless/wpa_supplicant tkip
-sys-apps/smartmontools -update-drivedb
+sys-apps/smartmontools -daemon -update-drivedb
 sys-apps/iproute2 -iptables
 sys-fs/lvm2 -thin
