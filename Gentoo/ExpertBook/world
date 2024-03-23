@@ -10,6 +10,7 @@ app-misc/evtest
 app-misc/fdupes
 app-misc/mc
 app-misc/tmux
+app-misc/wayland-utils
 app-office/libreoffice-bin
 app-portage/gentoolkit
 app-shells/bash-completion
@@ -70,3 +71,4 @@ sys-process/cronie
 sys-process/htop
 sys-process/lsof
 www-client/firefox-bin
+x11-apps/mesa-progs
