@@ -12,10 +12,13 @@ curl
 debootstrap
 deborphan
 dmidecode
+docker-compose
+docker.io
 dosfstools
 efitools
 fdisk
 firmware-linux
+git
 grub-efi-amd64
 hdparm
 htop
@@ -35,6 +38,7 @@ memtest86+
 nano
 nfs-kernel-server
 numactl
+nvme-cli
 openssh-client
 openssh-server
 parted
@@ -50,3 +54,4 @@ sudo
 tmux
 usbutils
 wget
+zabbix-agent2

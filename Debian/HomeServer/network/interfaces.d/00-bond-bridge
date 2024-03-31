@@ -1,0 +1,24 @@
+auto eno1
+iface eno1 inet manual
+
+auto eno2
+iface eno2 inet manual
+
+auto bond0
+iface bond0 inet manual
+	bond_slaves eno1 eno2
+	# bond_mode balance-rr
+	bond_mode active-backup
+	bond-miimon 100
+	bond-downdelay 200
+	bond-updelay 200
+
+auto br0
+iface br0 inet dhcp
+	bridge_ports bond0
+	bridge_stp off
+	bridge_fd 0
+	bridge_maxwait 0
+
+iface br0 inet6 auto
+	accept_ra 1

@@ -22,6 +22,7 @@ bsdutils
 busybox
 bzip2
 ca-certificates
+containerd
 coreutils
 cpio
 cpufrequtils
@@ -50,6 +51,8 @@ distro-info-data
 dmeventd
 dmidecode
 dmsetup
+docker-compose
+docker.io
 dosfstools
 dpkg
 e2fsprogs
@@ -66,6 +69,8 @@ firmware-misc-nonfree
 freeipmi-common
 gcc-12-base
 gettext-base
+git-man
+git
 gnupg-l10n
 gnupg-utils
 gnupg
@@ -86,7 +91,6 @@ gzip
 hdparm
 hostname
 htop
-ibverbs-providers
 ifenslave
 ifupdown
 init-system-helpers
@@ -140,6 +144,7 @@ libcpufreq0
 libcrypt1
 libcryptsetup12
 libcups2
+libcurl3-gnutls
 libcurl4
 libcwidget4
 libdaemon0
@@ -153,6 +158,7 @@ libedit2
 libefiboot1
 libefivar1
 libelf1
+liberror-perl
 libestr0
 libevent-core-2.1-7
 libexpat1
@@ -225,6 +231,7 @@ libnpth0
 libnsl2
 libnss-mdns
 libnuma1
+libnvme1
 libopenipmi0
 libp11-kit0
 libpam-modules-bin
@@ -294,8 +301,8 @@ libxxhash0
 libyaml-0-2
 libzstd1
 linux-base
-linux-image-6.1.0-13-amd64
-linux-image-6.1.0-16-amd64
+linux-image-6.1.0-17-amd64
+linux-image-6.1.0-18-amd64
 linux-image-amd64
 lm-sensors
 locales
@@ -324,6 +331,7 @@ nfs-common
 nfs-kernel-server
 nftables
 numactl
+nvme-cli
 openipmi
 openssh-client
 openssh-server
@@ -345,6 +353,7 @@ psmisc
 python-apt-common
 python3-anyio
 python3-apt
+python3-attr
 python3-certifi
 python3-cffi-backend
 python3-chardet
@@ -352,7 +361,13 @@ python3-charset-normalizer
 python3-click
 python3-colorama
 python3-cryptography
+python3-distro
+python3-distutils
 python3-dnspython
+python3-docker
+python3-dockerpty
+python3-docopt
+python3-dotenv
 python3-gpg
 python3-h11
 python3-h2
@@ -361,13 +376,16 @@ python3-httpcore
 python3-httpx
 python3-hyperframe
 python3-idna
+python3-jsonschema
 python3-ldb
+python3-lib2to3
 python3-markdown-it
 python3-markdown
 python3-mdurl
 python3-minimal
 python3-pkg-resources
 python3-pygments
+python3-pyrsistent
 python3-requests-toolbelt
 python3-requests
 python3-rfc3986
@@ -377,7 +395,9 @@ python3-six
 python3-sniffio
 python3-talloc
 python3-tdb
+python3-texttable
 python3-urllib3
+python3-websocket
 python3-yaml
 python3.11-minimal
 python3.11
@@ -387,6 +407,7 @@ readline-common
 rpcbind
 rsync
 rsyslog
+runc
 runit-helper
 samba-ad-provision
 samba-common-bin
@@ -406,11 +427,13 @@ smartmontools
 strace
 sudo
 systemd-sysv
+systemd-timesyncd
 systemd
 sysvinit-utils
 tar
 tdb-tools
 thin-provisioning-tools
+tini
 tmux
 tzdata
 ucf
@@ -422,7 +445,9 @@ usbutils
 usr-is-merged
 util-linux-extra
 util-linux
+uuid-runtime
 wget
 xz-utils
+zabbix-agent2
 zlib1g
 zstd
