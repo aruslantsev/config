@@ -19,13 +19,9 @@
 **/.vscode
 **/.idea
 **/.fleet
-.idea/
-.vscode/
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
 **/__pycache__
-*.py[cod]
 **/*.py[cod]
 *$py.class
 
@@ -34,28 +30,25 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
-**/build 
+**/build
 develop-eggs/
-dist/
 **/dist 
 downloads/
+*.egg
+**/*.egg-info
 eggs/
 .eggs/
+.installed.cfg
 lib/
 lib64/
 parts/
+pip-wheel-metadata/
 sdist/
+share/python-wheels/
 var/
 wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-**/*.egg-info
-.installed.cfg
-*.egg
-MANIFEST
 **/*.whl 
+MANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -80,7 +73,6 @@ coverage.xml
 *.cover
 *.py,cover
 .hypothesis/
-.pytest_cache/
 **/.pytest_cache 
 
 # Translations
@@ -155,7 +147,6 @@ venv.bak/
 /site
 
 # mypy
-.mypy_cache/
 **/.mypy_cache 
 .dmypy.json
 dmypy.json
