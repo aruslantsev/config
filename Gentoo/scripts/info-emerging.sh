@@ -5,14 +5,14 @@ while true
  echo Now emerging
  echo ==========================================================================
  echo
- ps a | grep -i sandbox | grep -v grep | awk '{print $5}' | grep --color=never -i \- | sed -e 's/\[//g' -e 's/\]//g'
+ ps a | grep -i sandbox | grep -i portage | grep -v grep | awk '{print $5}' | grep --color=never -i \- | sed -e 's/\[//g' -e 's/\]//g'
  echo
  echo ==========================================================================
  echo
  echo Directories in /var/tmp/portage
  echo ==========================================================================
  echo
- find /var/tmp/portage -maxdepth 2 | sed -e 's/\.\///g' | grep -i \/ --color=never | grep -v lockfile
+ find /var/tmp/portage -maxdepth 2 -type d | sed -e 's/\.\///g' | grep -i \/ --color=never | grep -v lockfile
  echo
  echo ==========================================================================
  echo
