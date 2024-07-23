@@ -1,0 +1,2 @@
+supervisor="supervise-daemon"
+command_args_foreground="--nofork --nopidfile"

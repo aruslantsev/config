@@ -18,7 +18,6 @@
 /etc/runlevels/boot/sysctl
 /etc/runlevels/boot/systemd-tmpfiles-setup
 /etc/runlevels/boot/termencoding
-/etc/runlevels/default/acpid
 /etc/runlevels/default/avahi-daemon
 /etc/runlevels/default/bluetooth
 /etc/runlevels/default/boltd
