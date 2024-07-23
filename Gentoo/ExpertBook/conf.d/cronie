@@ -1,0 +1,5 @@
+# Settings for the CRON daemon.
+supervisor="supervise-daemon"
+# CRONDARGS= :  any extra command-line startup arguments for crond
+# CRONDARGS=
+CRONDARGS="-f"
