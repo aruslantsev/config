@@ -1,2 +1,0 @@
-#BLUETOOTH_OPTS="-E"
-supervisor="supervise-daemon"
