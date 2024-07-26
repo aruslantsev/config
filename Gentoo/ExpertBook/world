@@ -31,6 +31,7 @@ kde-apps/spectacle
 kde-apps/svgpart
 kde-misc/kdeconnect
 kde-plasma/plasma-meta
+kde-plasma/xdg-desktop-portal-kde
 media-fonts/terminus-font
 media-gfx/gimp
 media-gfx/hugin
@@ -46,6 +47,7 @@ net-misc/ntp
 net-p2p/qbittorrent
 net-vpn/networkmanager-openvpn
 sys-apps/dmidecode
+sys-apps/ethtool
 sys-apps/hdparm
 sys-apps/irqbalance
 sys-apps/lm-sensors
