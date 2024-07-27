@@ -1,0 +1,8 @@
+# export NO_DEVTOOLS=1 # Needs git
+source ~/.dotfiles/00path
+# source ~/.dotfiles/01ps1-simple
+source ~/.dotfiles/01ps1-multiline
+# source ~/.dotfiles/01ps1-singleline
+source ~/.dotfiles/02aliases
+source ~/.dotfiles/10ssh-agent
+source ~/.dotfiles/90conda # Needs conda and filled ~/.condarc: changeps1: False

@@ -1,0 +1,13 @@
+unset SSH_ASKPASS
+
+if [ ! $(pgrep -u $USER ssh-agent) ] && [ -S ~/.ssh/ssh-agent.sock ]; then
+	echo No ssh-agent is running but socket is existing. Removing it...
+	rm ~/.ssh/ssh-agent.sock
+fi
+if [ ! -S ~/.ssh/ssh-agent.sock ]; then
+	echo Starting ssh-agent
+	ssh-agent -a ~/.ssh/ssh-agent.sock > /dev/null
+	echo 'You may want to add "AddKeysToAgent yes" to your ~/.ssh/config'
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh-agent.sock
+export SSH_AGENT_PID=$(pgrep -u $USER ssh-agent)
