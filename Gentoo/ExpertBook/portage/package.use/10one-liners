@@ -6,6 +6,7 @@ net-fs/nfs-utils nfsv41
 net-fs/samba client
 net-wireless/wpa_supplicant tkip
 sys-apps/openrc sysv-utils
+sys-apps/systemd-utils boot kernel-install
 sys-apps/smartmontools -daemon -update-drivedb
 sys-apps/iproute2 -iptables
 sys-fs/lvm2 -thin
