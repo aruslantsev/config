@@ -18,6 +18,7 @@
 /etc/runlevels/boot/sysctl
 /etc/runlevels/boot/systemd-tmpfiles-setup
 /etc/runlevels/boot/termencoding
+/etc/runlevels/default/NetworkManager
 /etc/runlevels/default/agetty.tty1
 /etc/runlevels/default/agetty.tty2
 /etc/runlevels/default/agetty.tty3
@@ -33,7 +34,6 @@
 /etc/runlevels/default/irqbalance
 /etc/runlevels/default/local
 /etc/runlevels/default/netmount
-/etc/runlevels/default/NetworkManager
 /etc/runlevels/default/rsyslog
 /etc/runlevels/default/sshd
 /etc/runlevels/default/tlp

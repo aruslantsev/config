@@ -9,7 +9,7 @@ app-misc/fdupes
 app-misc/mc
 app-misc/symlinks
 app-misc/tmux
-app-office/libreoffice-bin
+app-office/libreoffice
 app-portage/gentoolkit
 app-shells/bash-completion
 dev-debug/strace
@@ -36,6 +36,7 @@ media-fonts/terminus-font
 media-gfx/gimp
 media-gfx/hugin
 media-gfx/imagemagick
+media-sound/alsa-tools
 media-sound/alsa-utils
 media-sound/pavucontrol-qt
 net-analyzer/nmap
@@ -46,6 +47,7 @@ net-misc/networkmanager
 net-misc/ntp
 net-p2p/qbittorrent
 net-vpn/networkmanager-openvpn
+net-wireless/iw
 sys-apps/dmidecode
 sys-apps/ethtool
 sys-apps/hdparm
@@ -65,11 +67,14 @@ sys-fs/lvm2
 sys-fs/mdadm
 sys-kernel/dracut
 sys-kernel/gentoo-sources
+sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-power/cpupower
+sys-power/powerstat
 sys-power/powertop
 sys-power/tlp
 sys-process/cronie
+sys-process/forkstat
 sys-process/htop
 sys-process/lsof
 www-client/firefox-bin

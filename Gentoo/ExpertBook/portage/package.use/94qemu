@@ -1,1 +1,2 @@
-app-emulation/qemu gtk usb
+app-emulation/qemu sdl usb
+media-libs/libsdl2 gles2
