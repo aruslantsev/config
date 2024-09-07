@@ -16,6 +16,7 @@ dev-debug/strace
 dev-vcs/git
 kde-apps/ark
 kde-apps/dolphin
+kde-apps/dragon
 kde-apps/gwenview
 kde-apps/kamera
 kde-apps/kate
@@ -36,6 +37,7 @@ media-fonts/terminus-font
 media-gfx/gimp
 media-gfx/hugin
 media-gfx/imagemagick
+media-libs/libva-intel-media-driver
 media-sound/alsa-tools
 media-sound/alsa-utils
 media-sound/pavucontrol-qt
@@ -70,11 +72,9 @@ sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-power/cpupower
-sys-power/powerstat
 sys-power/powertop
 sys-power/tlp
 sys-process/cronie
-sys-process/forkstat
 sys-process/htop
 sys-process/lsof
 www-client/firefox-bin
