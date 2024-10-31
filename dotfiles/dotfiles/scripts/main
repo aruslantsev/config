@@ -1,0 +1,15 @@
+source ~/.dotfiles/scripts/00path
+
+if [ ${SIMPLE_PROMPT:-0} -eq 1 ]; then
+    source ~/.dotfiles/scripts/01ps1-simple
+elif [ ${MULTILINE_PROMPT:-0} -eq 1 ]; then
+    source ~/.dotfiles/scripts/01ps1-multiline
+else
+    source ~/.dotfiles/scripts/01ps1-singleline
+fi
+
+source ~/.dotfiles/scripts/02aliases
+
+if [ ${RUN_SSH_AGENT:-0} -eq 1 ]; then
+    source ~/.dotfiles/scripts/10ssh-agent
+fi

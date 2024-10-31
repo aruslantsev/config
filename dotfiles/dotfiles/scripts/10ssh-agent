@@ -7,7 +7,7 @@ fi
 if [ ! -S ~/.ssh/ssh-agent.sock ]; then
 	echo Starting ssh-agent
 	ssh-agent -a ~/.ssh/ssh-agent.sock > /dev/null
-	echo 'You may want to add "AddKeysToAgent yes" to your ~/.ssh/config'
+	echo 'You may want to insert "AddKeysToAgent yes" into your ~/.ssh/config'
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh-agent.sock
 export SSH_AGENT_PID=$(pgrep -u $USER ssh-agent)

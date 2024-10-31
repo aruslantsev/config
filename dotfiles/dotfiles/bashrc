@@ -1,8 +1,22 @@
-# export NO_DEVTOOLS=1 # Needs git
-source ~/.dotfiles/00path
-# source ~/.dotfiles/01ps1-simple
-source ~/.dotfiles/01ps1-multiline
-# source ~/.dotfiles/01ps1-singleline
-source ~/.dotfiles/02aliases
-source ~/.dotfiles/10ssh-agent
-source ~/.dotfiles/90conda # Needs conda and filled ~/.condarc: changeps1: False
+# Select prompt
+# Simple prompt: user@host $. No execution time, return code, development tools or anything else in prompt
+export SIMPLE_PROMPT=0
+# More useful prompt. Contains execution time, return code, information about development tools.
+# Use multiline prompt. Contains load average, RAM usage
+export MULTILINE_PROMPT=1
+
+# Autostart ssh-agent
+export RUN_SSH_AGENT=1
+
+# Development tools
+# Show git status (branch, uncommited files, etc.) in prompt
+export SHOW_GIT_STATUS=1
+# Show conda environment in prompt
+export SHOW_CONDA_STATUS=1
+
+# Do not save history
+unset HISTFILE
+
+source ~/.dotfiles/scripts/main
+
+# Aliases can be set in ~/.dotfiles/bash_aliases

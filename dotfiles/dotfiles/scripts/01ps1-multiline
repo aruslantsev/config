@@ -1,0 +1,31 @@
+source ~/.dotfiles/scripts/colors.sh
+source ~/.dotfiles/scripts/timer.sh
+source ~/.dotfiles/scripts/system.sh
+
+EXITCODE="\$(exitcode=\$?; if [ \${exitcode} = 0 ]; then echo -n \"${GREEN}\"; else echo -n \"${RED}\"; fi; echo -n \"[\${exitcode}|\$(get_exectime)]\"; echo \"${RESET}\")"
+
+if [ ${SHOW_GIT_STATUS:-0} -eq 1 ] || [ ${SHOW_CONDA_STATUS:-0} -eq 1 ]; then
+	source ~/.dotfiles/scripts/devtools.sh
+	DEVTOOLS_STR="\$(status_str=\$(get_devtools_str); if [ -n \"\${status_str}\" ]; then echo \"\n│  ${GREY}\${status_str}${RESET}\"; else echo -n; fi)"
+else
+	DEVTOOLS_STR=""
+fi
+
+SYSTEM_LOAD="${GREY}\$(get_system_load)${RESET}"
+
+TIME="${GREY}\D{%F %T}.${RESET}"
+
+SSH="\$(if [ ! -z \"\${SSH_CONNECTION}\" ]; then echo \"${YELLOW}[SSH]${RESET} \"; fi)"
+
+if [ $UID = 0 ]; then
+	PS1="\[\e]0;\u@\h:\w\a\]${RED}\h ${BLUE}\w \\\$${RESET}"
+else
+	PS1="\[\e]0;\u@\h:\w\a\]${GREEN}\u@\h ${BLUE}\w \\\$${RESET}"
+fi
+PS1="┌─ ${EXITCODE} ${TIME} ${SYSTEM_LOAD} ${DEVTOOLS_STR}\n└─ ${SSH}${PS1} "
+
+# ┌─┬─┐
+# │ │ │
+# ├─┼─┤
+# │ │ │
+# └─┴─┘
