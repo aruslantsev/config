@@ -9,12 +9,12 @@ export MULTILINE_PROMPT=1
 export RUN_SSH_AGENT=1
 
 # Development tools
-# Show git status (branch, uncommited files, etc.) in prompt
+# Show git status (branch, staged files, etc.) in prompt
 export SHOW_GIT_STATUS=1
 # Show conda environment in prompt
 export SHOW_CONDA_STATUS=1
 
-# Do not save history
+# Do not save command history
 unset HISTFILE
 
 source ~/.dotfiles/scripts/main

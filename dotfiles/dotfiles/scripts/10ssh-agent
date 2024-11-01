@@ -1,6 +1,6 @@
 unset SSH_ASKPASS
 
-if [ ! $(pgrep -u $USER ssh-agent) ] && [ -S ~/.ssh/ssh-agent.sock ]; then
+if [ ! $(pgrep -u $USER ssh-agent | wc -l) ] && [ -S ~/.ssh/ssh-agent.sock ]; then
 	echo No ssh-agent is running but socket is existing. Removing it...
 	rm ~/.ssh/ssh-agent.sock
 fi
